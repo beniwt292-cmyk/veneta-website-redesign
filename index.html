@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VENETA™ Window Fashions — Custom Blinds, Shades &amp; Shutters (Redesign Mockup)</title>
+<meta name="description" content="Redesign mockup for VENETA Window Fashions: custom blinds, shades and shutters engineered to fit, cordless by design, available at The Home Depot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414; --ink-70:#4A4A48; --ink-45:#83837E;
+  --line:#E3DFD8; --paper:#fff; --linen:#F7F4EF; --sand:#EDE6DA;
+  --daylight:#F2C230; --daylight-deep:#C99A15; --slate:#2E3A3F; --sky:#8FA9B4; --success:#2E6B4F;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-weight:400}
+h1{font-family:var(--serif);font-size:clamp(38px,6.2vw,64px);line-height:1.06;letter-spacing:-.02em}
+h2{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:1.12;letter-spacing:-.01em}
+h3{font-size:clamp(19px,1.6vw,24px);font-weight:600;line-height:1.25}
+p{margin:0 0 1em;max-width:64ch}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);margin:0 0 18px}
+section{padding:clamp(64px,9vw,124px) 0}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:12px 20px;z-index:200}
+.skip:focus{left:12px;top:12px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--slate);outline-offset:2px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:15px 28px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:var(--slate);border-color:var(--slate)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:#fff}
+.btn--ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn--ghost-light:hover{background:#fff;color:var(--ink);border-color:#fff}
+.btn--hd{background:var(--daylight);border-color:var(--daylight);color:var(--ink)}
+.btn--hd:hover{background:var(--daylight-deep);border-color:var(--daylight-deep);color:var(--ink)}
+.btn--sm{padding:11px 18px;font-size:12px}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:28px;height:76px;max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.logo{font-family:var(--sans);font-weight:600;font-size:23px;letter-spacing:.22em}
+.logo span{color:var(--daylight-deep)}
+nav.main{display:none;gap:26px;margin-left:auto;font-size:14px;font-weight:500}
+nav.main a{padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-bottom-color:var(--daylight)}
+.hd-wrap{display:none;margin-left:8px}
+.burger{margin-left:auto;background:none;border:1px solid var(--line);border-radius:2px;width:46px;height:46px;display:grid;place-items:center;cursor:pointer}
+.burger i{display:block;width:20px;height:1.5px;background:var(--ink);position:relative}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:20px;height:1.5px;background:var(--ink)}
+.burger i::before{top:-6px}.burger i::after{top:6px}
+@media(min-width:1080px){nav.main{display:flex}.hd-wrap{display:block}.burger{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.30) 42%,rgba(10,10,10,.72) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:clamp(36px,5vw,64px)}
+.hero h1{max-width:15ch}
+.hero p.lede{font-size:clamp(17px,1.4vw,20px);max-width:50ch;color:rgba(255,255,255,.92);margin:22px 0 32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:40px;padding-top:26px;border-top:1px solid rgba(255,255,255,.28);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+
+/* finder */
+.finder{background:var(--linen);border-bottom:1px solid var(--line);padding:clamp(40px,5vw,64px) 0}
+.finder h2{font-size:clamp(23px,2.4vw,30px)}
+.finder-grid{display:grid;gap:14px;grid-template-columns:1fr;margin-top:28px}
+.field label{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45);margin-bottom:8px}
+.field select{width:100%;padding:15px 14px;font:inherit;font-size:16px;background:#fff;border:1px solid var(--line);border-radius:2px;color:var(--ink)}
+@media(min-width:880px){.finder-grid{grid-template-columns:1fr 1fr 1fr auto;align-items:end}.finder-grid .btn{height:53px}}
+
+/* section head */
+.shead{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:44px}
+.shead p{color:var(--ink-70);margin:14px 0 0}
+
+/* product cards */
+.cards{display:grid;gap:32px 24px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{display:block;border-bottom:1px solid var(--line);padding-bottom:20px}
+.card .ph{overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+.card:hover .ph img{transform:scale(1.04)}
+.card h3{margin:18px 0 6px}
+.card .desc{font-size:15px;color:var(--ink-70);margin:0 0 12px;max-width:none}
+.card .price{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.badge{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:100px;padding:5px 11px;color:var(--ink-70)}
+
+/* slat divider */
+.slat{display:grid;gap:5px;max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.slat i{display:block;height:1px;background:var(--ink)}
+.slat i:nth-child(1){opacity:.35}.slat i:nth-child(2){opacity:.26}.slat i:nth-child(3){opacity:.18}.slat i:nth-child(4){opacity:.11}.slat i:nth-child(5){opacity:.06}
+
+/* spec */
+.spec-sec{background:var(--linen)}
+.split{display:grid;gap:clamp(32px,5vw,72px);grid-template-columns:1fr;align-items:start}
+@media(min-width:960px){.split{grid-template-columns:.85fr 1.15fr}}
+table.spec{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+table.spec th,table.spec td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+table.spec thead th{background:var(--sand);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-70)}
+table.spec tbody tr:last-child td{border-bottom:0}
+.tnote{font-size:13px;color:var(--ink-45);margin-top:14px}
+.scrollx{overflow-x:auto}
+
+/* safety */
+.safety img{width:100%;aspect-ratio:4/3;object-fit:cover}
+ul.ticks{list-style:none;padding:0;margin:0 0 28px}
+ul.ticks li{position:relative;padding-left:30px;margin-bottom:12px;color:var(--ink-70)}
+ul.ticks li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:6px;border-left:1.5px solid var(--success);border-bottom:1.5px solid var(--success);transform:rotate(-45deg)}
+
+/* dark band */
+.dark{background:var(--slate);color:#fff}
+.dark p{color:rgba(255,255,255,.78)}
+.dark .eyebrow{color:rgba(255,255,255,.6)}
+.three{display:grid;gap:34px;grid-template-columns:1fr;margin-top:52px}
+@media(min-width:820px){.three{grid-template-columns:repeat(3,1fr)}}
+.three h3{margin-bottom:8px}
+.three .num{font-family:var(--serif);font-size:15px;color:var(--daylight);letter-spacing:.1em;margin-bottom:14px;display:block}
+.note{margin-top:44px;padding:18px 22px;border-left:2px solid var(--daylight);background:rgba(255,255,255,.06);font-size:14.5px}
+.note a{border-bottom:1px solid var(--daylight)}
+
+/* rooms rail */
+.rail{display:flex;gap:16px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
+.rail a{flex:0 0 260px;scroll-snap-align:start}
+.rail .ph{aspect-ratio:3/4;overflow:hidden;background:var(--sand)}
+.rail img{width:100%;height:100%;object-fit:cover}
+.rail span{display:block;margin-top:12px;font-size:14px;font-weight:600}
+
+/* reviews */
+.reviews{background:var(--linen)}
+.rgrid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:820px){.rgrid{grid-template-columns:repeat(3,1fr)}}
+.rcard{background:#fff;border:1px solid var(--line);padding:28px}
+.stars{color:var(--daylight-deep);letter-spacing:.18em;font-size:14px}
+.rcard blockquote{margin:14px 0 18px;font-family:var(--serif);font-size:19px;line-height:1.45}
+.rmeta{font-size:12.5px;color:var(--ink-45);letter-spacing:.04em}
+
+/* support strip */
+.sgrid{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--line)}
+@media(min-width:820px){.sgrid{grid-template-columns:repeat(3,1fr)}}
+.sgrid a{padding:34px 0;border-bottom:1px solid var(--line);display:block;transition:padding-left .25s}
+@media(min-width:820px){.sgrid a{padding:34px 32px 34px 0}.sgrid a+a{padding-left:32px;border-left:1px solid var(--line)}}
+.sgrid a:hover h3{color:var(--daylight-deep)}
+.sgrid .meta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin-bottom:10px}
+.sgrid .arrow{font-size:14px;margin-top:12px;display:inline-block;border-bottom:1px solid var(--daylight);font-weight:600}
+
+/* newsletter */
+.news{background:var(--sand)}
+.nform{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.nform input{flex:1 1 260px;padding:15px 16px;font:inherit;font-size:16px;border:1px solid var(--ink);border-radius:2px;background:#fff}
+.priv{font-size:12.5px;color:var(--ink-70);margin-top:14px}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.75);padding:clamp(56px,7vw,88px) 0 0}
+.fgrid{display:grid;gap:38px;grid-template-columns:1fr 1fr}
+@media(min-width:900px){.fgrid{grid-template-columns:1.3fr 1fr 1fr 1fr 1fr}}
+footer h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 18px;font-weight:600}
+footer ul{list-style:none;padding:0;margin:0;font-size:14.5px}
+footer li{margin-bottom:11px}
+footer a:hover{color:#fff}
+.fbrand .logo{color:#fff;display:inline-block;margin-bottom:16px}
+.fbrand p{font-size:14.5px;color:rgba(255,255,255,.65)}
+.fcontact{font-size:15px;color:#fff;margin-top:16px}
+.legal{margin-top:56px;border-top:1px solid rgba(255,255,255,.16);padding:24px 0 30px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:rgba(255,255,255,.55)}
+
+/* sticky mobile bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:120;display:flex;gap:8px;padding:10px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{flex:1;justify-content:center;padding:14px 10px;font-size:11.5px}
+@media(min-width:1080px){.sticky{display:none}}
+
+/* mobile nav */
+.mnav{position:fixed;inset:0;z-index:150;background:#fff;padding:26px var(--pad);display:none;overflow:auto}
+.mnav.on{display:block}
+.mnav .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+.mnav .close{background:none;border:1px solid var(--line);width:46px;height:46px;font-size:22px;cursor:pointer;border-radius:2px}
+.mnav ul{list-style:none;padding:0;margin:0 0 32px}
+.mnav li{border-bottom:1px solid var(--line)}
+.mnav li a{display:block;padding:18px 0;font-family:var(--serif);font-size:24px}
+
+/* reveal */
+.rev{opacity:0;transform:translateY(16px);transition:opacity .45s cubic-bezier(.2,.6,.2,1),transform .45s cubic-bezier(.2,.6,.2,1)}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rev{opacity:1;transform:none}html{scroll-behavior:auto}}
+.mocknote{background:var(--daylight);color:var(--ink);font-size:12.5px;letter-spacing:.06em;text-align:center;padding:9px 16px;font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="mocknote">Redesign mockup &middot; not the live VENETA™ site &middot; photography and prices are placeholders</p>
+
+<header>
+  <div class="bar">
+    <a href="#" class="logo" aria-label="Veneta home">VENET<span>A</span></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#products">Products</a>
+      <a href="#finder">Shop By</a>
+      <a href="#innovation">Innovation</a>
+      <a href="#support">Support</a>
+      <a href="#buy">Where to Buy</a>
+    </nav>
+    <div class="hd-wrap"><a class="btn btn--hd btn--sm" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="openNav()"><i></i></button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top"><span class="logo">VENET<span>A</span></span><button class="close" aria-label="Close menu" onclick="closeNav()">&times;</button></div>
+  <ul>
+    <li><a href="#products" onclick="closeNav()">Products</a></li>
+    <li><a href="#finder" onclick="closeNav()">Shop By Room &amp; Need</a></li>
+    <li><a href="#innovation" onclick="closeNav()">Innovation</a></li>
+    <li><a href="#support" onclick="closeNav()">Support</a></li>
+    <li><a href="#buy" onclick="closeNav()">Where to Buy</a></li>
+  </ul>
+  <a class="btn btn--hd" style="width:100%;justify-content:center" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="mobile-nav">Shop at The Home Depot</a>
+  <p style="margin-top:26px;font-size:15px;color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="assets/img/hero.webp" alt="Sunlit kitchen and dining room with charcoal Veneta cellular shades lowered halfway across three windows" fetchpriority="high" width="1024" height="683">
+    <div class="wrap">
+      <p class="eyebrow" style="color:rgba(255,255,255,.75)">Custom blinds, shades &amp; shutters</p>
+      <h1>Light, exactly how you want it.</h1>
+      <p class="lede">Engineered to fit your windows, cordless by design, and available at The Home Depot.</p>
+      <div class="cta-row">
+        <a class="btn btn--hd" href="#finder">Find your window treatment</a>
+        <a class="btn btn--ghost-light" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="hero">Shop at The Home Depot</a>
+      </div>
+      <div class="trust">
+        <span>Cordless-first safety</span>
+        <span>Fits skylights, arches &amp; patio doors</span>
+        <span>10 free fabric samples</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDER -->
+  <div class="finder" id="finder">
+    <div class="wrap">
+      <p class="eyebrow">Product finder</p>
+      <h2>Tell us about your window. We'll narrow 400+ options down to three.</h2>
+      <div class="finder-grid">
+        <div class="field">
+          <label for="f-room">Which room?</label>
+          <select id="f-room"><option>Living room</option><option>Bedroom</option><option>Nursery</option><option>Kitchen</option><option>Bathroom</option><option>Home office</option><option>Patio door</option><option>Skylight</option><option>Arched window</option></select>
+        </div>
+        <div class="field">
+          <label for="f-need">What matters most?</label>
+          <select id="f-need"><option>Block all light</option><option>Soften the light</option><option>Keep the view</option><option>Save energy</option><option>Privacy</option><option>Child &amp; pet safety</option><option>Moisture resistance</option></select>
+        </div>
+        <div class="field">
+          <label for="f-look">What look?</label>
+          <select id="f-look"><option>Clean and modern</option><option>Soft folds</option><option>Natural wood</option><option>Sheer and airy</option><option>Classic shutters</option></select>
+        </div>
+        <button class="btn" type="button" data-analytics="finder-submit">See my matches</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="wrap">
+      <div class="shead rev">
+        <div>
+          <p class="eyebrow">The collection</p>
+          <h2>Eight ways to control your light.</h2>
+          <p>Every product is made to your measurements, in your fabric, with a cordless option.</p>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="#">View all products</a>
+      </div>
+      <div class="cards">
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/cellular-card.webp" alt="Charcoal cellular shades in a bright modern kitchen" loading="lazy" width="1000" height="1250"></div>
+          <h3>Cellular Shades</h3>
+          <p class="desc">Insulating honeycomb cells that cut heat loss and soften daylight.</p>
+          <span class="price">From $69</span>
+          <div class="badges"><span class="badge">Cordless</span><span class="badge">Blackout option</span><span class="badge">Energy efficient</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/roller-card.webp" alt="Light filtering roller shade lowered over a tall living room window" loading="lazy" width="1000" height="1250"></div>
+          <h3>Roller &amp; Solar Shades</h3>
+          <p class="desc">Keep your view and block UV, or go room-darkening in one clean sweep.</p>
+          <span class="price">From $59</span>
+          <div class="badges"><span class="badge">Cordless</span><span class="badge">UV protection</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/roman-card.webp" alt="Neutral Roman shade with soft folds above a seating area" loading="lazy" width="1000" height="1250"></div>
+          <h3>Roman Shades</h3>
+          <p class="desc">Soft, flat or edge-banded folds with a truly cord-free back.</p>
+          <span class="price">From $109</span>
+          <div class="badges"><span class="badge">Cordless</span><span class="badge">Designer fabrics</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/fauxwood-card.webp" alt="White faux wood blinds with wide slats in a living room" loading="lazy" width="1000" height="1250"></div>
+          <h3>Faux Wood Blinds</h3>
+          <p class="desc">Real-wood looks that shrug off humidity, with SmartRail™ and SmartPrivacy®.</p>
+          <span class="price">From $49</span>
+          <div class="badges"><span class="badge">Moisture resistant</span><span class="badge">Cordless option</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/shutters-card.webp" alt="White plantation shutters on a bay window beside a wooden bench" loading="lazy" width="1000" height="1250"></div>
+          <h3>Shutters</h3>
+          <p class="desc">A permanent upgrade that adds value and lasts decades.</p>
+          <span class="price">From $189</span>
+          <div class="badges"><span class="badge">Adds home value</span><span class="badge">Cordless</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/sheer-card.webp" alt="Sheer shade with horizontal fabric vanes diffusing daylight" loading="lazy" width="1000" height="1250"></div>
+          <h3>Sheer Shades</h3>
+          <p class="desc">Three woven layers that turn harsh glare into ambient glow.</p>
+          <span class="price">From $129</span>
+          <div class="badges"><span class="badge">Glare control</span><span class="badge">UV protection</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/dualdrape-card.webp" alt="DualDrape vertical sheer panels across a wide patio door" loading="lazy" width="1000" height="1250"></div>
+          <h3>DualDrape™</h3>
+          <p class="desc">Turn the vanes from sheer to solid. Built for patio doors and wide walls.</p>
+          <span class="price">From $199</span>
+          <div class="badges"><span class="badge">Up to 120&quot;</span><span class="badge">Removable vanes</span></div>
+        </a>
+        <a class="card rev" href="#">
+          <div class="ph"><img src="assets/img/vertical-card.webp" alt="Latte coloured vertical blinds across a sliding glass door" loading="lazy" width="1000" height="1250"></div>
+          <h3>Vertical Blinds</h3>
+          <p class="desc">Built for wide windows and sliders. Vanes wipe clean in seconds.</p>
+          <span class="price">From $79</span>
+          <div class="badges"><span class="badge">Oversized windows</span><span class="badge">Easy clean</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="slat" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- SPEC -->
+  <section class="spec-sec">
+    <div class="wrap split">
+      <div class="rev">
+        <p class="eyebrow">Engineered to fit</p>
+        <h2>Every dimension, published.</h2>
+        <p>Custom means measured once and fitted right. We publish the exact width and height range for every cell size and lift system, so you know it works before you order.</p>
+        <p style="color:var(--ink-70)">Including the windows nobody else covers: skylights, arches, French doors and 10-foot sliders.</p>
+        <a class="btn btn--ghost" href="#support">How to measure</a>
+      </div>
+      <div class="rev">
+        <div class="scrollx">
+        <table class="spec">
+          <caption class="eyebrow" style="text-align:left;margin-bottom:12px">Cellular shades &mdash; size ranges</caption>
+          <thead><tr><th scope="col">Configuration</th><th scope="col">Width</th><th scope="col">Height</th></tr></thead>
+          <tbody>
+            <tr><td>Cordless, bottom-up</td><td>11.5&quot; &ndash; 96&quot;</td><td>10&quot; &ndash; 86&quot;</td></tr>
+            <tr><td>Top-down / bottom-up</td><td>15&quot; &ndash; 96&quot;</td><td>10&quot; &ndash; 86&quot;</td></tr>
+            <tr><td>Day &amp; Night</td><td>15&quot; &ndash; 96&quot;</td><td>10&quot; &ndash; 86&quot;</td></tr>
+            <tr><td>ClearFit™ (French doors)</td><td>8.5&quot; &ndash; 72&quot;</td><td>6&quot; &ndash; 86&quot;</td></tr>
+            <tr><td>ClearFit™ for skylights</td><td>8.5&quot; &ndash; 59&quot;</td><td>6&quot; &ndash; 120&quot;</td></tr>
+            <tr><td>Motorized</td><td>24&quot; &ndash; 120&quot;</td><td>10&quot; &ndash; 138&quot;</td></tr>
+            <tr><td>Arch shades</td><td>5&quot; &ndash; 96&quot;</td><td>5&quot; &ndash; 48&quot;</td></tr>
+            <tr><td>Vertical cellular</td><td>30&quot; &ndash; 120&quot;</td><td>24&quot; &ndash; 120&quot;</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="tnote">Cell sizes: 3/8&quot;, 9/16&quot;, 3/4&quot; and 1 1/4&quot; single cell; 1/2&quot; and 3/4&quot; double cell. Measure to the nearest 1/8&quot; with a metal tape.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="safety">
+    <div class="wrap split" style="align-items:center">
+      <div class="rev">
+        <p class="eyebrow">Family safety</p>
+        <h2>Cordless by design, because kids and pets don't read labels.</h2>
+        <ul class="ticks">
+          <li>Cordless lift is the standard across every product line, not a paid upgrade.</li>
+          <li>Roman shades are cord-free on the front <em>and</em> the back.</li>
+          <li>Tested to industry safety standards for homes with children and pets.</li>
+          <li>Motorized options remove the pull entirely on hard-to-reach windows.</li>
+        </ul>
+        <a class="btn btn--ghost" href="#">See our safety standards</a>
+      </div>
+      <div class="rev"><img src="assets/img/room-vertical-card.webp" alt="Child's bedroom with cordless shades filtering soft daylight" loading="lazy" width="1000" height="1250" style="aspect-ratio:4/5"></div>
+    </div>
+  </section>
+
+  <!-- INNOVATION -->
+  <section class="dark" id="innovation">
+    <div class="wrap">
+      <div style="max-width:60ch">
+        <p class="eyebrow">Motorization</p>
+        <h2 style="color:#fff">Raise every shade in the house without getting up.</h2>
+        <p>Quiet, rechargeable motors with remote, wall-switch or hub control. No wiring, no dangling cords, no batteries to buy.</p>
+      </div>
+      <div class="three">
+        <div class="rev"><span class="num">01</span><h3>ShadeAuto™ Hub</h3><p>Group shades by room and raise or lower them together from one control point.</p></div>
+        <div class="rev"><span class="num">02</span><h3>TruQuiet™ motors</h3><p>Built in-house and tuned to run quietly enough for a nursery at nap time.</p></div>
+        <div class="rev"><span class="num">03</span><h3>RevitaCharge™</h3><p>Wired or wireless charging for the built-in lithium battery. Batteries included.</p></div>
+      </div>
+      <p class="note"><strong>Compatibility, stated once:</strong> smart-home support depends on your motor and hub combination. Check the <a href="#">current compatibility list</a> before you buy &mdash; it is the single source of truth and it is updated with every firmware release.</p>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section>
+    <div class="wrap">
+      <div class="shead rev">
+        <div><p class="eyebrow">Shop by room</p><h2>Start where you're standing.</h2></div>
+      </div>
+      <div class="rail">
+        <a href="#"><div class="ph"><img src="assets/img/roller-card.webp" alt="Living room with roller shades" loading="lazy"></div><span>Living Room</span></a>
+        <a href="#"><div class="ph"><img src="assets/img/cellular-card.webp" alt="Bedroom with blackout cellular shades" loading="lazy"></div><span>Bedroom</span></a>
+        <a href="#"><div class="ph"><img src="assets/img/sheer-card.webp" alt="Nursery with cordless sheer shades" loading="lazy"></div><span>Nursery</span></a>
+        <a href="#"><div class="ph"><img src="assets/img/fauxwood-card.webp" alt="Kitchen with faux wood blinds" loading="lazy"></div><span>Kitchen</span></a>
+        <a href="#"><div class="ph"><img src="assets/img/vertical-card.webp" alt="Patio door with vertical blinds" loading="lazy"></div><span>Patio Doors</span></a>
+        <a href="#"><div class="ph"><img src="assets/img/solar-card.webp" alt="Home office with solar screen shades" loading="lazy"></div><span>Home Office</span></a>
+        <a href="#"><div class="ph"><img src="assets/img/shutters-card.webp" alt="Bay window with shutters" loading="lazy"></div><span>Bay &amp; Arched</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="wrap">
+      <div class="shead rev">
+        <div><p class="eyebrow">4.6 out of 5 &middot; 2,180 reviews</p><h2>Rated by people who actually installed them.</h2></div>
+      </div>
+      <div class="rgrid">
+        <div class="rcard rev"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>&ldquo;The size chart was right down to the eighth of an inch. Both shades fit first time.&rdquo;</blockquote><p class="rmeta">Dana R. &middot; Cellular Shades &middot; Verified at The Home Depot</p></div>
+        <div class="rcard rev"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>&ldquo;Bought cordless for the nursery. Installed in under fifteen minutes with a screwdriver.&rdquo;</blockquote><p class="rmeta">Marcus T. &middot; Roller Shades &middot; Verified at The Home Depot</p></div>
+        <div class="rcard rev"><div class="stars" aria-label="4 out of 5 stars">★★★★☆</div><blockquote>&ldquo;Ordered the free swatches first, which saved me from the wrong beige. Glad I waited.&rdquo;</blockquote><p class="rmeta">Priya S. &middot; Roman Shades &middot; Verified at The Home Depot</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section id="support">
+    <div class="wrap">
+      <div class="shead rev">
+        <div><p class="eyebrow">Support</p><h2>Measure it, install it, keep it looking new.</h2></div>
+      </div>
+      <div class="sgrid">
+        <a href="#"><p class="meta">4 steps &middot; 10 minutes</p><h3>How to Measure</h3><p class="desc" style="color:var(--ink-70);margin:10px 0 0">Inside or outside mount, three-point measuring, and the rule that saves most orders.</p><span class="arrow">Read the guide</span></a>
+        <a href="#"><p class="meta">6 steps &middot; 20 minutes</p><h3>How to Install</h3><p class="desc" style="color:var(--ink-70);margin:10px 0 0">Brackets, headrail and valance, with a short video for every product line.</p><span class="arrow">Read the guide</span></a>
+        <a href="#"><p class="meta">By material</p><h3>How to Clean &amp; Care</h3><p class="desc" style="color:var(--ink-70);margin:10px 0 0">What to use on cellular, wood, fabric and vinyl, and what will ruin them.</p><span class="arrow">Read the guide</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE TO BUY -->
+  <section class="news" id="buy">
+    <div class="wrap split" style="align-items:center">
+      <div class="rev">
+        <p class="eyebrow">Where to buy</p>
+        <h2>Order online or see it in store.</h2>
+        <p>Veneta™ is sold exclusively at The Home Depot. Order up to 10 free fabric swatches first and judge the colour in your own light.</p>
+        <div class="cta-row">
+          <a class="btn btn--hd" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="where-to-buy">Shop at The Home Depot</a>
+          <a class="btn btn--ghost" href="#" data-analytics="sample-request">Order free samples</a>
+        </div>
+      </div>
+      <div class="rev">
+        <h3 style="margin-bottom:16px">Get the monthly letter</h3>
+        <p style="color:var(--ink-70);margin-bottom:0">Colour trends, care tips and new collections. One email a month, no more.</p>
+        <form class="nform" onsubmit="event.preventDefault();this.reset();alert('Mockup only');">
+          <label for="email" style="position:absolute;left:-9999px">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+        <p class="priv">We never sell your address. Unsubscribe in one click.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <span class="logo">VENET<span style="color:var(--daylight)">A</span></span>
+        <p>Custom blinds, shades and shutters by Richfield Window Coverings. Sold at The Home Depot.</p>
+        <p class="fcontact"><strong>1-855-558-1222</strong><br>help@venetawindowfashions.com</p>
+      </div>
+      <div><h4>Products</h4><ul><li><a href="#">Cellular Shades</a></li><li><a href="#">Roller &amp; Solar</a></li><li><a href="#">Roman Shades</a></li><li><a href="#">Faux Wood Blinds</a></li><li><a href="#">Shutters</a></li><li><a href="#">Sheer Shades</a></li><li><a href="#">DualDrape™</a></li><li><a href="#">Vertical Blinds</a></li></ul></div>
+      <div><h4>Shop by</h4><ul><li><a href="#">Room</a></li><li><a href="#">Need</a></li><li><a href="#">Product Finder</a></li><li><a href="#">Free Samples</a></li><li><a href="#">Where to Buy</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#">How to Measure</a></li><li><a href="#">How to Install</a></li><li><a href="#">How to Clean</a></li><li><a href="#">Warranty</a></li><li><a href="#">FAQ</a></li><li><a href="#">Spec Book</a></li><li><a href="#">Contact Us</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About Veneta</a></li><li><a href="#">Innovation</a></li><li><a href="#">Journal</a></li><li><a href="#">For Professionals</a></li><li><a href="#">Accessibility</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <span>&copy; <span id="yr"></span> Richfield Window Coverings. All rights reserved.</span>
+      <a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a><a href="#">Warranty</a><a href="#">Accessibility Statement</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn--hd" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="sticky-bar">Shop at The Home Depot</a>
+  <a class="btn btn--ghost" href="#" data-analytics="sample-request">Free samples</a>
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+function openNav(){document.getElementById('mnav').classList.add('on');document.body.style.overflow='hidden';}
+function closeNav(){document.getElementById('mnav').classList.remove('on');document.body.style.overflow='';}
+var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(function(el,i){el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+var bar=document.getElementById('sticky');
+addEventListener('scroll',function(){
+  var p=scrollY/(document.body.scrollHeight-innerHeight);
+  bar.classList.toggle('on', p>0.12 && p<0.94);
+},{passive:true});
+</script>
+</body>
+</html>
