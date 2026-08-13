@@ -54,6 +54,13 @@ python3 build/make.py                   # rebuild pages; accepted shots become <
 6. **One commit per batch**, subject line `P1 batch N: <sets touched>`, body listing
    accepted and rejected ids and the §15 gate result.
 
+## What `upgrade()` deliberately skips
+
+Images with an empty `alt` (gallery thumbnails, video posters) keep their small legacy
+files. Dropping a 1536px hero into a 90px thumbnail wastes bytes, and those modules are
+rebuilt in P2. `upgrade()` also never adds `fetchpriority="high"` to a tag that did not
+already have it, so a page can only ever have one LCP candidate.
+
 ## Batch map
 
 Batches 1–2 the homepage LCP hero and all 9 category heroes, 3–4 the 8 product index

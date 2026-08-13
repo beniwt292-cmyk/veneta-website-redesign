@@ -44,7 +44,7 @@ var bar=document.getElementById('sticky');
 if(bar){addEventListener('scroll',function(){var p=scrollY/(document.body.scrollHeight-innerHeight);bar.classList.toggle('on',p>0.12&&p<0.94);},{passive:true});}
 document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');});});
 document.querySelectorAll('form[data-mock]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var n=f.querySelector('.mockmsg');if(n){n.hidden=false;}});});
-document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventListener('click',function(){var m=document.getElementById('gal-main');if(m){m.src=b.dataset.src;m.alt=b.dataset.alt||m.alt;}});});
+document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventListener('click',function(){var m=document.getElementById('gal-main');if(!m)return;var pp=m.parentNode;if(pp&&pp.tagName==='PICTURE'){pp.querySelectorAll('source').forEach(function(s){s.remove();});}m.src=b.dataset.src;m.alt=b.dataset.alt||m.alt;});});
 """
     js = js.strip() + "\n" + interactive_js()
     open(os.path.join(ROOT, "assets/js/veneta.js"), "w").write(js)
@@ -206,7 +206,7 @@ def build_pdp(p):
           <div class="badges" style="margin-top:24px">{''.join(f'<span class="badge">{b}</span>' for b in p["badges"])}</div>
         </div>
         <div>
-          <img id="gal-main" src="assets/img/{p["hero"]}" alt="{p["short"]} installed in a styled room">
+          {PIC.pic("category-" + p["slug"], img_id="gal-main", alt=f'{p["short"]} installed in a styled room', lcp=True) or f'<img id="gal-main" src="assets/img/{p["hero"]}" alt="{p["short"]} installed in a styled room">'}
           <div class="gal-thumbs" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">{thumbs}</div>
         </div>
       </div>

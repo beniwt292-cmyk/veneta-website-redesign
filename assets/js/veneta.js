@@ -11,7 +11,7 @@ var bar=document.getElementById('sticky');
 if(bar){addEventListener('scroll',function(){var p=scrollY/(document.body.scrollHeight-innerHeight);bar.classList.toggle('on',p>0.12&&p<0.94);},{passive:true});}
 document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');});});
 document.querySelectorAll('form[data-mock]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var n=f.querySelector('.mockmsg');if(n){n.hidden=false;}});});
-document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventListener('click',function(){var m=document.getElementById('gal-main');if(m){m.src=b.dataset.src;m.alt=b.dataset.alt||m.alt;}});});
+document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventListener('click',function(){var m=document.getElementById('gal-main');if(!m)return;var pp=m.parentNode;if(pp&&pp.tagName==='PICTURE'){pp.querySelectorAll('source').forEach(function(s){s.remove();});}m.src=b.dataset.src;m.alt=b.dataset.alt||m.alt;});});
 /* ===== VENETA interactive layer =============================================
    Product finder, live grid filtering, product mega menu and site search.
    Data below is injected at build time.

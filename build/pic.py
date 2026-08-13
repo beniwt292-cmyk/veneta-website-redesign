@@ -39,24 +39,24 @@ def shipped(s):
     return all(os.path.exists(os.path.join(ROOT, s["files"][k])) for k in ("avif", "webp"))
 
 
-def pic(shot_id, cls="", sizes="", style="", alt=None, lcp=None):
+def pic(shot_id, cls="", sizes="", style="", alt=None, lcp=None, img_id=""):
     """<picture> with AVIF + WebP, explicit dimensions and descriptive alt text."""
     by_id, _ = _shots()
     s = by_id.get(shot_id)
     if not s or not shipped(s):
         return ""
-    return _markup(s, cls=cls, sizes=sizes, style=style,
+    return _markup(s, cls=cls, sizes=sizes, style=style, img_id=img_id,
                    alt=alt or s["alt"], lcp=s["lcp"] if lcp is None else lcp)
 
 
-def _markup(s, cls="", sizes="", style="", alt="", lcp=False):
+def _markup(s, cls="", sizes="", style="", alt="", lcp=False, img_id=""):
     load = 'fetchpriority="high" decoding="async"' if lcp else 'loading="lazy" decoding="async"'
     sz = f' sizes="{sizes}"' if sizes else ""
     return (
         f'<picture{f" class={chr(34)}{cls}{chr(34)}" if cls else ""}>'
         f'<source type="image/avif" srcset="{s["files"]["avif"]}"{sz}>'
         f'<source type="image/webp" srcset="{s["files"]["webp"]}"{sz}>'
-        f'<img src="{s["files"]["webp"]}" alt="{alt}" width="{s["width"]}" height="{s["height"]}" '
+        f'<img {f"id={chr(34)}{img_id}{chr(34)} " if img_id else ""}src="{s["files"]["webp"]}" alt="{alt}" width="{s["width"]}" height="{s["height"]}" '
         f'{load}{f" style={chr(34)}{style}{chr(34)}" if style else ""}></picture>'
     )
 
@@ -70,7 +70,12 @@ def _attr(tag, name):
 
 
 def upgrade(html):
-    """Swap legacy <img> tags for <picture> wherever a P1 shot has shipped."""
+    """Swap legacy <img> tags for <picture> wherever a P1 shot has shipped.
+
+    Decorative images (empty alt: gallery thumbnails, video posters) are left on
+    their small legacy files. Substituting a full-size hero into a 90px thumbnail
+    wastes bytes, and those modules are rebuilt in P2 anyway.
+    """
     _, by_legacy = _shots()
 
     def sub(m):
@@ -78,13 +83,14 @@ def upgrade(html):
         s = by_legacy.get(os.path.basename(name))
         if not s or not shipped(s):
             return tag
-        alt = _attr(tag, "alt")
+        if not _attr(tag, "alt"):
+            return tag                       # decorative: leave the legacy thumbnail
         return _markup(
             s,
             cls=_attr(tag, "class"),
             style=_attr(tag, "style"),
-            alt=s["alt"] if alt else "",          # keep intentionally empty alt empty
-            lcp=("fetchpriority" in tag) or s["lcp"],
+            alt=s["alt"],
+            lcp="fetchpriority" in tag,      # never promote a second LCP candidate
         )
 
     return _IMG.sub(sub, html)
