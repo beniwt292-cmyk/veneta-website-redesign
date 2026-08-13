@@ -3,11 +3,21 @@
 Audit, redesign strategy, design system, content guide and a deployable homepage mockup for
 [venetawindowfashions.com](https://www.venetawindowfashions.com/).
 
+## Start here
+
+**[`MASTER_PLAN.md`](MASTER_PLAN.md) is the single source of truth.** It contains the diagnosis of
+why the current redesign still reads as dated, the "Daylight Editorial" design system and tokens,
+the information architecture, the SEO and schema requirements, the Home Depot handoff and
+measurement model, the AI image pipeline, the phased roadmap, and the acceptance gates every page
+must pass before it is committed. Everything in `docs/` is historical context — where it disagrees
+with `MASTER_PLAN.md`, the master plan wins.
+
 ## What's here
 
 | File | What it is |
 |---|---|
-| [`docs/01-website-audit.md`](docs/01-website-audit.md) | Full audit: severity-ranked findings across UX, content, technical, SEO and accessibility, with measured numbers |
+| [`MASTER_PLAN.md`](MASTER_PLAN.md) | **Master reference.** Current plan of record; supersedes `docs/01`–`docs/07` |
+| [`docs/01-website-audit.md`](docs/01-website-audit.md) | *Historical.* Full audit of the live site: severity-ranked findings across UX, content, technical, SEO and accessibility, with measured numbers |
 | [`docs/02-redesign-strategy.md`](docs/02-redesign-strategy.md) | Positioning, audience jobs, new information architecture, design direction, tech plan, redirect map, phasing |
 | [`docs/03-design-system.md`](docs/03-design-system.md) | "Editorial Daylight" design system: colour, type, spacing, components, imagery, motion, accessibility criteria |
 | [`docs/04-mockup-prompt.md`](docs/04-mockup-prompt.md) | The copy-paste build prompt for an AI coding tool, plus an image-generation prompt for static comps |
