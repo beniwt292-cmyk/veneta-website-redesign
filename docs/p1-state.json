@@ -1,24 +1,102 @@
 {
+ "og": {
+  "og-cellular-shades": {
+   "path": "assets/img/og-cellular-shades-1200.webp",
+   "source": "category-cellular-shades"
+  },
+  "og-home": {
+   "path": "assets/img/og-home-1200.webp",
+   "source": "hero-home"
+  },
+  "og-products": {
+   "path": "assets/img/og-products-1200.webp",
+   "source": "category-cellular-shades"
+  },
+  "og-roller-solar-shades": {
+   "path": "assets/img/og-roller-solar-shades-1200.webp",
+   "source": "category-roller-solar-shades"
+  },
+  "og-roman-shades": {
+   "path": "assets/img/og-roman-shades-1200.webp",
+   "source": "category-roman-shades"
+  }
+ },
  "shots": {
   "category-cellular-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 63.7,
+     "path": "assets/img/category-cellular-shades-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 85.2,
+     "path": "assets/img/category-cellular-shades-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-dualdrape": {
    "attempts": 0,
    "status": "pending"
   },
   "category-faux-wood-blinds": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 52.9,
+     "path": "assets/img/category-faux-wood-blinds-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 69.3,
+     "path": "assets/img/category-faux-wood-blinds-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-roller-solar-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 71.8,
+     "path": "assets/img/category-roller-solar-shades-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 89.5,
+     "path": "assets/img/category-roller-solar-shades-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-roman-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 74.3,
+     "path": "assets/img/category-roman-shades-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 103.2,
+     "path": "assets/img/category-roman-shades-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-sheer-shades": {
    "attempts": 0,
@@ -37,8 +115,22 @@
    "status": "pending"
   },
   "hero-home": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 82.4,
+     "path": "assets/img/hero-home-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 125.2,
+     "path": "assets/img/hero-home-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 864,
+   "status": "accepted",
+   "width": 1536
   },
   "index-cellular-shades": {
    "attempts": 0,
