@@ -2,10 +2,10 @@
 
 # filterable attributes per product line
 TAGS = {
-    "cellular-shades":     ["cordless", "blackout", "motorized", "energy", "under50"],
-    "roller-solar-shades": ["cordless", "blackout", "solar", "motorized", "energy", "under50"],
+    "cellular-shades":     ["cordless", "blackout", "motorized", "energy"],
+    "roller-solar-shades": ["cordless", "blackout", "solar", "motorized", "energy"],
     "roman-shades":        ["cordless", "blackout", "motorized"],
-    "faux-wood-blinds":    ["cordless", "moisture", "motorized", "under50"],
+    "faux-wood-blinds":    ["cordless", "moisture", "motorized"],
     "shutters":            ["cordless", "moisture", "patio", "energy"],
     "sheer-shades":        ["cordless", "solar", "motorized"],
     "dualdrape":           ["cordless", "patio"],
@@ -21,7 +21,6 @@ CHIPS = [
     ("Patio door", "patio"),
     ("Moisture resistant", "moisture"),
     ("Energy efficient", "energy"),
-    ("Under $50", "under50"),
 ]
 
 # lines that hold up on openings 96" and wider

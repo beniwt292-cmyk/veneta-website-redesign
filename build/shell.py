@@ -40,7 +40,7 @@ def head(title, desc, css="assets/css/veneta.css"):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<p class="mocknote">Redesign mockup &middot; not the live VENETA&trade; site &middot; photography, prices and reviews are placeholders</p>
+<p class="mocknote">Redesign mockup &middot; not the live VENETA&trade; site &middot; photography is placeholder art direction</p>
 """
 
 
@@ -94,21 +94,6 @@ SEARCH_PANEL = (
     '</div></div>'
 )
 
-
-TICKER_ITEMS = [
-    "Custom made to your window",
-    "Free samples shipped in 3 days",
-    "Cordless and child safe by default",
-    "Sold at The Home Depot",
-    "Limited lifetime warranty",
-    "Made in the USA",
-]
-
-
-def ticker():
-    run = "".join("<span>%s</span>" % t for t in TICKER_ITEMS)
-    return ('<div class="ticker" aria-hidden="true"><div class="ticker-in">'
-            + run + run + '</div></div>')
 
 
 def header(active=""):
@@ -199,7 +184,6 @@ FOOTER = f"""
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="privacy-policy.html">Privacy Policy</a><a href="warranty.html">Warranty</a><a href="accessibility.html">Accessibility Statement</a>
     </div>
   </div>
-  <p class="fmark" aria-hidden="true"><span>VENETA</span></p>
 </footer>
 
 <div class="sticky" id="sticky">
@@ -339,7 +323,14 @@ def stats(items):
 
 
 def cta_band(h2, body, primary=None, secondary=None, dark=True):
-    p = f'<a class="btn btn--hd" href="{primary[1]}" data-analytics="hd-outbound">{primary[0]}</a>' if primary else ""
+    # orange is reserved for the Home Depot handoff; internal CTAs use the light ghost
+    if primary:
+        hd = "homedepot.com" in primary[1]
+        cls = "btn btn--hd" if hd else ("btn btn--light" if dark else "btn")
+        hook = ' data-analytics="hd-outbound"' if hd else ""
+        p = f'<a class="{cls}" href="{primary[1]}"{hook}>{primary[0]}</a>'
+    else:
+        p = ""
     s = f'<a class="btn btn--ghost-light" href="{secondary[1]}">{secondary[0]}</a>' if secondary else ""
     return f"""
   <section class="{'dark' if dark else ''}">

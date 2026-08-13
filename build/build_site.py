@@ -26,7 +26,7 @@ def write(name, html):
 def build_assets():
     os.makedirs(os.path.join(ROOT, "assets/css"), exist_ok=True)
     os.makedirs(os.path.join(ROOT, "assets/js"), exist_ok=True)
-    css = "".join(open(os.path.join(B, f)).read() for f in ("base.css", "extra.css", "luxe.css", "gallery.css"))
+    css = "".join(open(os.path.join(B, f)).read() for f in ("tokens.css", "components.css", "pages.css"))
     open(os.path.join(ROOT, "assets/css/veneta.css"), "w").write(css)
     js = """
 document.querySelectorAll('#yr').forEach(function(e){e.textContent=new Date().getFullYear();});
@@ -65,7 +65,6 @@ def build_home():
     it = iter(HOME_LINKS)
     body = re.sub(r'href="#"', lambda m: 'href="%s"' % next(it), body)
     body = body.replace('href="#finder"', 'href="product-finder.html"')
-    body = body.replace('__TICKER__', SH.ticker())
     write("index.html", page(
         "VENETA&trade; Window Fashions &mdash; Custom Blinds, Shades &amp; Shutters",
         "Custom blinds, shades and shutters engineered to fit, cordless by design, available at The Home Depot.",
@@ -156,19 +155,19 @@ def build_products():
     <div class="wrap">
       {shead('Compare', 'Which one fits the problem?')}
       <div class="scrollx"><table class="cmp">
-        <thead><tr><th>Product</th><th>Blackout</th><th>Keeps the view</th><th>Wet rooms</th><th>Patio doors</th><th>Motorized</th><th>From</th></tr></thead>
+        <thead><tr><th>Product</th><th>Blackout</th><th>Keeps the view</th><th>Wet rooms</th><th>Patio doors</th><th>Motorized</th></tr></thead>
         <tbody>
-          <tr><th><a href="cellular-shades.html">Cellular Shades</a></th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td><td>$34</td></tr>
-          <tr><th><a href="roller-solar-shades.html">Roller &amp; Solar</a></th><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td><td>$29</td></tr>
-          <tr><th><a href="roman-shades.html">Roman Shades</a></th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td><td>$79</td></tr>
-          <tr><th><a href="faux-wood-blinds.html">Faux Wood Blinds</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td class="y">Yes</td><td>$27</td></tr>
-          <tr><th><a href="shutters.html">Shutters</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td>$189</td></tr>
-          <tr><th><a href="sheer-shades.html">Sheer Shades</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td><td>$99</td></tr>
-          <tr><th><a href="dualdrape.html">DualDrape&trade;</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="n">No</td><td class="y">Yes</td><td class="n">No</td><td>$149</td></tr>
-          <tr><th><a href="vertical-blinds.html">Vertical Blinds</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td>$59</td></tr>
+          <tr><th><a href="cellular-shades.html">Cellular Shades</a></th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td></tr>
+          <tr><th><a href="roller-solar-shades.html">Roller &amp; Solar</a></th><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td></tr>
+          <tr><th><a href="roman-shades.html">Roman Shades</a></th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td></tr>
+          <tr><th><a href="faux-wood-blinds.html">Faux Wood Blinds</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td class="y">Yes</td></tr>
+          <tr><th><a href="shutters.html">Shutters</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td></tr>
+          <tr><th><a href="sheer-shades.html">Sheer Shades</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="y">Yes</td></tr>
+          <tr><th><a href="dualdrape.html">DualDrape&trade;</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="n">No</td><td class="y">Yes</td><td class="n">No</td></tr>
+          <tr><th><a href="vertical-blinds.html">Vertical Blinds</a></th><td class="n">Partial</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td></tr>
         </tbody>
       </table></div>
-      <p class="tnote">Prices are placeholders for the mockup. Live pricing is set by The Home Depot and varies by size and option.</p>
+      <p class="tnote">Pricing is set by The Home Depot and varies by size, fabric and lift option. Configure your window there for an exact price.</p>
     </div>
   </section>
   {cta_band("Not sure yet? Get the fabric in your hand.",
@@ -197,7 +196,7 @@ def build_pdp(p):
           <p class="eyebrow">{p["short"]}</p>
           <h1>{p["tagline"]}</h1>
           <p class="lede">{p["lede"]}</p>
-          <p style="margin-top:22px"><span class="pill">{p["price"]}</span> <span style="font-size:13.5px;color:var(--ink-45);margin-left:8px">&#9733;&#9733;&#9733;&#9733;&#9734; 4.6 &middot; 812 reviews (placeholder)</span></p>
+          <p class="pill" style="margin-top:22px">{p["price"]}</p>
           <div class="cta-row" style="margin-top:26px">
             <a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound" data-location="pdp-{p["slug"]}">Shop at The Home Depot</a>
             <a class="btn btn--ghost" href="free-samples.html">Order free samples</a>
