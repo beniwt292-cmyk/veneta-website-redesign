@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Builds the full multi-page VENETA redesign mockup into the repo root."""
 import json, os, re, shutil, sys
+import shell as SH
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
@@ -25,7 +26,7 @@ def write(name, html):
 def build_assets():
     os.makedirs(os.path.join(ROOT, "assets/css"), exist_ok=True)
     os.makedirs(os.path.join(ROOT, "assets/js"), exist_ok=True)
-    css = "".join(open(os.path.join(B, f)).read() for f in ("base.css", "extra.css", "luxe.css"))
+    css = "".join(open(os.path.join(B, f)).read() for f in ("base.css", "extra.css", "luxe.css", "gallery.css"))
     open(os.path.join(ROOT, "assets/css/veneta.css"), "w").write(css)
     js = """
 document.querySelectorAll('#yr').forEach(function(e){e.textContent=new Date().getFullYear();});
@@ -64,6 +65,7 @@ def build_home():
     it = iter(HOME_LINKS)
     body = re.sub(r'href="#"', lambda m: 'href="%s"' % next(it), body)
     body = body.replace('href="#finder"', 'href="product-finder.html"')
+    body = body.replace('__TICKER__', SH.ticker())
     write("index.html", page(
         "VENETA&trade; Window Fashions &mdash; Custom Blinds, Shades &amp; Shutters",
         "Custom blinds, shades and shutters engineered to fit, cordless by design, available at The Home Depot.",

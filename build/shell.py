@@ -34,7 +34,7 @@ def head(title, desc, css="assets/css/veneta.css"):
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{css}">
 <script src="assets/js/search-index.js" defer></script>
 </head>
@@ -93,6 +93,22 @@ SEARCH_PANEL = (
     '<p class="searchp-hint">Press <kbd>Esc</kbd> to close</p>'
     '</div></div>'
 )
+
+
+TICKER_ITEMS = [
+    "Custom made to your window",
+    "Free samples shipped in 3 days",
+    "Cordless and child safe by default",
+    "Sold at The Home Depot",
+    "Limited lifetime warranty",
+    "Made in the USA",
+]
+
+
+def ticker():
+    run = "".join("<span>%s</span>" % t for t in TICKER_ITEMS)
+    return ('<div class="ticker" aria-hidden="true"><div class="ticker-in">'
+            + run + run + '</div></div>')
 
 
 def header(active=""):
@@ -183,6 +199,7 @@ FOOTER = f"""
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="privacy-policy.html">Privacy Policy</a><a href="warranty.html">Warranty</a><a href="accessibility.html">Accessibility Statement</a>
     </div>
   </div>
+  <p class="fmark" aria-hidden="true"><span>VENETA</span></p>
 </footer>
 
 <div class="sticky" id="sticky">
