@@ -249,10 +249,15 @@ table.spec tbody tr:hover{background:var(--linen)}
 .dark{background:var(--noir);color:rgba(255,255,255,.8)}
 .dark p{color:rgba(255,255,255,.62)}
 .dark h1,.dark h2,.dark h3{color:#fff}
-.three{gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);margin-top:clamp(40px,5vw,64px)}
-.three>div{background:var(--noir);padding:clamp(26px,3vw,40px)}
-.three .num{font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:var(--clay-soft);margin-bottom:20px}
+.three{gap:0;background:transparent;margin-top:clamp(40px,5vw,64px);
+  border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.three>div{background:var(--card);padding:clamp(26px,3vw,40px);
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.three .num{font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:var(--clay);margin-bottom:20px}
 .three h3{border-bottom:0;padding:0;margin-bottom:10px}
+.dark .three{border-top-color:rgba(255,255,255,.16);border-left-color:rgba(255,255,255,.16)}
+.dark .three>div{background:var(--noir);border-right-color:rgba(255,255,255,.16);border-bottom-color:rgba(255,255,255,.16)}
+.dark .three .num{color:var(--clay-soft)}
 .note{border-left:1px solid var(--clay);background:rgba(255,255,255,.04)}
 
 .dark .shead h2,.dark h2{max-width:24ch}
@@ -428,5 +433,4 @@ footer li a:hover{color:#fff;padding-left:4px}
 @media(max-width:640px){
   .mocknote{font-size:9px;letter-spacing:.12em}
   .sticky .btn{font-size:9.5px;letter-spacing:.08em;padding:14px 6px}
-  .three{gap:1px}
 }
