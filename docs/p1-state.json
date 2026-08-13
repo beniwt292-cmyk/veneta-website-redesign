@@ -19,6 +19,10 @@
   "og-roman-shades": {
    "path": "assets/img/og-roman-shades-1200.webp",
    "source": "category-roman-shades"
+  },
+  "og-shutters": {
+   "path": "assets/img/og-shutters-1200.webp",
+   "source": "category-shutters"
   }
  },
  "shots": {
@@ -41,8 +45,22 @@
    "width": 1536
   },
   "category-dualdrape": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 63.3,
+     "path": "assets/img/category-dualdrape-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 81.0,
+     "path": "assets/img/category-dualdrape-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-faux-wood-blinds": {
    "attempts": 1,
@@ -99,20 +117,76 @@
    "width": 1536
   },
   "category-sheer-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 63.2,
+     "path": "assets/img/category-sheer-shades-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 74.3,
+     "path": "assets/img/category-sheer-shades-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-shutters": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 61.3,
+     "path": "assets/img/category-shutters-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 77.1,
+     "path": "assets/img/category-shutters-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-vertical-blinds": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 59.8,
+     "path": "assets/img/category-vertical-blinds-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 78.4,
+     "path": "assets/img/category-vertical-blinds-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "category-woven-wood-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 71.2,
+     "path": "assets/img/category-woven-wood-shades-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 102.0,
+     "path": "assets/img/category-woven-wood-shades-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "hero-home": {
    "attempts": 1,
