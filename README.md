@@ -62,3 +62,8 @@ Deploy: point Vercel at this repo as a static site (no build step required).
 
 Photography in `assets/img/` is Veneta's own product imagery, optimised to WebP, used for
 internal mockup purposes only. Prices, review copy and ratings are placeholders.
+
+
+## P1 imagery
+
+P1 runs as twelve resumable batches. See `docs/P1-RUNBOOK.md` for the commands and the batch prompt; `docs/p1-manifest.json` is the shot list and `docs/p1-state.json` tracks progress.

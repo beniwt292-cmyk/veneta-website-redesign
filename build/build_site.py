@@ -2,6 +2,7 @@
 """Builds the full multi-page VENETA redesign mockup into the repo root."""
 import json, os, re, shutil, sys
 import shell as SH
+import pic as PIC
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
@@ -17,6 +18,7 @@ def slugify(s):
 
 
 def write(name, html):
+    html = PIC.upgrade(html)
     with open(os.path.join(ROOT, name), "w") as f:
         f.write(html)
     written.append(name)

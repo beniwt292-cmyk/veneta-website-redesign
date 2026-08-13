@@ -1,0 +1,244 @@
+{
+ "shots": {
+  "category-cellular-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-dualdrape": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-faux-wood-blinds": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-roller-solar-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-roman-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-sheer-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-shutters": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-vertical-blinds": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "category-woven-wood-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "hero-home": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-cellular-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-dualdrape": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-faux-wood-blinds": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-roller-solar-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-roman-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-sheer-shades": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-shutters": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "index-vertical-blinds": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-blackout-espresso": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-bottom-bar": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-cellular-bone": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-cotton-mushroom": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-faux-wood-white": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-linen-flax": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-sheer-vane": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-shutter-paint": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-solar-10": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-solar-5": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-wood-oak": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "macro-woven-flax": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "motor-dusk-bedroom": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "motor-living-wall": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "motor-patio-run": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "room-bathroom": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "room-bedroom": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "room-home-office": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "room-kitchen": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "room-living-room": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "room-nursery": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "safety-nursery-cordless": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "safety-playroom": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "style-modern-coastal": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "style-organic-modern": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "style-quiet-traditional": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "style-warm-minimal": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "trade-commercial-lobby": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "trade-hospitality-lounge": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "trade-hospitality-room": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "trade-multifamily-living": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "trade-office-meeting": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "trade-office-open": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-cellular-black": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-cellular-light": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-cellular-room": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-sheer-closed": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-sheer-half": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-sheer-open": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-solar-10": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-solar-5": {
+   "attempts": 0,
+   "status": "pending"
+  },
+  "triptych-solar-open": {
+   "attempts": 0,
+   "status": "pending"
+  }
+ }
+}
