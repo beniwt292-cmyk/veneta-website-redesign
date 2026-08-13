@@ -106,3 +106,38 @@ Every accepted image, with the prompt that produced it, so the set can be extend
 - Files: `assets/img/index-shutters-1024.avif` (27.2 KB), `assets/img/index-shutters-1024.webp` (37.1 KB)
 - Alt: warm white plantation shutters on a bay window in a limestone-toned living room
 - Prompt: Bay window in a limestone-toned living room, tightly framed on the window, featuring interior plantation shutters in warm white painted hardwood, louvres tilted upward, panels closed. Natural morning daylight from camera-left showing realistic filtered light and soft directional shadows on white oak flooring and lime-plaster walls. Shot on 50mm, eye-level architectural interior photography, camera height 4'8", corrected verticals, editorial composition, generous negative space. Palette: warm bone, limestone, flax, mushroom, white oak. Mood: calm, precise, quietly expensive, believable, tactile. Under-styled, maximum three props, no legible lettering. Emphasise: realistic stile and rail proportions, clean hinge lines, even pleat and slat spacing, crisp fabric edges, accurate window proportions, visible weave texture. Avoid: warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Framed so a centre crop to 4:5 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## index-sheer-shades
+
+- Set: index · ratio 4:5 · 819x1024
+- Files: `assets/img/index-sheer-shades-1024.avif` (31.1 KB), `assets/img/index-sheer-shades-1024.webp` (43.3 KB)
+- Alt: bone sheer shades with open fabric vanes diffusing daylight in a serene bedroom
+- Prompt: Serene bedroom with a wide window, tightly framed on the window, featuring sheer horizontal shades in bone fabric vanes between sheer facings, vanes fully open, shade lowered. Natural morning daylight from camera-right showing realistic filtered light and soft directional shadows on white oak flooring and lime-plaster walls. Shot on 50mm, eye-level architectural interior photography, camera height 4'8", corrected verticals, editorial composition, generous negative space. Palette: warm bone, limestone, flax, mushroom, white oak. Mood: calm, precise, quietly expensive, believable, tactile. Under-styled, maximum three props, no legible lettering. Emphasise: consistent transparency across every vane, even pleat and slat spacing, crisp fabric edges, accurate window proportions, visible weave texture. Avoid: warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Framed so a centre crop to 4:5 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## index-dualdrape
+
+- Set: index · ratio 4:5 · 819x1024
+- Files: `assets/img/index-dualdrape-1024.avif` (36.4 KB), `assets/img/index-dualdrape-1024.webp` (49.5 KB)
+- Alt: flax DualDrape vertical sheer panels half rotated across a wide patio door
+- Prompt: Wide patio door in a warm minimal living space, tightly framed on the window, featuring DualDrape vertical sheer panels in flax fabric vanes on a sheer backing, vanes half rotated. Natural morning daylight from camera-left showing realistic filtered light and soft directional shadows on white oak flooring and lime-plaster walls. Shot on 50mm, eye-level architectural interior photography, camera height 4'8", corrected verticals, editorial composition, generous negative space. Palette: warm bone, limestone, flax, mushroom, white oak. Mood: calm, precise, quietly expensive, believable, tactile. Under-styled, maximum three props, no legible lettering. Emphasise: even vane spacing and the layered sheer effect, even pleat and slat spacing, crisp fabric edges, accurate window proportions, visible weave texture. Avoid: warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Framed so a centre crop to 4:5 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## index-vertical-blinds
+
+- Set: index · ratio 4:5 · 819x1024
+- Files: `assets/img/index-vertical-blinds-1024.avif` (31.5 KB), `assets/img/index-vertical-blinds-1024.webp` (38.9 KB)
+- Alt: mushroom vertical blinds rotated half open across a sliding glass door
+- Prompt: Sliding glass door in a bright family room, tightly framed on the window, featuring cordless vertical blinds in mushroom textured vinyl vanes, vanes rotated to half open. Natural morning daylight from camera-right showing realistic filtered light and soft directional shadows on white oak flooring and lime-plaster walls. Shot on 50mm, eye-level architectural interior photography, camera height 4'8", corrected verticals, editorial composition, generous negative space. Palette: warm bone, limestone, flax, mushroom, white oak. Mood: calm, precise, quietly expensive, believable, tactile. Under-styled, maximum three props, no legible lettering. Emphasise: straight plumb vanes and even spacing, even pleat and slat spacing, crisp fabric edges, accurate window proportions, visible weave texture. Avoid: warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Framed so a centre crop to 4:5 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-woven-flax
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-woven-flax-1024.avif` (67.6 KB), `assets/img/macro-woven-flax-1024.webp` (111.7 KB)
+- Alt: Macro detail of woven wood shade material in flax and mushroom bamboo and reed fibres with visible slubs
+- Prompt: Macro photograph of woven wood shade material in flax and mushroom bamboo and reed fibres with visible slubs, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: fibre detail and weave rhythm, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-cellular-bone
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-cellular-bone-1024.avif` (78.4 KB), `assets/img/macro-cellular-bone-1024.webp` (108.1 KB)
+- Alt: Macro detail of cellular shade honeycomb material seen edge-on in bone spun polyester with crisp cell walls
+- Prompt: Macro photograph of cellular shade honeycomb material seen edge-on in bone spun polyester with crisp cell walls, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the geometry of the honeycomb cells, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.

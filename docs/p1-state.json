@@ -225,8 +225,22 @@
    "width": 819
   },
   "index-dualdrape": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 36.4,
+     "path": "assets/img/index-dualdrape-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 49.5,
+     "path": "assets/img/index-dualdrape-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-faux-wood-blinds": {
    "attempts": 1,
@@ -283,8 +297,22 @@
    "width": 819
   },
   "index-sheer-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 31.1,
+     "path": "assets/img/index-sheer-shades-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 43.3,
+     "path": "assets/img/index-sheer-shades-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-shutters": {
    "attempts": 1,
@@ -305,8 +333,22 @@
    "width": 819
   },
   "index-vertical-blinds": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 31.5,
+     "path": "assets/img/index-vertical-blinds-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 38.9,
+     "path": "assets/img/index-vertical-blinds-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "macro-blackout-espresso": {
    "attempts": 0,
@@ -317,8 +359,22 @@
    "status": "pending"
   },
   "macro-cellular-bone": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 78.4,
+     "path": "assets/img/macro-cellular-bone-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 108.1,
+     "path": "assets/img/macro-cellular-bone-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-cotton-mushroom": {
    "attempts": 0,
@@ -353,8 +409,22 @@
    "status": "pending"
   },
   "macro-woven-flax": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 67.6,
+     "path": "assets/img/macro-woven-flax-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 111.7,
+     "path": "assets/img/macro-woven-flax-1024.webp",
+     "q": 72
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "motor-dusk-bedroom": {
    "attempts": 0,
