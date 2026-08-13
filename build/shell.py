@@ -34,8 +34,9 @@ def head(title, desc, css="assets/css/veneta.css"):
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{css}">
+<script src="assets/js/search-index.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -43,10 +44,67 @@ def head(title, desc, css="assets/css/veneta.css"):
 """
 
 
-def header(active=""):
-    links = "".join(
-        f'<a href="{u}"{" class=\"on\"" if k == active else ""}>{n}</a>' for n, u, k in NAV
+PRODUCT_MENU = [
+    ("Cellular Shades", "cellular-shades", "cellular-card.webp", "Insulating honeycomb"),
+    ("Roller &amp; Solar", "roller-solar-shades", "roller-card.webp", "Clean, single sweep"),
+    ("Roman Shades", "roman-shades", "roman-card.webp", "Soft fabric folds"),
+    ("Faux Wood Blinds", "faux-wood-blinds", "fauxwood-card.webp", "Real wood look"),
+    ("Shutters", "shutters", "shutters-card.webp", "Built in and permanent"),
+    ("Sheer Shades", "sheer-shades", "sheer-card.webp", "Light through fabric"),
+    ("DualDrape&trade;", "dualdrape", "dualdrape-card.webp", "Sheer to solid"),
+    ("Vertical Blinds", "vertical-blinds", "vertical-card.webp", "Wide spans and sliders"),
+]
+
+
+def mega():
+    tiles = "".join(
+        '<a href="%s.html"><span class="mm-ph"><img src="assets/img/%s" alt="" loading="lazy"></span>'
+        '<span class="mm-t">%s</span><span class="mm-d">%s</span></a>' % (sl, im, n, d)
+        for n, sl, im, d in PRODUCT_MENU
     )
+    return (
+        '<div class="mm" role="group" aria-label="Products"><div class="mm-in">'
+        '<div class="mm-grid">' + tiles + '</div>'
+        '<div class="mm-side"><h4>Not sure where to start?</h4><ul>'
+        '<li><a href="product-finder.html">Product finder, three questions</a></li>'
+        '<li><a href="shop-by-room.html">Shop by room</a></li>'
+        '<li><a href="shop-by-need.html">Shop by need</a></li>'
+        '<li><a href="buying-guides.html">Buying guides</a></li>'
+        '<li><a href="free-samples.html">Order free samples</a></li>'
+        '</ul><a class="btn btn--ghost btn--sm" href="products.html">See all products</a>'
+        '</div></div></div>'
+    )
+
+
+MAG = ('<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" '
+       'stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/>'
+       '<path d="M15.5 15.5 21 21"/></svg>')
+
+SEARCH_BTN = ('<button class="iconbtn" data-search-open aria-label="Search this site">'
+              + MAG + '</button>')
+
+SEARCH_PANEL = (
+    '<div class="searchp" id="search" role="dialog" aria-modal="true" aria-label="Search this site">'
+    '<div class="searchp-in"><div class="searchp-bar">' + MAG +
+    '<input id="search-q" type="search" placeholder="Search products, guides and support" '
+    'autocomplete="off" aria-label="Search">'
+    '<button class="searchp-x" data-search-close aria-label="Close search">&times;</button></div>'
+    '<div class="searchp-res" id="search-res"></div>'
+    '<p class="searchp-hint">Press <kbd>Esc</kbd> to close</p>'
+    '</div></div>'
+)
+
+
+def header(active=""):
+    parts = []
+    for n, u, k in NAV:
+        cls = ' class="on"' if k == active else ""
+        if k == "products":
+            parts.append('<div class="hasmenu"><a href="%s"%s aria-expanded="false">%s</a>%s</div>'
+                         % (u, cls, n, mega()))
+        else:
+            parts.append('<a href="%s"%s>%s</a>' % (u, cls, n))
+    links = "".join(parts)
     mlinks = "".join(
         f'<li><a href="{u}">{n}</a></li>' for n, u in MNAV
     )
@@ -55,7 +113,8 @@ def header(active=""):
   <div class="bar">
     <a href="index.html" class="logo" aria-label="Veneta home">VENET<span>A</span></a>
     <nav class="main" aria-label="Primary">{links}</nav>
-    <div class="hd-wrap"><a class="btn btn--hd btn--sm" href="{HD}" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <div class="hd-wrap">{SEARCH_BTN}<a class="btn btn--hd btn--sm" href="{HD}" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <button class="iconbtn m-only" data-search-open aria-label="Search this site">{MAG}</button>
     <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="openNav()"><i></i></button>
   </div>
 </header>
@@ -67,6 +126,7 @@ def header(active=""):
   <p style="margin-top:26px;font-size:15px;color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
 </div>
 
+{SEARCH_PANEL}
 <main id="main">
 """
 
@@ -235,10 +295,13 @@ def tiles(items):
 
 
 def cards(items):
+    from interactive_data import TAGS
     out = ""
     for name, desc, price, img, href, badges in items:
         b = "".join(f'<span class="badge">{x}</span>' for x in badges)
-        out += f"""<a class="card rev" href="{href}">
+        slug = href.replace(".html", "")
+        tags = " ".join(TAGS.get(slug, []))
+        out += f"""<a class="card rev" href="{href}" data-slug="{slug}" data-tags="{tags}">
           <div class="ph"><img src="assets/img/{img}" alt="{name} shown in a styled room" loading="lazy"></div>
           <h3>{name}</h3><p class="desc">{desc}</p><p class="price">{price}</p>
           <div class="badges">{b}</div>

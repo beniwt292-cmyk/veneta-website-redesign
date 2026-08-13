@@ -8,8 +8,9 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/veneta.css">
+<script src="assets/js/search-index.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -18,8 +19,9 @@
 <header>
   <div class="bar">
     <a href="index.html" class="logo" aria-label="Veneta home">VENET<span>A</span></a>
-    <nav class="main" aria-label="Primary"><a href="products.html">Products</a><a href="shop-by-room.html" class="on">Shop By</a><a href="innovation.html">Innovation</a><a href="inspiration.html">Inspiration</a><a href="support.html">Support</a><a href="where-to-buy.html">Where to Buy</a></nav>
-    <div class="hd-wrap"><a class="btn btn--hd btn--sm" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <nav class="main" aria-label="Primary"><div class="hasmenu"><a href="products.html" aria-expanded="false">Products</a><div class="mm" role="group" aria-label="Products"><div class="mm-in"><div class="mm-grid"><a href="cellular-shades.html"><span class="mm-ph"><img src="assets/img/cellular-card.webp" alt="" loading="lazy"></span><span class="mm-t">Cellular Shades</span><span class="mm-d">Insulating honeycomb</span></a><a href="roller-solar-shades.html"><span class="mm-ph"><img src="assets/img/roller-card.webp" alt="" loading="lazy"></span><span class="mm-t">Roller &amp; Solar</span><span class="mm-d">Clean, single sweep</span></a><a href="roman-shades.html"><span class="mm-ph"><img src="assets/img/roman-card.webp" alt="" loading="lazy"></span><span class="mm-t">Roman Shades</span><span class="mm-d">Soft fabric folds</span></a><a href="faux-wood-blinds.html"><span class="mm-ph"><img src="assets/img/fauxwood-card.webp" alt="" loading="lazy"></span><span class="mm-t">Faux Wood Blinds</span><span class="mm-d">Real wood look</span></a><a href="shutters.html"><span class="mm-ph"><img src="assets/img/shutters-card.webp" alt="" loading="lazy"></span><span class="mm-t">Shutters</span><span class="mm-d">Built in and permanent</span></a><a href="sheer-shades.html"><span class="mm-ph"><img src="assets/img/sheer-card.webp" alt="" loading="lazy"></span><span class="mm-t">Sheer Shades</span><span class="mm-d">Light through fabric</span></a><a href="dualdrape.html"><span class="mm-ph"><img src="assets/img/dualdrape-card.webp" alt="" loading="lazy"></span><span class="mm-t">DualDrape&trade;</span><span class="mm-d">Sheer to solid</span></a><a href="vertical-blinds.html"><span class="mm-ph"><img src="assets/img/vertical-card.webp" alt="" loading="lazy"></span><span class="mm-t">Vertical Blinds</span><span class="mm-d">Wide spans and sliders</span></a></div><div class="mm-side"><h4>Not sure where to start?</h4><ul><li><a href="product-finder.html">Product finder, three questions</a></li><li><a href="shop-by-room.html">Shop by room</a></li><li><a href="shop-by-need.html">Shop by need</a></li><li><a href="buying-guides.html">Buying guides</a></li><li><a href="free-samples.html">Order free samples</a></li></ul><a class="btn btn--ghost btn--sm" href="products.html">See all products</a></div></div></div></div><a href="shop-by-room.html" class="on">Shop By</a><a href="innovation.html">Innovation</a><a href="inspiration.html">Inspiration</a><a href="support.html">Support</a><a href="where-to-buy.html">Where to Buy</a></nav>
+    <div class="hd-wrap"><button class="iconbtn" data-search-open aria-label="Search this site"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button><a class="btn btn--hd btn--sm" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <button class="iconbtn m-only" data-search-open aria-label="Search this site"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
     <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="openNav()"><i></i></button>
   </div>
 </header>
@@ -31,6 +33,7 @@
   <p style="margin-top:26px;font-size:15px;color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
 </div>
 
+<div class="searchp" id="search" role="dialog" aria-modal="true" aria-label="Search this site"><div class="searchp-in"><div class="searchp-bar"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="search-q" type="search" placeholder="Search products, guides and support" autocomplete="off" aria-label="Search"><button class="searchp-x" data-search-close aria-label="Close search">&times;</button></div><div class="searchp-res" id="search-res"></div><p class="searchp-hint">Press <kbd>Esc</kbd> to close</p></div></div>
 <main id="main">
 
   <div class="phero">
@@ -48,7 +51,7 @@
     <div class="wrap">
       <div class="withside">
         <div>
-          <form class="form" data-mock style="max-width:none">
+          <form class="form" id="pf-form" style="max-width:none">
             <div class="full"><label for="f-room">1. Which room?</label>
               <select id="f-room"><option>Living room</option><option>Bedroom</option><option>Nursery</option><option>Kitchen</option><option>Bathroom</option><option>Home office</option><option>Dining room</option><option>Patio door or wide opening</option></select></div>
             <div class="full"><label for="f-need">2. What matters most?</label>
@@ -57,29 +60,28 @@
             <div class="half"><label for="f-h">Opening height (inches)</label><input id="f-h" type="number" min="24" max="120" placeholder="60"></div>
             <div class="full"><label for="f-lift">Lift preference</label>
               <select id="f-lift"><option>Cordless</option><option>Motorized</option><option>No preference</option></select></div>
-            <div class="full"><button class="btn" type="submit">Show my recommendations</button>
-              <p class="mockmsg hint" hidden style="margin-top:12px;color:var(--success)">Mockup only: in the built site this returns a ranked shortlist with reasons, plus a note on what will not work at this size.</p></div>
+            <div class="full"><button class="btn" type="submit">Show my recommendations</button></div>
           </form>
-          <div style="margin-top:56px">
+          <div class="fout" id="pf-out" style="margin-top:56px">
             <div class="shead">
-        <div><p class="eyebrow">Example result</p><h2>What a recommendation looks like.</h2><p>Bedroom &middot; block all the light &middot; 36&quot; &times; 60&quot; &middot; cordless</p></div>
+        <div><p class="eyebrow">Your shortlist</p><h2>Living room &middot; block all the light</h2></div>
         
       </div>
-            <div class="cards"><a class="card rev" href="cellular-shades.html">
+            <div class="cards"><a class="card rev" href="cellular-shades.html" data-slug="cellular-shades" data-tags="cordless blackout motorized energy under50">
           <div class="ph"><img src="assets/img/cellular-card.webp" alt="Cellular Shades shown in a styled room" loading="lazy"></div>
           <h3>Cellular Shades</h3><p class="desc">The warmest shade in the line.</p><p class="price">From $34</p>
           <div class="badges"><span class="badge">Cordless standard</span><span class="badge">Blackout option</span></div>
-        </a><a class="card rev" href="roller-solar-shades.html">
+        </a><a class="card rev" href="roller-solar-shades.html" data-slug="roller-solar-shades" data-tags="cordless blackout solar motorized energy under50">
           <div class="ph"><img src="assets/img/roller-card.webp" alt="Roller &amp; Solar Shades shown in a styled room" loading="lazy"></div>
           <h3>Roller &amp; Solar Shades</h3><p class="desc">Clean lines. Precise light control.</p><p class="price">From $29</p>
           <div class="badges"><span class="badge">Cordless option</span><span class="badge">1% to 14% openness</span></div>
-        </a><a class="card rev" href="roman-shades.html">
+        </a><a class="card rev" href="roman-shades.html" data-slug="roman-shades" data-tags="cordless blackout motorized">
           <div class="ph"><img src="assets/img/roman-card.webp" alt="Roman Shades shown in a styled room" loading="lazy"></div>
           <h3>Roman Shades</h3><p class="desc">Soft fabric. Structured folds.</p><p class="price">From $79</p>
           <div class="badges"><span class="badge">Cordless option</span><span class="badge">Designer fabrics</span></div>
         </a></div>
-            <div class="callout"><p><strong>What we would not fit here:</strong> a solar screen. At night a lit room is visible through any screen fabric, so it is the wrong product for a bedroom even at 1% openness.</p></div>
           </div>
+          <div class="callout" style="margin-top:28px"><p><strong>What we will tell you not to buy:</strong> a solar screen for a bedroom. At night a lit room is visible through any screen fabric, so it is the wrong product even at 1% openness.</p></div>
         </div>
         <aside class="side">
           <div class="box tint sticky-box">

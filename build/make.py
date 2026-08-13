@@ -22,6 +22,8 @@ P3.build_company()
 P3.build_legal()
 P3.build_utility()
 
+S.build_search_index()
+
 print("pages written:", len(S.written))
 for n in sorted(S.written):
     print("  ", n)

@@ -8,8 +8,9 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/veneta.css">
+<script src="assets/js/search-index.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -18,8 +19,9 @@
 <header>
   <div class="bar">
     <a href="index.html" class="logo" aria-label="Veneta home">VENET<span>A</span></a>
-    <nav class="main" aria-label="Primary"><a href="products.html" class="on">Products</a><a href="shop-by-room.html">Shop By</a><a href="innovation.html">Innovation</a><a href="inspiration.html">Inspiration</a><a href="support.html">Support</a><a href="where-to-buy.html">Where to Buy</a></nav>
-    <div class="hd-wrap"><a class="btn btn--hd btn--sm" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <nav class="main" aria-label="Primary"><div class="hasmenu"><a href="products.html" class="on" aria-expanded="false">Products</a><div class="mm" role="group" aria-label="Products"><div class="mm-in"><div class="mm-grid"><a href="cellular-shades.html"><span class="mm-ph"><img src="assets/img/cellular-card.webp" alt="" loading="lazy"></span><span class="mm-t">Cellular Shades</span><span class="mm-d">Insulating honeycomb</span></a><a href="roller-solar-shades.html"><span class="mm-ph"><img src="assets/img/roller-card.webp" alt="" loading="lazy"></span><span class="mm-t">Roller &amp; Solar</span><span class="mm-d">Clean, single sweep</span></a><a href="roman-shades.html"><span class="mm-ph"><img src="assets/img/roman-card.webp" alt="" loading="lazy"></span><span class="mm-t">Roman Shades</span><span class="mm-d">Soft fabric folds</span></a><a href="faux-wood-blinds.html"><span class="mm-ph"><img src="assets/img/fauxwood-card.webp" alt="" loading="lazy"></span><span class="mm-t">Faux Wood Blinds</span><span class="mm-d">Real wood look</span></a><a href="shutters.html"><span class="mm-ph"><img src="assets/img/shutters-card.webp" alt="" loading="lazy"></span><span class="mm-t">Shutters</span><span class="mm-d">Built in and permanent</span></a><a href="sheer-shades.html"><span class="mm-ph"><img src="assets/img/sheer-card.webp" alt="" loading="lazy"></span><span class="mm-t">Sheer Shades</span><span class="mm-d">Light through fabric</span></a><a href="dualdrape.html"><span class="mm-ph"><img src="assets/img/dualdrape-card.webp" alt="" loading="lazy"></span><span class="mm-t">DualDrape&trade;</span><span class="mm-d">Sheer to solid</span></a><a href="vertical-blinds.html"><span class="mm-ph"><img src="assets/img/vertical-card.webp" alt="" loading="lazy"></span><span class="mm-t">Vertical Blinds</span><span class="mm-d">Wide spans and sliders</span></a></div><div class="mm-side"><h4>Not sure where to start?</h4><ul><li><a href="product-finder.html">Product finder, three questions</a></li><li><a href="shop-by-room.html">Shop by room</a></li><li><a href="shop-by-need.html">Shop by need</a></li><li><a href="buying-guides.html">Buying guides</a></li><li><a href="free-samples.html">Order free samples</a></li></ul><a class="btn btn--ghost btn--sm" href="products.html">See all products</a></div></div></div></div><a href="shop-by-room.html">Shop By</a><a href="innovation.html">Innovation</a><a href="inspiration.html">Inspiration</a><a href="support.html">Support</a><a href="where-to-buy.html">Where to Buy</a></nav>
+    <div class="hd-wrap"><button class="iconbtn" data-search-open aria-label="Search this site"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button><a class="btn btn--hd btn--sm" href="https://www.homedepot.com/b/VENETA/N-5yc1vZryk" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <button class="iconbtn m-only" data-search-open aria-label="Search this site"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
     <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="openNav()"><i></i></button>
   </div>
 </header>
@@ -31,6 +33,7 @@
   <p style="margin-top:26px;font-size:15px;color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
 </div>
 
+<div class="searchp" id="search" role="dialog" aria-modal="true" aria-label="Search this site"><div class="searchp-in"><div class="searchp-bar"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="search-q" type="search" placeholder="Search products, guides and support" autocomplete="off" aria-label="Search"><button class="searchp-x" data-search-close aria-label="Close search">&times;</button></div><div class="searchp-res" id="search-res"></div><p class="searchp-hint">Press <kbd>Esc</kbd> to close</p></div></div>
 <main id="main">
 
   <div class="phero">
@@ -60,10 +63,15 @@
   <section id="overview">
     <div class="wrap">
       <div class="withside">
+        <div>
         <div class="prose">
           <h2>Overview</h2>
           <p>A shutter is the only window treatment that becomes part of the architecture. Louvres tilt within a fixed panel for precise light and privacy control, and the whole panel can swing clear when you want the window fully open. Because they are framed into the opening, shutters also seal better than most shades against draughts.</p>
-          <h2 id="options">What you choose</h2>
+        </div>
+      <div class="shead rev" id="options" style="margin-top:clamp(48px,5vw,72px)">
+        <div><p class="eyebrow">Options</p><h2>What you choose</h2></div>
+      </div>
+      <div class="three" style="margin-top:0"><div class="rev"><h3>Louvre sizes</h3><p style="color:var(--ink-70);margin:8px 0 0">2 1/2", 3 1/2" and 4 1/2" louvres. The wider the louvre, the more view you get when open and the fewer lines across the window.</p></div><div class="rev"><h3>Frame styles</h3><p style="color:var(--ink-70);margin:8px 0 0">L-frame for a flush, trim-free opening; deco frame for a fuller, more traditional surround. Both have dedicated installation videos.</p></div><div class="rev"><h3>Tilt options</h3><p style="color:var(--ink-70);margin:8px 0 0">A front tilt rod for a classic look, or a hidden rear tilt for a clean panel face.</p></div><div class="rev"><h3>Configurations</h3><p style="color:var(--ink-70);margin:8px 0 0">Single panel, bi-fold, and bypass tracks for wide openings and patio doors.</p></div></div>
         </div>
         <aside class="side">
           <div class="box sticky-box">
@@ -84,7 +92,6 @@
           </div>
         </aside>
       </div>
-      <div class="three" style="margin-top:8px"><div class="rev"><h3>Louvre sizes</h3><p style="color:var(--ink-70);margin:8px 0 0">2 1/2", 3 1/2" and 4 1/2" louvres. The wider the louvre, the more view you get when open and the fewer lines across the window.</p></div><div class="rev"><h3>Frame styles</h3><p style="color:var(--ink-70);margin:8px 0 0">L-frame for a flush, trim-free opening; deco frame for a fuller, more traditional surround. Both have dedicated installation videos.</p></div><div class="rev"><h3>Tilt options</h3><p style="color:var(--ink-70);margin:8px 0 0">A front tilt rod for a classic look, or a hidden rear tilt for a clean panel face.</p></div><div class="rev"><h3>Configurations</h3><p style="color:var(--ink-70);margin:8px 0 0">Single panel, bi-fold, and bypass tracks for wide openings and patio doors.</p></div></div>
     </div>
   </section>
   <div class="slat" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -145,19 +152,19 @@
         <div><p class="eyebrow">Also consider</p><h2>Related products.</h2></div>
         <a class="btn btn--ghost btn--sm" href="products.html">View all products</a>
       </div>
-      <div class="cards"><a class="card rev" href="cellular-shades.html">
+      <div class="cards"><a class="card rev" href="cellular-shades.html" data-slug="cellular-shades" data-tags="cordless blackout motorized energy under50">
           <div class="ph"><img src="assets/img/cellular-card.webp" alt="Cellular Shades shown in a styled room" loading="lazy"></div>
           <h3>Cellular Shades</h3><p class="desc">The warmest shade in the line.</p><p class="price">From $34</p>
           <div class="badges"><span class="badge">Cordless standard</span><span class="badge">Blackout option</span></div>
-        </a><a class="card rev" href="roller-solar-shades.html">
+        </a><a class="card rev" href="roller-solar-shades.html" data-slug="roller-solar-shades" data-tags="cordless blackout solar motorized energy under50">
           <div class="ph"><img src="assets/img/roller-card.webp" alt="Roller &amp; Solar Shades shown in a styled room" loading="lazy"></div>
           <h3>Roller &amp; Solar Shades</h3><p class="desc">Clean lines. Precise light control.</p><p class="price">From $29</p>
           <div class="badges"><span class="badge">Cordless option</span><span class="badge">1% to 14% openness</span></div>
-        </a><a class="card rev" href="roman-shades.html">
+        </a><a class="card rev" href="roman-shades.html" data-slug="roman-shades" data-tags="cordless blackout motorized">
           <div class="ph"><img src="assets/img/roman-card.webp" alt="Roman Shades shown in a styled room" loading="lazy"></div>
           <h3>Roman Shades</h3><p class="desc">Soft fabric. Structured folds.</p><p class="price">From $79</p>
           <div class="badges"><span class="badge">Cordless option</span><span class="badge">Designer fabrics</span></div>
-        </a><a class="card rev" href="faux-wood-blinds.html">
+        </a><a class="card rev" href="faux-wood-blinds.html" data-slug="faux-wood-blinds" data-tags="cordless moisture motorized under50">
           <div class="ph"><img src="assets/img/fauxwood-card.webp" alt="Faux Wood Blinds shown in a styled room" loading="lazy"></div>
           <h3>Faux Wood Blinds</h3><p class="desc">Looks like wood. Handles humidity like vinyl.</p><p class="price">From $27</p>
           <div class="badges"><span class="badge">Moisture resistant</span><span class="badge">Cordless option</span></div>

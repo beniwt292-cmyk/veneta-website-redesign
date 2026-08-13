@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds the full multi-page VENETA redesign mockup into the repo root."""
-import os, re, shutil, sys
+import json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
@@ -25,7 +25,7 @@ def write(name, html):
 def build_assets():
     os.makedirs(os.path.join(ROOT, "assets/css"), exist_ok=True)
     os.makedirs(os.path.join(ROOT, "assets/js"), exist_ok=True)
-    css = open(os.path.join(B, "base.css")).read() + open(os.path.join(B, "extra.css")).read()
+    css = "".join(open(os.path.join(B, f)).read() for f in ("base.css", "extra.css", "luxe.css"))
     open(os.path.join(ROOT, "assets/css/veneta.css"), "w").write(css)
     js = """
 document.querySelectorAll('#yr').forEach(function(e){e.textContent=new Date().getFullYear();});
@@ -35,13 +35,16 @@ document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('cli
 addEventListener('keydown',function(e){if(e.key==='Escape')closeNav();});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
 document.querySelectorAll('.rev').forEach(function(el,i){el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+var hdr=document.querySelector('header');
+if(hdr){var setStuck=function(){hdr.classList.toggle('stuck',scrollY>8);};setStuck();addEventListener('scroll',setStuck,{passive:true});}
 var bar=document.getElementById('sticky');
 if(bar){addEventListener('scroll',function(){var p=scrollY/(document.body.scrollHeight-innerHeight);bar.classList.toggle('on',p>0.12&&p<0.94);},{passive:true});}
 document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');});});
 document.querySelectorAll('form[data-mock]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var n=f.querySelector('.mockmsg');if(n){n.hidden=false;}});});
 document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventListener('click',function(){var m=document.getElementById('gal-main');if(m){m.src=b.dataset.src;m.alt=b.dataset.alt||m.alt;}});});
 """
-    open(os.path.join(ROOT, "assets/js/veneta.js"), "w").write(js.strip() + "\n")
+    js = js.strip() + "\n" + interactive_js()
+    open(os.path.join(ROOT, "assets/js/veneta.js"), "w").write(js)
 
 
 # ---------------------------------------------------------------- home
@@ -67,6 +70,61 @@ def build_home():
         body, active="home"))
 
 
+
+def interactive_js():
+    """interactive.js with the recommendation + filter data injected."""
+    import interactive_data as I
+    prods = {}
+    for p in D.PRODUCTS:
+        prods[p["slug"]] = {
+            "name": p["short"],
+            "desc": p["tagline"],
+            "price": p["price"],
+            "img": p["card"],
+            "badges": p["badges"][:2],
+            "wide": p["slug"] in I.WIDE,
+        }
+    payload = {
+        "products": prods,
+        "room": I.ROOM,
+        "need": I.NEED,
+        "look": I.LOOK,
+        "lift": I.LIFT,
+    }
+    src = open(os.path.join(B, "interactive.js")).read()
+    return src.replace("/*__DATA__*/{}", json.dumps(payload, separators=(",", ":")))
+
+
+def build_search_index():
+    """Scan the written pages for title + description and emit a search index."""
+    out = []
+    priority = ["products.html", "product-finder.html", "cellular-shades.html",
+                "roller-solar-shades.html", "how-to-measure.html", "support.html",
+                "where-to-buy.html", "free-samples.html"]
+    for name in written:
+        if name in ("404.html", "sitemap.html"):
+            continue
+        html = open(os.path.join(ROOT, name)).read()
+        t = re.search(r"<title>(.*?)</title>", html, re.S)
+        d = re.search(r'<meta name="description" content="(.*?)"', html, re.S)
+        if not t:
+            continue
+        title = re.sub(r"\s*\|.*$", "", t.group(1))
+        title = re.sub(r"\s*&mdash;.*$", "", title).strip()
+        desc = (d.group(1) if d else "").strip()
+        out.append({"t": unes(title), "d": unes(desc), "u": name})
+    out.sort(key=lambda r: (priority.index(r["u"]) if r["u"] in priority else 99, r["t"]))
+    js = "window.VENETA_INDEX=" + json.dumps(out, separators=(",", ":")) + ";"
+    open(os.path.join(ROOT, "assets/js/search-index.js"), "w").write(js)
+
+
+def unes(x):
+    for a, b in (("&amp;", "&"), ("&mdash;", "\u2014"), ("&trade;", "\u2122"),
+                 ("&reg;", "\u00ae"), ("&middot;", "\u00b7"), ("&quot;", '"'),
+                 ("&ndash;", "\u2013"), ("&#39;", "'")):
+        x = x.replace(a, b)
+    return x
+
 # ---------------------------------------------------------------- products index
 def build_products():
     body = phero(
@@ -76,14 +134,19 @@ def build_products():
         trail=[("Home", "index.html"), ("Products", None)],
         ctas=f'<a class="btn" href="product-finder.html">Use the product finder</a><a class="btn btn--ghost" href="free-samples.html">Order free samples</a>',
     )
-    chips = "".join(f'<button class="chip" aria-pressed="false">{c}</button>' for c in
-                    ["Cordless", "Blackout", "Solar screen", "Motorized", "Patio door", "Moisture resistant", "Energy efficient", "Under $50"])
+    import interactive_data as I
+    chips = "".join(f'<button class="chip" type="button" aria-pressed="false" data-tag="{t}">{c}</button>'
+                    for c, t in I.CHIPS)
     body += f"""
   <section>
     <div class="wrap">
-      {shead('Filter', 'Narrow it down.', 'Mockup filters are illustrative. In build, these map to real product attributes and update the grid without a page reload.')}
-      <div class="chips">{chips}</div>
-      <div style="margin-top:52px">{cards(D.card_tuples())}</div>
+      {shead('Filter', 'Narrow it down.', 'Pick the attributes that matter. The grid updates instantly, no page reload.')}
+      <div class="chips" data-filter>{chips}</div>
+      <div class="filter-bar">
+        <p id="filter-count" aria-live="polite">All 8 products</p>
+        <button class="arrow" type="button" id="filter-reset" hidden>Clear filters</button>
+      </div>
+      <div id="filter-grid" data-empty="No single product does all of that. Try clearing one filter, or use the product finder.">{cards(D.card_tuples())}</div>
     </div>
   </section>
   {SLAT}
@@ -151,10 +214,15 @@ def build_pdp(p):
   <section id="overview">
     <div class="wrap">
       <div class="withside">
+        <div>
         <div class="prose">
           <h2>Overview</h2>
           <p>{p["intro"]}</p>
-          <h2 id="options">What you choose</h2>
+        </div>
+      <div class="shead rev" id="options" style="margin-top:clamp(48px,5vw,72px)">
+        <div><p class="eyebrow">Options</p><h2>What you choose</h2></div>
+      </div>
+      <div class="three" style="margin-top:0">{feats}</div>
         </div>
         <aside class="side">
           <div class="box sticky-box">
@@ -175,7 +243,6 @@ def build_pdp(p):
           </div>
         </aside>
       </div>
-      <div class="three" style="margin-top:8px">{feats}</div>
     </div>
   </section>
   {SLAT}
@@ -331,7 +398,7 @@ def build_shop_by():
     <div class="wrap">
       <div class="withside">
         <div>
-          <form class="form" data-mock style="max-width:none">
+          <form class="form" id="pf-form" style="max-width:none">
             <div class="full"><label for="f-room">1. Which room?</label>
               <select id="f-room"><option>Living room</option><option>Bedroom</option><option>Nursery</option><option>Kitchen</option><option>Bathroom</option><option>Home office</option><option>Dining room</option><option>Patio door or wide opening</option></select></div>
             <div class="full"><label for="f-need">2. What matters most?</label>
@@ -340,14 +407,13 @@ def build_shop_by():
             <div class="half"><label for="f-h">Opening height (inches)</label><input id="f-h" type="number" min="24" max="120" placeholder="60"></div>
             <div class="full"><label for="f-lift">Lift preference</label>
               <select id="f-lift"><option>Cordless</option><option>Motorized</option><option>No preference</option></select></div>
-            <div class="full"><button class="btn" type="submit">Show my recommendations</button>
-              <p class="mockmsg hint" hidden style="margin-top:12px;color:var(--success)">Mockup only: in the built site this returns a ranked shortlist with reasons, plus a note on what will not work at this size.</p></div>
+            <div class="full"><button class="btn" type="submit">Show my recommendations</button></div>
           </form>
-          <div style="margin-top:56px">
-            {shead('Example result', 'What a recommendation looks like.', 'Bedroom &middot; block all the light &middot; 36&quot; &times; 60&quot; &middot; cordless')}
+          <div class="fout" id="pf-out" style="margin-top:56px">
+            {shead('Your shortlist', 'Living room &middot; block all the light')}
             {cards(D.card_tuples(["cellular-shades", "roller-solar-shades", "roman-shades"]))}
-            <div class="callout"><p><strong>What we would not fit here:</strong> a solar screen. At night a lit room is visible through any screen fabric, so it is the wrong product for a bedroom even at 1% openness.</p></div>
           </div>
+          <div class="callout" style="margin-top:28px"><p><strong>What we will tell you not to buy:</strong> a solar screen for a bedroom. At night a lit room is visible through any screen fabric, so it is the wrong product even at 1% openness.</p></div>
         </div>
         <aside class="side">
           <div class="box tint sticky-box">
