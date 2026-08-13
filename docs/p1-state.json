@@ -207,32 +207,102 @@
    "width": 1536
   },
   "index-cellular-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 43.4,
+     "path": "assets/img/index-cellular-shades-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 63.3,
+     "path": "assets/img/index-cellular-shades-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-dualdrape": {
    "attempts": 0,
    "status": "pending"
   },
   "index-faux-wood-blinds": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 26.8,
+     "path": "assets/img/index-faux-wood-blinds-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 35.9,
+     "path": "assets/img/index-faux-wood-blinds-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-roller-solar-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 58.6,
+     "path": "assets/img/index-roller-solar-shades-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 91.5,
+     "path": "assets/img/index-roller-solar-shades-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-roman-shades": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 52.4,
+     "path": "assets/img/index-roman-shades-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 73.9,
+     "path": "assets/img/index-roman-shades-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-sheer-shades": {
    "attempts": 0,
    "status": "pending"
   },
   "index-shutters": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 27.2,
+     "path": "assets/img/index-shutters-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 37.1,
+     "path": "assets/img/index-shutters-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 819
   },
   "index-vertical-blinds": {
    "attempts": 0,
