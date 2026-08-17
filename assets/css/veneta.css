@@ -852,20 +852,41 @@ picture{display:block}
   border-top:1px solid var(--line);
 }
 .gc{
-  display:block;padding:30px 0;border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:30px 0;
+  border-bottom:1px solid var(--line);
   transition:background var(--d-base) var(--ease);
 }
 .gc-k{
-  margin:0 0 12px;font-size:var(--fs-micro);letter-spacing:var(--ls-micro);
+  margin:0 0 14px;font-size:var(--fs-micro);letter-spacing:var(--ls-micro);
   text-transform:uppercase;color:var(--clay);
 }
-.gc h3{font-family:var(--serif);font-size:var(--fs-h3);font-weight:400;letter-spacing:-.018em}
-.gc-d{margin:10px 0 18px;font-size:var(--fs-small);color:var(--ink-45);max-width:48ch}
+.gc h3{
+  margin:0;font-family:var(--serif);font-weight:400;
+  font-size:clamp(20px,1.7vw,26px);line-height:1.2;letter-spacing:-.018em;
+  text-wrap:balance;
+}
+.gc-d{
+  margin:12px 0 22px;font-size:var(--fs-small);line-height:1.55;
+  color:var(--ink-45);max-width:36ch;text-wrap:pretty;
+}
+.gc .arrow{margin-top:auto;align-self:start}
 @media(min-width:860px){
-  .gc-grid{grid-template-columns:repeat(3,1fr)}
-  .gc{height:100%;padding:34px 34px 34px 0;border-right:1px solid var(--line);border-bottom:0}
-  .gc:last-child{border-right:0}
+  .gc-grid{
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:auto auto 1fr auto;
+    border-bottom:1px solid var(--line);
+  }
+  .gc{
+    grid-row:span 4;display:grid;grid-template-rows:subgrid;row-gap:0;
+    padding:36px 36px 38px 0;border-bottom:0;
+  }
+  .gc+.gc{border-left:1px solid var(--line);padding-left:36px}
+  .gc-d{align-self:start}
+  .gc .arrow{align-self:end;justify-self:start;margin-top:0}
   .gc:hover{background:var(--surface)}
+}
+@supports not (grid-template-rows:subgrid){
+  @media(min-width:860px){.gc{display:flex}.gc .arrow{margin-top:auto;align-self:start}}
 }
 
 /* --- handoff band ------------------------------------------------------- */
