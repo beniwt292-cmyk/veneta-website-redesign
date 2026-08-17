@@ -845,12 +845,40 @@
    "width": 1536
   },
   "trade-commercial-lobby": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 105.0,
+     "path": "assets/img/trade-commercial-lobby-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 155.9,
+     "path": "assets/img/trade-commercial-lobby-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "trade-hospitality-lounge": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 100.7,
+     "path": "assets/img/trade-hospitality-lounge-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 156.2,
+     "path": "assets/img/trade-hospitality-lounge-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "trade-hospitality-room": {
    "attempts": 1,
@@ -871,16 +899,58 @@
    "width": 1536
   },
   "trade-multifamily-living": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 74.2,
+     "path": "assets/img/trade-multifamily-living-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 94.1,
+     "path": "assets/img/trade-multifamily-living-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "trade-office-meeting": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 50.1,
+     "path": "assets/img/trade-office-meeting-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 62.5,
+     "path": "assets/img/trade-office-meeting-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "trade-office-open": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 70.8,
+     "path": "assets/img/trade-office-open-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 91.3,
+     "path": "assets/img/trade-office-open-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "triptych-cellular-black": {
    "attempts": 1,
