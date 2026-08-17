@@ -579,20 +579,76 @@
    "status": "pending"
   },
   "room-bathroom": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 27.2,
+     "path": "assets/img/room-bathroom-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 34.6,
+     "path": "assets/img/room-bathroom-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "room-bedroom": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 37.2,
+     "path": "assets/img/room-bedroom-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 50.7,
+     "path": "assets/img/room-bedroom-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "room-home-office": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 42.9,
+     "path": "assets/img/room-home-office-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 59.0,
+     "path": "assets/img/room-home-office-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "room-kitchen": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 31.5,
+     "path": "assets/img/room-kitchen-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 39.3,
+     "path": "assets/img/room-kitchen-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "room-living-room": {
    "attempts": 1,
@@ -613,8 +669,22 @@
    "width": 768
   },
   "room-nursery": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 35.0,
+     "path": "assets/img/room-nursery-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 55.7,
+     "path": "assets/img/room-nursery-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "safety-nursery-cordless": {
    "attempts": 0,
