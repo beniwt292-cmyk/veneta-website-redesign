@@ -377,16 +377,58 @@
    "width": 768
   },
   "macro-cotton-mushroom": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 68.1,
+     "path": "assets/img/macro-cotton-mushroom-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 121.5,
+     "path": "assets/img/macro-cotton-mushroom-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-faux-wood-white": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 31.4,
+     "path": "assets/img/macro-faux-wood-white-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 43.6,
+     "path": "assets/img/macro-faux-wood-white-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-linen-flax": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 82.9,
+     "path": "assets/img/macro-linen-flax-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 116.7,
+     "path": "assets/img/macro-linen-flax-1024.webp",
+     "q": 66
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-sheer-vane": {
    "attempts": 0,
@@ -397,12 +439,40 @@
    "status": "pending"
   },
   "macro-solar-10": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 74.3,
+     "path": "assets/img/macro-solar-10-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 113.2,
+     "path": "assets/img/macro-solar-10-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-solar-5": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 80.8,
+     "path": "assets/img/macro-solar-5-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 120.0,
+     "path": "assets/img/macro-solar-5-1024.webp",
+     "q": 72
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-wood-oak": {
    "attempts": 0,

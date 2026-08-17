@@ -141,3 +141,38 @@ Every accepted image, with the prompt that produced it, so the set can be extend
 - Files: `assets/img/macro-cellular-bone-1024.avif` (78.4 KB), `assets/img/macro-cellular-bone-1024.webp` (108.1 KB)
 - Alt: Macro detail of cellular shade honeycomb material seen edge-on in bone spun polyester with crisp cell walls
 - Prompt: Macro photograph of cellular shade honeycomb material seen edge-on in bone spun polyester with crisp cell walls, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the geometry of the honeycomb cells, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-linen-flax
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-linen-flax-1024.avif` (82.9 KB), `assets/img/macro-linen-flax-1024.webp` (116.7 KB)
+- Alt: Macro detail of roller shade fabric in flax linen with an open plain weave
+- Prompt: Macro photograph of roller shade fabric in flax linen with an open plain weave, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: thread count and weave openness, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-solar-5
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-solar-5-1024.avif` (80.8 KB), `assets/img/macro-solar-5-1024.webp` (120.0 KB)
+- Alt: Macro detail of solar shade mesh at 5 percent openness in espresso and charcoal fibreglass yarn
+- Prompt: Macro photograph of solar shade mesh at 5 percent openness in espresso and charcoal fibreglass yarn, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the precise grid of the mesh, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-solar-10
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-solar-10-1024.avif` (74.3 KB), `assets/img/macro-solar-10-1024.webp` (113.2 KB)
+- Alt: Macro detail of solar shade mesh at 10 percent openness in bone and limestone yarn
+- Prompt: Macro photograph of solar shade mesh at 10 percent openness in bone and limestone yarn, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the open grid and yarn twist, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-cotton-mushroom
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-cotton-mushroom-1024.avif` (68.1 KB), `assets/img/macro-cotton-mushroom-1024.webp` (121.5 KB)
+- Alt: Macro detail of Roman shade fabric in mushroom textured cotton with a soft slub
+- Prompt: Macro photograph of Roman shade fabric in mushroom textured cotton with a soft slub, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the hand of the cloth and fold memory, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-faux-wood-white
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-faux-wood-white-1024.avif` (31.4 KB), `assets/img/macro-faux-wood-white-1024.webp` (43.6 KB)
+- Alt: Macro detail of faux wood blind slat in warm white composite with a subtle grain emboss
+- Prompt: Macro photograph of faux wood blind slat in warm white composite with a subtle grain emboss, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the slat edge profile and matte finish, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
