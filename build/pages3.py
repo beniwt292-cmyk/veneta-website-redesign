@@ -267,7 +267,15 @@ def build_guides():
     body = phero("Buying guides", "Long-form answers, before you spend money.",
                  "Each guide covers one product line in the detail a specification sheet cannot: what the options actually do, which ones matter in your room, and where the money is well spent.",
                  trail=[("Home", "index.html"), ("Buying guides", None)])
-    body += f"""<section class="tight"><div class="wrap"><div class="cards">{grid}</div></div></section>
+    body += f"""<section class="tight"><div class="wrap">
+      <a class="rowfeat rev" href="blinds-vs-shades-vs-shutters.html" style="text-decoration:none;color:inherit">
+        <div class="txt"><p class="eyebrow">Start here</p><h2>Blinds, shades or shutters?</h2>
+          <p style="color:var(--ink-70)">Three different objects, not three styles of the same thing. Nine differences that decide it, and a straight recommendation for each room.</p>
+          <span class="arrow" style="margin-top:22px">Read the comparison</span></div>
+        <div><img src="assets/img/style-quiet-traditional-1536.webp" alt="A traditional room with shutters, blinds and shades at three different windows" loading="lazy"></div>
+      </a>
+      <div style="margin-top:clamp(48px,6vw,80px)">{shead('By product line', 'Long-form, one line at a time.')}<div class="cards">{grid}</div></div>
+    </div></section>
   {SLAT}
   {support_strip()}"""
     write("buying-guides.html", page("Buying Guides | VENETA&trade;",
@@ -486,14 +494,14 @@ def build_company():
     body = phero("For professionals", "Specification, volume and a contact who answers.",
                  "Builders, interior designers, property managers and installers: the details you need are on the page, and the trade team is a phone call rather than a form-to-nowhere.",
                  trail=[("Home", "index.html"), ("For professionals", None)],
-                 ctas='<a class="btn" href="contact.html" data-ev="trade_apply" data-ev-firm_type="unspecified">Contact the trade team</a><a class="btn btn--ghost" href="products.html">Product specifications</a>')
+                 ctas='<a class="btn" href="contact.html" data-ev="trade_apply" data-ev-firm_type="unspecified">Contact the trade team</a><a class="btn btn--ghost" href="for-professionals-resources.html">Download resources</a><a class="btn btn--ghost" href="commercial.html">Commercial projects</a>')
     body += f"""
   <section class="tight">
     <div class="wrap">
       {shead('Resources', 'Everything downloadable, in one place.')}
       <div class="sgrid">
-        <a href="products.html"><p class="meta">Specification</p><h3>Spec book</h3><p class="desc" style="color:var(--ink-70);margin:8px 0 0">Full size ranges, mount depths, weights and tolerances for all eight lines.</p><span class="arrow">Open</span></a>
-        <a href="#"><p class="meta">CAD &amp; BIM</p><h3>Drawing files</h3><p class="desc" style="color:var(--ink-70);margin:8px 0 0">DWG sections for headrails, brackets and shutter frames.</p><span class="arrow">Download</span></a>
+        <a href="for-professionals-resources.html"><p class="meta">Specification</p><h3>Spec book</h3><p class="desc" style="color:var(--ink-70);margin:8px 0 0">Full size ranges, mount depths, weights and tolerances for all eight lines.</p><span class="arrow">Download</span></a>
+        <a href="for-professionals-resources.html"><p class="meta">CAD &amp; BIM</p><h3>Drawing files</h3><p class="desc" style="color:var(--ink-70);margin:8px 0 0">DWG sections for headrails, brackets and shutter frames, with the full resource set.</p><span class="arrow">Open resources</span></a>
         <a href="warranty.html"><p class="meta">Policy</p><h3>Warranty terms</h3><p class="desc" style="color:var(--ink-70);margin:8px 0 0">Coverage, exclusions and the claim process in full.</p><span class="arrow">Read</span></a>
       </div>
       <div style="margin-top:64px">
@@ -654,9 +662,10 @@ def build_utility():
         ("Shop by", [("Shop by room", "shop-by-room.html"), ("Shop by need", "shop-by-need.html"), ("Product finder", "product-finder.html"), ("Free samples", "free-samples.html"), ("Where to buy", "where-to-buy.html")]),
         ("Innovation", [("Innovation hub", "innovation.html")] + [(n, h) for n, h, _ in D.INNOVATIONS] + [("Child &amp; pet safety", "child-safety.html")]),
         ("Support", [("Support hub", "support.html"), ("How to measure", "how-to-measure.html"), ("How to install", "how-to-install.html"), ("How to clean", "how-to-clean.html"), ("Installation videos", "installation-videos.html"), ("L-frame videos", "installation-videos-l-frame.html"), ("Deco frame videos", "installation-videos-deco-frame.html"), ("Warranty", "warranty.html"), ("FAQ", "faq.html"), ("Contact", "contact.html")]),
-        ("Guides", [("Buying guides", "buying-guides.html")] + [(g["label"], g["file"]) for g in GUIDES]),
+        ("Guides", [("Buying guides", "buying-guides.html"), ("Blinds vs shades vs shutters", "blinds-vs-shades-vs-shutters.html")] + [(g["label"], g["file"]) for g in GUIDES]),
         ("Inspiration", [("Inspiration", "inspiration.html"), ("Journal", "journal.html")] + [(p["title"], p["slug"] + ".html") for p in D.POSTS]),
-        ("Company", [("About Veneta", "about.html"), ("For professionals", "for-professionals.html"), ("Terms &amp; conditions", "terms-and-conditions.html"), ("Privacy policy", "privacy-policy.html"), ("Accessibility", "accessibility.html"), ("404 page", "404.html")]),
+        ("Trade &amp; commercial", [("For professionals", "for-professionals.html"), ("Trade resources", "for-professionals-resources.html"), ("Commercial", "commercial.html"), ("Commercial spec library", "commercial-spec-library.html")]),
+        ("Company", [("About Veneta", "about.html"), ("Terms &amp; conditions", "terms-and-conditions.html"), ("Privacy policy", "privacy-policy.html"), ("Accessibility", "accessibility.html"), ("404 page", "404.html")]),
     ]
     cols = ""
     total = 0

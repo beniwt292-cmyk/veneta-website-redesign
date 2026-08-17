@@ -4,6 +4,12 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/products-2", "destination": "/products", "permanent": true },
+    { "source": "/commercial/spec-library", "destination": "/commercial-spec-library", "permanent": true },
+    { "source": "/for-professionals/resources", "destination": "/for-professionals-resources", "permanent": true },
+    { "source": "/guides/blinds-vs-shades-vs-shutters", "destination": "/blinds-vs-shades-vs-shutters", "permanent": true },
+    { "source": "/blinds-vs-shades", "destination": "/blinds-vs-shades-vs-shutters", "permanent": true },
+    { "source": "/trade-resources", "destination": "/for-professionals-resources", "permanent": true },
+    { "source": "/spec-library", "destination": "/commercial-spec-library", "permanent": true },
     { "source": "/cellular", "destination": "/cellular-shades", "permanent": true },
     { "source": "/roller-solar", "destination": "/roller-solar-shades", "permanent": true },
     { "source": "/roman", "destination": "/roman-shades", "permanent": true },

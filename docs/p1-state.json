@@ -10,6 +10,11 @@
    "path": "assets/img/og-child-safety-1200.webp",
    "source": "safety-nursery-cordless"
   },
+  "og-commercial": {
+   "jpg": "assets/img/og-commercial-1200.jpg",
+   "path": "assets/img/og-commercial-1200.webp",
+   "source": "trade-commercial-lobby"
+  },
   "og-company": {
    "jpg": "assets/img/og-company-1200.jpg",
    "path": "assets/img/og-company-1200.webp",

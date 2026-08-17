@@ -524,7 +524,7 @@ table.cmp td.n{color:var(--ink-45)}
 }
 .form{display:grid;gap:18px;grid-template-columns:1fr;max-width:620px}
 .form textarea{min-height:140px;resize:vertical}
-.form .hint{font-size:var(--fs-fine);color:var(--ink-45);margin-top:6px}
+.hint{font-size:var(--fs-fine);color:var(--ink-45);margin-top:6px}
 @media(min-width:700px){
   .form{grid-template-columns:1fr 1fr}
   .form .half{grid-column:span 1}

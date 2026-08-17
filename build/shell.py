@@ -81,6 +81,7 @@ def mega():
         '<li><a href="shop-by-room.html">Shop by room</a></li>'
         '<li><a href="shop-by-need.html">Shop by need</a></li>'
         '<li><a href="buying-guides.html">Buying guides</a></li>'
+        '<li><a href="blinds-vs-shades-vs-shutters.html">Blinds vs shades vs shutters</a></li>'
         '<li><a href="free-samples.html">Order free samples</a></li>'
         '</ul><a class="btn btn--ghost btn--sm" href="products.html">See all products</a>'
         '</div></div></div>'
@@ -193,6 +194,7 @@ FOOTER = f"""
         <li><a href="innovation.html">Innovation</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="for-professionals.html">For Professionals</a></li>
+        <li><a href="commercial.html">Commercial</a></li>
         <li><a href="accessibility.html">Accessibility</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul></div>

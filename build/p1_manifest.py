@@ -318,7 +318,8 @@ def build():
         ("rooms", "room-living-room"), ("need", "room-bedroom"),
         ("inspiration", "style-warm-minimal"), ("guides", "style-quiet-traditional"),
         ("support", "room-home-office"), ("innovation", "motor-living-wall"),
-        ("trade", "trade-office-open"), ("journal", "style-modern-coastal"),
+        ("trade", "trade-office-open"), ("commercial", "trade-commercial-lobby"),
+        ("journal", "style-modern-coastal"),
         ("samples", "macro-linen-flax"), ("company", "style-organic-modern")]]
 
     doc = {

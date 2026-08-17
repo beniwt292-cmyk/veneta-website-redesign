@@ -102,6 +102,7 @@ PAGE_META = {
     "how-to-measure.html":                   ("guide", "measure"),
     "how-to-install.html":                   ("guide", "install"),
     "how-to-clean.html":                     ("guide", "clean"),
+    "blinds-vs-shades-vs-shutters.html":     ("guide", "comparison"),
 
     "support.html":                          ("support", ""),
     "faq.html":                              ("support", ""),
@@ -120,6 +121,9 @@ PAGE_META = {
     "innovation.html":                       ("technology", ""),
 
     "for-professionals.html":                ("trade", ""),
+    "for-professionals-resources.html":       ("trade", "resources"),
+    "commercial.html":                       ("commercial", ""),
+    "commercial-spec-library.html":          ("commercial", "spec-library"),
     "about.html":                            ("company", ""),
     "journal.html":                          ("journal_hub", ""),
     "journal-beat-summer-heat.html":         ("journal", ""),

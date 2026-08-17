@@ -13,6 +13,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.venetawindowfashions.com/blinds-vs-shades-vs-shutters</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.venetawindowfashions.com/buying-guides</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -35,6 +41,18 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.venetawindowfashions.com/commercial-spec-library</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.venetawindowfashions.com/commercial</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.venetawindowfashions.com/contact</loc>
@@ -68,6 +86,12 @@
   </url>
   <url>
     <loc>https://www.venetawindowfashions.com/faux-wood-guide</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.venetawindowfashions.com/for-professionals-resources</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

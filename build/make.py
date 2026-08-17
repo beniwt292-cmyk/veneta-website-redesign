@@ -4,6 +4,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_site as S
 import pages2 as P2
 import pages3 as P3
+import pages5 as P5
 import p2 as P2T
 import data as D
 import seo as SEO
@@ -28,6 +29,7 @@ P3.build_inspiration()
 P2T.build_gallery(S.write, S.page)   # §7.4 replaces the P0 inspiration template
 P3.build_company()
 P3.build_legal()
+P5.build_all()          # P5 §7.6 commercial, spec library, trade resources, comparison
 P3.build_utility()
 
 S.build_search_index()
