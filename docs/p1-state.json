@@ -595,8 +595,22 @@
    "status": "pending"
   },
   "room-living-room": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 44.1,
+     "path": "assets/img/room-living-room-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 63.7,
+     "path": "assets/img/room-living-room-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "room-nursery": {
    "attempts": 0,
@@ -651,8 +665,22 @@
    "status": "pending"
   },
   "triptych-cellular-black": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 10.6,
+     "path": "assets/img/triptych-cellular-black-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 11.8,
+     "path": "assets/img/triptych-cellular-black-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-cellular-light": {
    "attempts": 1,
@@ -691,16 +719,58 @@
    "width": 1000
   },
   "triptych-sheer-closed": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 9.9,
+     "path": "assets/img/triptych-sheer-closed-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 11.0,
+     "path": "assets/img/triptych-sheer-closed-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-sheer-half": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 16.3,
+     "path": "assets/img/triptych-sheer-half-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 18.3,
+     "path": "assets/img/triptych-sheer-half-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-sheer-open": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 10.9,
+     "path": "assets/img/triptych-sheer-open-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 13.0,
+     "path": "assets/img/triptych-sheer-open-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-solar-10": {
    "attempts": 1,

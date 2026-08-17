@@ -246,3 +246,38 @@ Every accepted image, with the prompt that produced it, so the set can be extend
 - Files: `assets/img/triptych-cellular-room-1000.avif` (9.5 KB), `assets/img/triptych-cellular-room-1000.webp` (11.6 KB)
 - Alt: Cellular shades in room-darkening bone fabric, fully lowered, a soft halo only at the edges
 - Prompt: Straight-on view of a single window fitted with cellular shades in bone or charcoal fabric as specified, in room-darkening bone fabric, fully lowered, a soft halo only at the edges. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-cellular-black
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-cellular-black-1000.avif` (10.6 KB), `assets/img/triptych-cellular-black-1000.webp` (11.8 KB)
+- Alt: Cellular shades in blackout fabric, fully lowered, a near-dark window with a thin light line at the sill
+- Prompt: Straight-on view of a single window fitted with cellular shades in bone or charcoal fabric as specified, in blackout fabric, fully lowered, a near-dark window with a thin light line at the sill. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-sheer-open
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-sheer-open-1000.avif` (10.9 KB), `assets/img/triptych-sheer-open-1000.webp` (13.0 KB)
+- Alt: Sheer horizontal shades with vanes fully open, lowered, clear diffused daylight between the vanes
+- Prompt: Straight-on view of a single window fitted with sheer horizontal shades in bone or charcoal fabric as specified, with vanes fully open, lowered, clear diffused daylight between the vanes. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-sheer-half
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-sheer-half-1000.avif` (16.3 KB), `assets/img/triptych-sheer-half-1000.webp` (18.3 KB)
+- Alt: Sheer horizontal shades with vanes half rotated, lowered, banded light across the fabric
+- Prompt: Straight-on view of a single window fitted with sheer horizontal shades in bone or charcoal fabric as specified, with vanes half rotated, lowered, banded light across the fabric. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-sheer-closed
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-sheer-closed-1000.avif` (9.9 KB), `assets/img/triptych-sheer-closed-1000.webp` (11.0 KB)
+- Alt: Sheer horizontal shades with vanes fully closed, lowered, a flat privacy surface with no gaps
+- Prompt: Straight-on view of a single window fitted with sheer horizontal shades in bone or charcoal fabric as specified, with vanes fully closed, lowered, a flat privacy surface with no gaps. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## room-living-room
+
+- Set: room · ratio 3:4 · 768x1024
+- Files: `assets/img/room-living-room-1024.avif` (44.1 KB), `assets/img/room-living-room-1024.webp` (63.7 KB)
+- Alt: Living room fitted with light-filtering roller shades in flax linen
+- Prompt: Living room with a low sofa and a tall window, featuring light-filtering roller shades in flax linen, half lowered. Natural morning daylight from camera-left showing realistic filtered light and soft directional shadows on white oak flooring and lime-plaster walls. Shot on 50mm, eye-level architectural interior photography, camera height 4'8", corrected verticals, editorial composition, generous negative space. Palette: warm bone, limestone, flax, mushroom, white oak. Mood: calm, precise, quietly expensive, believable, tactile. Under-styled, maximum three props, no legible lettering. Emphasise: glare control with the view kept, even pleat and slat spacing, crisp fabric edges, accurate window proportions, visible weave texture. Avoid: warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
