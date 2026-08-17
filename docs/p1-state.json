@@ -4,6 +4,10 @@
    "path": "assets/img/og-cellular-shades-1200.webp",
    "source": "category-cellular-shades"
   },
+  "og-child-safety": {
+   "path": "assets/img/og-child-safety-1200.webp",
+   "source": "safety-nursery-cordless"
+  },
   "og-home": {
    "path": "assets/img/og-home-1200.webp",
    "source": "hero-home"
@@ -589,12 +593,40 @@
    "width": 1536
   },
   "motor-living-wall": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 44.6,
+     "path": "assets/img/motor-living-wall-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 54.7,
+     "path": "assets/img/motor-living-wall-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 864,
+   "status": "accepted",
+   "width": 1536
   },
   "motor-patio-run": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 64.4,
+     "path": "assets/img/motor-patio-run-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 83.8,
+     "path": "assets/img/motor-patio-run-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 864,
+   "status": "accepted",
+   "width": 1536
   },
   "room-bathroom": {
    "attempts": 1,
@@ -705,12 +737,40 @@
    "width": 768
   },
   "safety-nursery-cordless": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 49.6,
+     "path": "assets/img/safety-nursery-cordless-1365.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 63.6,
+     "path": "assets/img/safety-nursery-cordless-1365.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1365
   },
   "safety-playroom": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 65.7,
+     "path": "assets/img/safety-playroom-1365.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 92.8,
+     "path": "assets/img/safety-playroom-1365.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1365
   },
   "style-modern-coastal": {
    "attempts": 1,
@@ -793,8 +853,22 @@
    "status": "pending"
   },
   "trade-hospitality-room": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 56.4,
+     "path": "assets/img/trade-hospitality-room-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 70.8,
+     "path": "assets/img/trade-hospitality-room-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "trade-multifamily-living": {
    "attempts": 0,
