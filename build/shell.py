@@ -2,23 +2,35 @@
 
 HD = "https://www.homedepot.com/b/VENETA/N-5yc1vZryk"
 
+# §5.1 primary navigation. Audience entries (For Designers, Commercial) live in
+# the utility bar and the footer, never here.
 NAV = [
     ("Products", "products.html", "products"),
-    ("Shop By", "shop-by-room.html", "shopby"),
-    ("Innovation", "innovation.html", "innovation"),
+    ("Shop by Need", "shop-by-need.html", "need"),
+    ("Rooms", "shop-by-room.html", "shopby"),
     ("Inspiration", "inspiration.html", "inspiration"),
+    ("Guides", "buying-guides.html", "guides"),
     ("Support", "support.html", "support"),
-    ("Where to Buy", "where-to-buy.html", "buy"),
+]
+
+UTIL = [
+    ("Free samples", "free-samples.html"),
+    ("For designers", "for-professionals.html"),
+    ("Innovation", "innovation.html"),
+    ("Where to buy", "where-to-buy.html"),
 ]
 
 MNAV = [
     ("Products", "products.html"),
-    ("Shop by Room", "shop-by-room.html"),
     ("Shop by Need", "shop-by-need.html"),
-    ("Product Finder", "product-finder.html"),
-    ("Innovation", "innovation.html"),
+    ("Rooms", "shop-by-room.html"),
     ("Inspiration", "inspiration.html"),
+    ("Buying Guides", "buying-guides.html"),
     ("Support", "support.html"),
+    ("Product Finder", "product-finder.html"),
+    ("Free Samples", "free-samples.html"),
+    ("Innovation", "innovation.html"),
+    ("For Designers", "for-professionals.html"),
     ("Where to Buy", "where-to-buy.html"),
 ]
 
@@ -58,7 +70,7 @@ PRODUCT_MENU = [
 
 def mega():
     tiles = "".join(
-        '<a href="%s.html"><span class="mm-ph"><img src="assets/img/%s" alt="" loading="lazy"></span>'
+        '<a href="%s.html"><span class="mm-ph"><img src="assets/img/%s" alt="" width="320" height="240" loading="lazy" decoding="async"></span>'
         '<span class="mm-t">%s</span><span class="mm-d">%s</span></a>' % (sl, im, n, d)
         for n, sl, im, d in PRODUCT_MENU
     )
@@ -109,7 +121,14 @@ def header(active=""):
     mlinks = "".join(
         f'<li><a href="{u}">{n}</a></li>' for n, u in MNAV
     )
+    ulinks = "".join(f'<a href="{u}">{n}</a>' for n, u in UTIL)
     return f"""
+<div class="util">
+  <div class="wrap"><div class="util-row">
+    {ulinks}
+    <a class="sp" href="contact.html">1-855-558-1222</a>
+  </div></div>
+</div>
 <header>
   <div class="bar">
     <a href="index.html" class="logo" aria-label="Veneta home">VENET<span>A</span></a>
