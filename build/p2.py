@@ -631,6 +631,29 @@ def build_family(p, write, page):
 
 
 # ================================================================= gallery ====
+def stylerail():
+    """§5.2 four style pages, surfaced from the gallery they belong to."""
+    import pages6 as P6
+    out = ""
+    for st in P6.STYLES:
+        m = PIC.pic(st["hero"], sizes="(min-width:900px) 24vw, 50vw")
+        if not m:
+            continue
+        out += (f'<a class="rl-item" href="style-{st["slug"]}.html"><div class="ph">{m}</div>'
+                f'<h3>{st["name"]}</h3><p>{st["h1"]}</p></a>')
+    if not out:
+        return ""
+    return f"""
+  <section>
+    <div class="wrap">
+      {shead('Styles', 'Four looks, specified rather than described.',
+             'Each one lists the palette, the fabrics and the four decisions that actually build it.')}
+      <div class="rl-grid">{out}</div>
+    </div>
+  </section>
+"""
+
+
 def build_gallery(write, page):
     """§7.4 — mixed-aspect grid, never uniform, one feature every nine tiles."""
     sizes = {
@@ -678,6 +701,7 @@ def build_gallery(write, page):
     <p class="galbar-note">Filters are illustrative in this build. Every tile already links to its product.</p>
   </div></div></div>
   <section class="nobot"><div class="wrap"><div class="gt-grid">{tiles}</div></div></section>
+  {stylerail()}
   {handoff('handoff')}
   {guidecards()}
 """

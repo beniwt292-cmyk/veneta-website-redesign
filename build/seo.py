@@ -78,6 +78,22 @@ OG_PAGE = {
     "vertical-blinds.html": "og-vertical-blinds",
     "shop-by-room.html": "og-rooms",
     "shop-by-need.html": "og-need",
+    "need-blackout.html": "og-need",
+    "need-light-filtering.html": "og-need",
+    "need-privacy.html": "og-need",
+    "need-energy-efficiency.html": "og-need",
+    "need-patio-doors.html": "og-need",
+    "room-bedroom.html": "og-rooms",
+    "room-living-room.html": "og-rooms",
+    "room-kitchen.html": "og-rooms",
+    "room-bathroom.html": "og-rooms",
+    "room-home-office.html": "og-rooms",
+    "room-nursery.html": "og-rooms",
+    "style-modern-minimal.html": "og-inspiration",
+    "style-warm-organic.html": "og-company",
+    "style-coastal.html": "og-journal",
+    "style-classic-tailored.html": "og-shutters",
+
     "product-finder.html": "og-need",
     "inspiration.html": "og-inspiration",
     "journal.html": "og-journal",
@@ -502,6 +518,13 @@ PRI = [
       "where-to-buy.html", "innovation.html", "motorization.html", "child-safety.html",
       "blinds-vs-shades-vs-shutters.html", "commercial.html"],
      "0.8", "monthly"),
+    ([f"need-{n}.html" for n in ("blackout", "light-filtering", "privacy",
+                                 "energy-efficiency", "patio-doors")]
+     + [f"room-{r}.html" for r in ("bedroom", "living-room", "kitchen", "bathroom",
+                                   "home-office", "nursery")],
+     "0.8", "monthly"),
+    ([f"style-{t}.html" for t in ("modern-minimal", "warm-organic", "coastal",
+                                  "classic-tailored")], "0.7", "monthly"),
 ]
 NOINDEX_PAGES = {"404.html"}
 

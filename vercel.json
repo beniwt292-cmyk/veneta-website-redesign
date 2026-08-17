@@ -3,51 +3,361 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/products-2", "destination": "/products", "permanent": true },
-    { "source": "/commercial/spec-library", "destination": "/commercial-spec-library", "permanent": true },
-    { "source": "/for-professionals/resources", "destination": "/for-professionals-resources", "permanent": true },
-    { "source": "/guides/blinds-vs-shades-vs-shutters", "destination": "/blinds-vs-shades-vs-shutters", "permanent": true },
-    { "source": "/blinds-vs-shades", "destination": "/blinds-vs-shades-vs-shutters", "permanent": true },
-    { "source": "/trade-resources", "destination": "/for-professionals-resources", "permanent": true },
-    { "source": "/spec-library", "destination": "/commercial-spec-library", "permanent": true },
-    { "source": "/cellular", "destination": "/cellular-shades", "permanent": true },
-    { "source": "/roller-solar", "destination": "/roller-solar-shades", "permanent": true },
-    { "source": "/roman", "destination": "/roman-shades", "permanent": true },
-    { "source": "/roman-cordless", "destination": "/roman-cordless-guide", "permanent": true },
-    { "source": "/faux-wood", "destination": "/faux-wood-blinds", "permanent": true },
-    { "source": "/sheer-shades", "destination": "/sheer-shades", "permanent": true },
-    { "source": "/design-by-room", "destination": "/shop-by-room", "permanent": true },
-    { "source": "/design-by-need", "destination": "/shop-by-need", "permanent": true },
-    { "source": "/design-center", "destination": "/inspiration", "permanent": true },
-    { "source": "/innovative-features", "destination": "/innovation", "permanent": true },
-    { "source": "/truquietmotorization", "destination": "/truquiet-motorization", "permanent": true },
-    { "source": "/smartrail", "destination": "/smartrail", "permanent": true },
-    { "source": "/smartprivacy", "destination": "/smartprivacy", "permanent": true },
-    { "source": "/clearfit", "destination": "/clearfit", "permanent": true },
-    { "source": "/help", "destination": "/contact", "permanent": true },
-    { "source": "/design-blog", "destination": "/journal", "permanent": true },
-    { "source": "/design-trend-presentation", "destination": "/inspiration", "permanent": true },
-    { "source": "/l-frame-installation-videos", "destination": "/installation-videos-l-frame", "permanent": true },
-    { "source": "/deco-frame-shutter-installation-videos", "destination": "/installation-videos-deco-frame", "permanent": true },
-    { "source": "/cordless-roller-shades", "destination": "/cordless-roller-shades-guide", "permanent": true },
-    { "source": "/spring-cleaning-for-your-window-treatments", "destination": "/journal-spring-cleaning", "permanent": true },
-    { "source": "/faux-wood-blinds-do-more-for-your-home-decor", "destination": "/journal-faux-wood-decor", "permanent": true },
-    { "source": "/beat-the-summer-heat-with-cellular-shades", "destination": "/journal-beat-summer-heat", "permanent": true },
-    { "source": "/gray-is-the-new-white", "destination": "/journal-gray-is-the-new-white", "permanent": true },
-    { "source": "/evoke-coastal-colors-bellevue-shades", "destination": "/journal-bellevue-coastal-colors", "permanent": true }
+    {
+      "source": "/products-2",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/commercial/spec-library",
+      "destination": "/commercial-spec-library",
+      "permanent": true
+    },
+    {
+      "source": "/for-professionals/resources",
+      "destination": "/for-professionals-resources",
+      "permanent": true
+    },
+    {
+      "source": "/guides/blinds-vs-shades-vs-shutters",
+      "destination": "/blinds-vs-shades-vs-shutters",
+      "permanent": true
+    },
+    {
+      "source": "/blinds-vs-shades",
+      "destination": "/blinds-vs-shades-vs-shutters",
+      "permanent": true
+    },
+    {
+      "source": "/trade-resources",
+      "destination": "/for-professionals-resources",
+      "permanent": true
+    },
+    {
+      "source": "/spec-library",
+      "destination": "/commercial-spec-library",
+      "permanent": true
+    },
+    {
+      "source": "/cellular",
+      "destination": "/cellular-shades",
+      "permanent": true
+    },
+    {
+      "source": "/roller-solar",
+      "destination": "/roller-solar-shades",
+      "permanent": true
+    },
+    {
+      "source": "/roman",
+      "destination": "/roman-shades",
+      "permanent": true
+    },
+    {
+      "source": "/roman-cordless",
+      "destination": "/roman-cordless-guide",
+      "permanent": true
+    },
+    {
+      "source": "/faux-wood",
+      "destination": "/faux-wood-blinds",
+      "permanent": true
+    },
+    {
+      "source": "/sheer-shades",
+      "destination": "/sheer-shades",
+      "permanent": true
+    },
+    {
+      "source": "/design-by-room",
+      "destination": "/shop-by-room",
+      "permanent": true
+    },
+    {
+      "source": "/design-by-need",
+      "destination": "/shop-by-need",
+      "permanent": true
+    },
+    {
+      "source": "/design-center",
+      "destination": "/inspiration",
+      "permanent": true
+    },
+    {
+      "source": "/innovative-features",
+      "destination": "/innovation",
+      "permanent": true
+    },
+    {
+      "source": "/truquietmotorization",
+      "destination": "/truquiet-motorization",
+      "permanent": true
+    },
+    {
+      "source": "/smartrail",
+      "destination": "/smartrail",
+      "permanent": true
+    },
+    {
+      "source": "/smartprivacy",
+      "destination": "/smartprivacy",
+      "permanent": true
+    },
+    {
+      "source": "/clearfit",
+      "destination": "/clearfit",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/design-blog",
+      "destination": "/journal",
+      "permanent": true
+    },
+    {
+      "source": "/design-trend-presentation",
+      "destination": "/inspiration",
+      "permanent": true
+    },
+    {
+      "source": "/l-frame-installation-videos",
+      "destination": "/installation-videos-l-frame",
+      "permanent": true
+    },
+    {
+      "source": "/deco-frame-shutter-installation-videos",
+      "destination": "/installation-videos-deco-frame",
+      "permanent": true
+    },
+    {
+      "source": "/cordless-roller-shades",
+      "destination": "/cordless-roller-shades-guide",
+      "permanent": true
+    },
+    {
+      "source": "/spring-cleaning-for-your-window-treatments",
+      "destination": "/journal-spring-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/faux-wood-blinds-do-more-for-your-home-decor",
+      "destination": "/journal-faux-wood-decor",
+      "permanent": true
+    },
+    {
+      "source": "/beat-the-summer-heat-with-cellular-shades",
+      "destination": "/journal-beat-summer-heat",
+      "permanent": true
+    },
+    {
+      "source": "/gray-is-the-new-white",
+      "destination": "/journal-gray-is-the-new-white",
+      "permanent": true
+    },
+    {
+      "source": "/evoke-coastal-colors-bellevue-shades",
+      "destination": "/journal-bellevue-coastal-colors",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-need/blackout",
+      "destination": "/need-blackout",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-need/light-filtering",
+      "destination": "/need-light-filtering",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-need/privacy",
+      "destination": "/need-privacy",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-need/energy-efficiency",
+      "destination": "/need-energy-efficiency",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-need/patio-doors",
+      "destination": "/need-patio-doors",
+      "permanent": true
+    },
+    {
+      "source": "/blackout",
+      "destination": "/need-blackout",
+      "permanent": true
+    },
+    {
+      "source": "/light-filtering",
+      "destination": "/need-light-filtering",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/energy-efficiency",
+      "destination": "/need-energy-efficiency",
+      "permanent": true
+    },
+    {
+      "source": "/patio-doors",
+      "destination": "/need-patio-doors",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-room/bedroom",
+      "destination": "/room-bedroom",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-room/living-room",
+      "destination": "/room-living-room",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-room/kitchen",
+      "destination": "/room-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-room/bathroom",
+      "destination": "/room-bathroom",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-room/home-office",
+      "destination": "/room-home-office",
+      "permanent": true
+    },
+    {
+      "source": "/shop-by-room/nursery",
+      "destination": "/room-nursery",
+      "permanent": true
+    },
+    {
+      "source": "/bedroom",
+      "destination": "/room-bedroom",
+      "permanent": true
+    },
+    {
+      "source": "/living-room",
+      "destination": "/room-living-room",
+      "permanent": true
+    },
+    {
+      "source": "/kitchen",
+      "destination": "/room-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/bathroom",
+      "destination": "/room-bathroom",
+      "permanent": true
+    },
+    {
+      "source": "/home-office",
+      "destination": "/room-home-office",
+      "permanent": true
+    },
+    {
+      "source": "/nursery",
+      "destination": "/room-nursery",
+      "permanent": true
+    },
+    {
+      "source": "/styles/modern-minimal",
+      "destination": "/style-modern-minimal",
+      "permanent": true
+    },
+    {
+      "source": "/styles/warm-organic",
+      "destination": "/style-warm-organic",
+      "permanent": true
+    },
+    {
+      "source": "/styles/coastal",
+      "destination": "/style-coastal",
+      "permanent": true
+    },
+    {
+      "source": "/styles/classic-tailored",
+      "destination": "/style-classic-tailored",
+      "permanent": true
+    },
+    {
+      "source": "/blackout-shades",
+      "destination": "/need-blackout",
+      "permanent": true
+    },
+    {
+      "source": "/blackout-blinds",
+      "destination": "/need-blackout",
+      "permanent": true
+    },
+    {
+      "source": "/patio-door-blinds",
+      "destination": "/need-patio-doors",
+      "permanent": true
+    },
+    {
+      "source": "/sliding-door-blinds",
+      "destination": "/need-patio-doors",
+      "permanent": true
+    },
+    {
+      "source": "/energy-efficient-blinds",
+      "destination": "/need-energy-efficiency",
+      "permanent": true
+    },
+    {
+      "source": "/styles",
+      "destination": "/inspiration",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-shades",
+      "destination": "/need-privacy",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     }
   ]

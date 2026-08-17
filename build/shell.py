@@ -79,7 +79,9 @@ def mega():
         '<div class="mm-side"><h4>Not sure where to start?</h4><ul>'
         '<li><a href="product-finder.html">Product finder, three questions</a></li>'
         '<li><a href="shop-by-room.html">Shop by room</a></li>'
+        '<li><a href="room-bedroom.html">Bedroom shades</a></li>'
         '<li><a href="shop-by-need.html">Shop by need</a></li>'
+        '<li><a href="need-blackout.html">Blackout shades</a></li>'
         '<li><a href="buying-guides.html">Buying guides</a></li>'
         '<li><a href="blinds-vs-shades-vs-shutters.html">Blinds vs shades vs shutters</a></li>'
         '<li><a href="free-samples.html">Order free samples</a></li>'
@@ -172,13 +174,30 @@ FOOTER = f"""
         <li><a href="dualdrape.html">DualDrape&trade;</a></li>
         <li><a href="vertical-blinds.html">Vertical Blinds</a></li>
       </ul></div>
-      <div><h4>Shop by</h4><ul>
-        <li><a href="shop-by-room.html">Room</a></li>
-        <li><a href="shop-by-need.html">Need</a></li>
+      <div><h4>By room</h4><ul>
+        <li><a href="room-bedroom.html">Bedroom</a></li>
+        <li><a href="room-living-room.html">Living Room</a></li>
+        <li><a href="room-kitchen.html">Kitchen</a></li>
+        <li><a href="room-bathroom.html">Bathroom</a></li>
+        <li><a href="room-home-office.html">Home Office</a></li>
+        <li><a href="room-nursery.html">Nursery</a></li>
+        <li><a href="shop-by-room.html">All rooms</a></li>
+      </ul></div>
+      <div><h4>By need</h4><ul>
+        <li><a href="need-blackout.html">Blackout</a></li>
+        <li><a href="need-light-filtering.html">Light filtering</a></li>
+        <li><a href="need-privacy.html">Privacy</a></li>
+        <li><a href="need-energy-efficiency.html">Energy efficiency</a></li>
+        <li><a href="need-patio-doors.html">Patio doors</a></li>
+        <li><a href="shop-by-need.html">All needs</a></li>
+      </ul></div>
+      <div><h4>Shop &amp; decide</h4><ul>
         <li><a href="product-finder.html">Product Finder</a></li>
         <li><a href="free-samples.html">Free Samples</a></li>
         <li><a href="where-to-buy.html">Where to Buy</a></li>
         <li><a href="buying-guides.html">Buying Guides</a></li>
+        <li><a href="blinds-vs-shades-vs-shutters.html">Blinds vs Shades vs Shutters</a></li>
+        <li><a href="style-modern-minimal.html">Styles</a></li>
       </ul></div>
       <div><h4>Support</h4><ul>
         <li><a href="how-to-measure.html">How to Measure</a></li>

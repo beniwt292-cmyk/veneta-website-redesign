@@ -657,9 +657,14 @@ def build_legal():
 
 
 def build_utility():
+    import pages6 as P6          # late: pages6 imports prose_blocks from here
     groups = [
         ("Products", [("All products", "products.html")] + [(p["short"], p["slug"] + ".html") for p in D.PRODUCTS]),
         ("Shop by", [("Shop by room", "shop-by-room.html"), ("Shop by need", "shop-by-need.html"), ("Product finder", "product-finder.html"), ("Free samples", "free-samples.html"), ("Where to buy", "where-to-buy.html")]),
+        ("Rooms", [(P6.ROOM_BY_SLUG[r]["name"], f"room-{r}.html") for r in
+                   ("bedroom", "living-room", "kitchen", "bathroom", "home-office", "nursery")]),
+        ("Needs", [(n["nav"], f'need-{n["slug"]}.html') for n in P6.NEEDS]),
+        ("Styles", [(t["name"], f'style-{t["slug"]}.html') for t in P6.STYLES]),
         ("Innovation", [("Innovation hub", "innovation.html")] + [(n, h) for n, h, _ in D.INNOVATIONS] + [("Child &amp; pet safety", "child-safety.html")]),
         ("Support", [("Support hub", "support.html"), ("How to measure", "how-to-measure.html"), ("How to install", "how-to-install.html"), ("How to clean", "how-to-clean.html"), ("Installation videos", "installation-videos.html"), ("L-frame videos", "installation-videos-l-frame.html"), ("Deco frame videos", "installation-videos-deco-frame.html"), ("Warranty", "warranty.html"), ("FAQ", "faq.html"), ("Contact", "contact.html")]),
         ("Guides", [("Buying guides", "buying-guides.html"), ("Blinds vs shades vs shutters", "blinds-vs-shades-vs-shutters.html")] + [(g["label"], g["file"]) for g in GUIDES]),

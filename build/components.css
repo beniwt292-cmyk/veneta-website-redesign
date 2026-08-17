@@ -485,7 +485,9 @@ footer li a:hover{color:#fff}
   display:flex;flex-wrap:wrap;gap:10px 22px;
   font-size:var(--fs-fine);letter-spacing:.06em;color:var(--on-noir-45);
 }
-@media(min-width:900px){.fgrid{grid-template-columns:1.3fr 1fr 1fr 1fr 1fr}}
+@media(min-width:640px){.fgrid{grid-template-columns:1fr 1fr 1fr}}
+@media(min-width:900px){.fgrid{grid-template-columns:1fr 1fr 1fr 1fr}}
+@media(min-width:1180px){.fgrid{grid-template-columns:1.15fr repeat(6,1fr);gap:26px}}
 /* ==========================================================================
    P2 — TEMPLATE COMPONENTS (§7)
    Mobile first. Every value here resolves to a token in tokens.css.

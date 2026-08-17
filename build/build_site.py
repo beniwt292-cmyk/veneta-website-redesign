@@ -320,9 +320,15 @@ def build_pdp(p):
 
 # ---------------------------------------------------------------- shop by room / need / finder
 def build_shop_by():
+    # §5.2: six rooms now have standalone pages; Patio Doors resolves to its need
+    # page. The two without a page of their own stay as anchors on this hub.
+    DEEP = {"Living Room": "room-living-room.html", "Bedroom": "room-bedroom.html",
+            "Nursery": "room-nursery.html", "Kitchen": "room-kitchen.html",
+            "Bathroom": "room-bathroom.html", "Home Office": "room-home-office.html",
+            "Patio Doors": "need-patio-doors.html"}
     room_tiles = []
     for name, sub, img in D.ROOMS:
-        room_tiles.append((name, sub, img, f"#{slugify(name)}"))
+        room_tiles.append((name, sub, img, DEEP.get(name, f"#{slugify(name)}")))
     blocks = ""
     rec = {
         "Living Room": ["roller-solar-shades", "sheer-shades", "roman-shades"],
@@ -356,7 +362,9 @@ def build_shop_by():
               <li>Cordless lift available on every option</li>
               <li>Free samples before you commit</li>
             </ul>
-            <a class="btn btn--ghost btn--sm" href="{rec[name][0]}.html">Start with {D.BY_SLUG[rec[name][0]]["short"]}</a>
+            <div class="cta-row" style="margin-top:22px">
+              {f'<a class="btn btn--ghost btn--sm" href="{DEEP[name]}">Full {name.lower()} guide</a>' if name in DEEP else ''}
+              <a class="btn btn--ghost btn--sm" href="{rec[name][0]}.html">Start with {D.BY_SLUG[rec[name][0]]["short"]}</a></div>
           </div>
           <div><img src="assets/img/{img}" alt="{name} fitted with Veneta window treatments" loading="lazy"></div>
         </div>
@@ -381,11 +389,19 @@ def build_shop_by():
                                     body, active="shopby"))
 
     # by need
+    NEED_PAGE = {"Block the light": "need-blackout.html",
+                 "Cut glare and heat": "need-light-filtering.html",
+                 "Keep the view": "need-light-filtering.html",
+                 "Lower the energy bill": "need-energy-efficiency.html",
+                 "Cover a patio door": "need-patio-doors.html",
+                 "Handle humidity": "room-bathroom.html",
+                 "Child and pet safe": "child-safety.html",
+                 "Quiet the room": "need-blackout.html"}
     nblocks = ""
     for i, (need, sub, img, slugs) in enumerate(D.NEEDS):
         nid = slugify(need)
         nblocks += f"""<div id="{nid}" style="padding-top:clamp(48px,6vw,80px)">
-          {rowfeat(f'Need {str(i+1).zfill(2)}', need + ".", f'<p style="color:var(--ink-70)">{sub}</p><p style="color:var(--ink-70)">Recommended lines: ' + ", ".join(f'<a class="link" href="{s}.html" style="border-bottom:1px solid var(--clay)">{D.BY_SLUG[s]["short"]}</a>' for s in slugs) + '.</p>', img, need + " solution shown at a window", flip=(i % 2 == 1))}
+          {rowfeat(f'Need {str(i+1).zfill(2)}', need + ".", f'<p style="color:var(--ink-70)">{sub}</p><p style="color:var(--ink-70)">Recommended lines: ' + ", ".join(f'<a class="link" href="{s}.html" style="border-bottom:1px solid var(--clay)">{D.BY_SLUG[s]["short"]}</a>' for s in slugs) + '.</p>', img, need + " solution shown at a window", cta=(f'<a class="btn btn--ghost btn--sm" href="{NEED_PAGE[need]}">Read the full guide</a>' if need in NEED_PAGE else ""), flip=(i % 2 == 1))}
         </div>"""
     body = phero("Shop by need", "Name the problem. We'll name the product.",
                  "Most people arrive with a problem, not a product in mind: the sun hits the screen, the bedroom is too bright, the patio door looks bare. Start there.",
