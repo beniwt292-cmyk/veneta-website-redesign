@@ -304,6 +304,40 @@ PRODUCTS = [
 BY_SLUG = {p["slug"]: p for p in PRODUCTS}
 
 
+# --------------------------------------------------------------------------- §9.2
+# Home Depot link map. Every outbound retail link on the site resolves through this
+# dict, so a corrected URL is a one-line change instead of a 200-link find/replace.
+#
+# Keys are product slugs (not the short names sketched in MASTER_PLAN §9.2) so no
+# second mapping layer is needed; see decision log §17.
+#
+# PLACEHOLDER: Home Depot has not supplied filtered shelf URLs, so every product key
+# currently points at the generic brand shelf. Names listed in HD_PLACEHOLDER are
+# reported by build/handoffgate.py on every build so this cannot be forgotten.
+
+HD_BRAND = "https://www.homedepot.com/b/VENETA/N-5yc1vZryk"
+
+HD_LINKS = {
+    "brand":               HD_BRAND,
+    "cellular-shades":     HD_BRAND,
+    "roller-solar-shades": HD_BRAND,
+    "roman-shades":        HD_BRAND,
+    "faux-wood-blinds":    HD_BRAND,
+    "shutters":            HD_BRAND,
+    "sheer-shades":        HD_BRAND,
+    "dualdrape":           HD_BRAND,
+    "vertical-blinds":     HD_BRAND,
+    "install":             "https://www.homedepot.com/services",
+    "stores":              "https://www.homedepot.com/l/storeDirectory",
+}
+
+# Keys still awaiting a real destination from the retailer.
+HD_PLACEHOLDER = {
+    "cellular-shades", "roller-solar-shades", "roman-shades", "faux-wood-blinds",
+    "shutters", "sheer-shades", "dualdrape", "vertical-blinds", "install",
+}
+
+
 def card_tuples(slugs=None):
     src = PRODUCTS if slugs is None else [BY_SLUG[s] for s in slugs]
     return [

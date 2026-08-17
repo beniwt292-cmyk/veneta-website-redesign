@@ -4,8 +4,9 @@ import json, os, re, shutil, sys
 import shell as SH
 import pic as PIC
 import seo as SEO
+import hd as HD
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
+from shell import (page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
 import data as D
 
@@ -21,6 +22,7 @@ def slugify(s):
 def write(name, html):
     html = PIC.upgrade(html)
     html = SEO.inject(name, html)   # §6.4: canonical, Open Graph, JSON-LD, outbound rels
+    html = HD.stamp(name, html)     # §9/§10: page type, retail hooks, body dimensions
     with open(os.path.join(ROOT, name), "w") as f:
         f.write(html)
     if name not in written:      # inspiration.html is built by P0 then replaced by §7.4
@@ -50,6 +52,7 @@ document.querySelectorAll('form[data-mock]').forEach(function(f){f.addEventListe
 document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventListener('click',function(){var m=document.getElementById('gal-main');if(!m)return;var pp=m.parentNode;if(pp&&pp.tagName==='PICTURE'){pp.querySelectorAll('source').forEach(function(s){s.remove();});}m.src=b.dataset.src;m.alt=b.dataset.alt||m.alt;});});
 """
     js = js.strip() + "\n" + interactive_js()
+    js += "\n" + open(os.path.join(B, "analytics.js")).read()   # §10 measurement layer
     open(os.path.join(ROOT, "assets/js/veneta.js"), "w").write(js)
 
 
@@ -203,7 +206,7 @@ def build_pdp(p):
           <p class="lede">{p["lede"]}</p>
           <p class="pill" style="margin-top:22px">{p["price"]}</p>
           <div class="cta-row" style="margin-top:26px">
-            <a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound" data-location="pdp-{p["slug"]}">Shop at The Home Depot</a>
+            {HD.btn("Shop at The Home Depot", key=p["slug"], module="pdp_hero")}
             <a class="btn btn--ghost" href="free-samples.html">Order free samples</a>
           </div>
           <div class="badges" style="margin-top:24px">{''.join(f'<span class="badge">{b}</span>' for b in p["badges"])}</div>
@@ -239,7 +242,7 @@ def build_pdp(p):
               <li>Limited lifetime warranty</li>
               <li>Cordless options available</li>
             </ul>
-            <a class="btn btn--hd btn--sm" style="width:100%;justify-content:center;margin-top:16px" href="{HD}" data-analytics="hd-outbound" data-location="pdp-side">Shop now</a>
+            {HD.btn("Shop now", key=p["slug"], module="pdp_rail", cls="btn btn--hd btn--sm", style="width:100%;justify-content:center;margin-top:16px")}
             <a class="btn btn--ghost btn--sm" style="width:100%;justify-content:center;margin-top:8px" href="free-samples.html">Free samples</a>
           </div>
           <div class="box tint">
@@ -307,7 +310,7 @@ def build_pdp(p):
   </section>
   {cta_band("Ready when you are.",
             "Veneta is sold exclusively through The Home Depot, online and in store. Configure your size and options there.",
-            ("Shop at The Home Depot", HD), ("Find a store", "where-to-buy.html"))}
+            ("Shop at The Home Depot", HD.href(module="cta_band")), ("Find a store", "where-to-buy.html"))}
 """
     write(p["slug"] + ".html", page(
         f'{p["short"]} &mdash; Custom, Cordless, Made to Fit | VENETA&trade;',

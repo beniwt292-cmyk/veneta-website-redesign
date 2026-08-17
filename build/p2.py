@@ -16,16 +16,16 @@ import data as D
 import p2data as P2D
 import pic as PIC
 import shell as SH
-from shell import HD, crumbs, acc, shead, SLAT
+import hd as HD
+from shell import crumbs, acc, shead, SLAT
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SAMPLES = "free-samples.html"
 
 
-def _hd(label, loc):
-    return (f'<a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound" '
-            f'data-location="{loc}">{label}</a>')
+def _hd(label, module, key="brand"):
+    return HD.btn(label, key=key, module=module)
 
 
 def _ghost(label, href, light=False):
@@ -51,7 +51,7 @@ def hero(shot, eyebrow, h1, lede, ctas, proof, tall=True):
       <p class="eyebrow">{eyebrow}</p>
       <h1>{h1}</h1>
       <p class="lede">{lede}</p>
-      <div class="cta-row">{ctas}</div>
+      <div class="cta-row">{ctas}</div>{HD.TRUST_P if "homedepot.com" in ctas else ""}
       <div class="fhero-proof">{chips}</div>
     </div>
   </div>
@@ -230,7 +230,7 @@ def guidecards(items=None, eyebrow="Guides", h2="Read this before you measure.")
 """
 
 
-def handoff(loc="handoff"):
+def handoff(module="handoff", key="brand"):
     """§9 HANDOFF BAND — a premium retail partnership, stated plainly, with no
     apology and no invented pricing."""
     steps = "".join(
@@ -248,9 +248,10 @@ def handoff(loc="handoff"):
           there; the shade is cut to your measurements here.</p>
         </div>
         <div class="cta-row">
-          {_hd('Shop at The Home Depot', loc)}
+          {_hd('Shop at The Home Depot', module, key)}
           {_ghost('Measure &amp; install help', 'support.html')}
         </div>
+        {HD.TRUST_P}
       </div>
       <ol class="ho-steps">{steps}</ol>
     </div>
@@ -337,7 +338,7 @@ def swatches(p):
     <div class="wrap">
       {shead('Materials', 'Eight of the range, shown flat.',
              'A screen cannot show openness or hand. Order the swatch and tape it to the glass before you order the shade.')}
-      <div class="sw2-grid">{sw}</div>
+      <div class="sw2-grid" data-category="{p["slug"]}">{sw}</div>
       <div class="cta-row" style="margin-top:32px">{_ghost('Order up to 8 free samples', SAMPLES)}</div>
     </div>
   </section>
@@ -351,7 +352,7 @@ def spectable(p, note=""):
     <div class="wrap">
       {shead('Specifications', 'The numbers, not the adjectives.',
              'Full published range, on the page, not behind a tab.')}
-      <div class="scrollx"><table class="spec2"><tbody>{rows}</tbody></table></div>
+      <div class="scrollx"><table class="spec2" data-category="{p["slug"]}"><tbody>{rows}</tbody></table></div>
       <p class="tnote">{note or 'Sizes shown are the full manufacturing range. Not every fabric is offered at every size, and pricing is set by The Home Depot.'}</p>
     </div>
   </section>
@@ -497,7 +498,7 @@ def build_home(write, page):
 
     body += roomrail(P2D.HOME_ROOMS)
     body += guidecards()
-    body += handoff("home-handoff")
+    body += handoff("handoff")
     body += audience_split()
 
     write("index.html", page(
@@ -519,7 +520,7 @@ def build_category(p, write, page):
         short,
         p["tagline"],
         p["lede"],
-        _hd(f"Shop {short.lower()} at The Home Depot", f"cat-{slug}")
+        _hd(f"Shop {short.lower()} at The Home Depot", "hero", slug)
         + _ghost("Order free samples", SAMPLES, light=True),
         p["badges"][:3],
         tall=False,
@@ -542,7 +543,7 @@ def build_category(p, write, page):
     body += compare(slug)
     body += safetystrip(p)
     body += faqs(p)
-    body += handoff(f"cat-{slug}-handoff")
+    body += handoff("handoff", slug)
     body += guidecards()
 
     write(slug + ".html", page(
@@ -595,7 +596,7 @@ def build_family(p, write, page):
           <p class="lede">{p["lede"]}</p>
           <div class="kv2">{rows}</div>
           <div class="cta-row">
-            {_hd('Configure at The Home Depot', f'pf-{slug}')}
+            {_hd('Configure at The Home Depot', 'family_hero', slug)}
             {_ghost('Order free samples', SAMPLES)}
           </div>
           <p class="tnote">Pricing is set by The Home Depot and depends on width, height, fabric
@@ -619,7 +620,7 @@ def build_family(p, write, page):
     body += compare(slug)
     body += safetystrip(p)
     body += faqs(p)
-    body += handoff(f"pf-{slug}-handoff")
+    body += handoff("handoff", slug)
     body += guidecards()
 
     write(slug + ".html", page(
@@ -677,7 +678,7 @@ def build_gallery(write, page):
     <p class="galbar-note">Filters are illustrative in this build. Every tile already links to its product.</p>
   </div></div></div>
   <section class="nobot"><div class="wrap"><div class="gt-grid">{tiles}</div></div></section>
-  {handoff('gallery-handoff')}
+  {handoff('handoff')}
   {guidecards()}
 """
     write("inspiration.html", page(

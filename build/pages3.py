@@ -2,7 +2,8 @@
 """Warranty, contact, FAQ, buying guides, inspiration, journal, company, legal, utility pages."""
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
+import hd as HD
+from shell import (page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
 import data as D
 from build_site import write, slugify
@@ -277,7 +278,7 @@ def build_guides():
         others = "".join(f'<li><a href="{x["file"]}">{x["label"]}</a></li>' for x in GUIDES if x["file"] != g["file"])
         body = phero_media("Buying guide", g["h1"], g["lede"], g["img"], g["label"],
                            trail=[("Home", "index.html"), ("Buying guides", "buying-guides.html"), (g["label"], None)],
-                           ctas=f'<a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound">Shop at The Home Depot</a><a class="btn btn--ghost" href="free-samples.html">Order free samples</a>')
+                           ctas=HD.btn("Shop at The Home Depot", module="hero") + '<a class="btn btn--ghost" href="free-samples.html">Order free samples</a>' + HD.TRUST_P)
         body += f"""
   <section class="tight">
     <div class="wrap">
@@ -377,7 +378,7 @@ def build_inspiration():
       </div>
     </div>
   </section>
-  {cta_band("Ready to fix the window?", "Every product is made to measure, cordless as standard, and sold at The Home Depot.", ("Shop at The Home Depot", HD), ("Use the product finder", "product-finder.html"))}
+  {cta_band("Ready to fix the window?", "Every product is made to measure, cordless as standard, and sold at The Home Depot.", ("Shop at The Home Depot", HD.href(module="cta_band")), ("Use the product finder", "product-finder.html"))}
 """
         write(p["slug"] + ".html", page(f'{p.get("seo_title", p["title"])} | VENETA&trade; Journal',
                                         p["excerpt"][:155], body, active="inspiration"))
@@ -388,7 +389,7 @@ def build_company():
     body = phero("Where to buy", "Sold exclusively at The Home Depot.",
                  "Two ways to buy: configure and order online, or take your measurements to a store and have someone walk you through the options. Support afterwards comes from us either way.",
                  trail=[("Home", "index.html"), ("Where to buy", None)],
-                 ctas=f'<a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound" data-location="wtb-hero">Shop at The Home Depot</a><a class="btn btn--ghost" href="how-to-measure.html">Measure first</a>')
+                 ctas=HD.btn("Shop at The Home Depot", module="wtb_hero") + '<a class="btn btn--ghost" href="how-to-measure.html">Measure first</a>')
     body += f"""
   <section class="tight">
     <div class="wrap">
@@ -400,7 +401,7 @@ def build_company():
             <li>Free samples posted to you</li>
             <li>Delivery direct to the door, typically 10 to 15 business days</li>
           </ul>
-          <a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound" data-location="wtb-online">Shop the range</a></div>
+          {HD.btn("Shop the range", module="wtb_online")}{HD.TRUST_P}</div>
         <div><p class="eyebrow">In store</p><h2>Visit the blinds desk</h2>
           <ul class="ticks" style="margin-top:18px">
             <li>See and handle the actual materials</li>
@@ -408,7 +409,7 @@ def build_company():
             <li>Bring your measurements: width first, to the nearest 1/8&quot;</li>
             <li>Ask about installation services available in your area</li>
           </ul>
-          <a class="btn btn--ghost" href="https://www.homedepot.com/l/storeDirectory">Find a store</a></div>
+          {HD.btn("Find a store", key="stores", module="wtb_stores", cls="btn btn--ghost")}</div>
       </div>
     </div>
   </section>
@@ -485,7 +486,7 @@ def build_company():
     body = phero("For professionals", "Specification, volume and a contact who answers.",
                  "Builders, interior designers, property managers and installers: the details you need are on the page, and the trade team is a phone call rather than a form-to-nowhere.",
                  trail=[("Home", "index.html"), ("For professionals", None)],
-                 ctas='<a class="btn" href="contact.html">Contact the trade team</a><a class="btn btn--ghost" href="products.html">Product specifications</a>')
+                 ctas='<a class="btn" href="contact.html" data-ev="trade_apply" data-ev-firm_type="unspecified">Contact the trade team</a><a class="btn btn--ghost" href="products.html">Product specifications</a>')
     body += f"""
   <section class="tight">
     <div class="wrap">
@@ -538,9 +539,9 @@ def build_company():
     <div class="wrap">
       <div class="withside">
         <div>
-          <form class="form" data-mock>
+          <form class="form" data-mock data-ev="sample_request" data-ev-audience="consumer">
             <div class="full"><label for="s-lines">Which product lines?</label>
-              <select id="s-lines" multiple size="6" style="min-height:auto">{''.join(f'<option>{re.sub("&trade;|&reg;", "", p["short"])}</option>' for p in D.PRODUCTS)}</select>
+              <select id="s-lines" data-ev-param="products" multiple size="6" style="min-height:auto">{''.join(f'<option>{re.sub("&trade;|&reg;", "", p["short"])}</option>' for p in D.PRODUCTS)}</select>
               <p class="hint">Hold Ctrl or Cmd to select more than one. Up to eight swatches in total.</p></div>
             <div><label for="s-name">Name</label><input id="s-name" required></div>
             <div><label for="s-email">Email</label><input id="s-email" type="email" required></div>
@@ -561,7 +562,7 @@ def build_company():
             <li>For screens, look through it at the actual view.</li>
             <li>For blackout, hold it up to a bright window.</li></ul></div>
           <div class="box"><h4>Then what?</h4><p style="margin:0;color:var(--ink-70)">Measure the opening, then configure the size at The Home Depot.</p>
-            <a class="btn btn--hd btn--sm" style="width:100%;justify-content:center;margin-top:14px" href="{HD}" data-analytics="hd-outbound" data-location="samples-side">Shop now</a></div>
+            {HD.btn("Shop now", module="samples_rail", cls="btn btn--hd btn--sm", style="width:100%;justify-content:center;margin-top:14px")}</div>
         </aside>
       </div>
     </div>

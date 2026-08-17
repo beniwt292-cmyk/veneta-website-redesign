@@ -54,6 +54,12 @@
       (wide ? '<div class="callout" style="margin-top:28px"><p><strong>At 96&quot; and wider</strong> a single blind gets heavy. We have kept the shortlist to lines built for wide openings.</p></div>' : '');
     out.hidden = false;
     out.setAttribute('aria-live', 'polite');
+    if (window.vev) {
+      window.vev('finder_complete', {
+        room: room, priority: need,
+        look: withLift ? val('f-lift') : val('f-look')
+      });
+    }
     if (window.__finderScroll) { out.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   }
 

@@ -2,7 +2,8 @@
 """Innovation, support, guides, journal, company and legal pages."""
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
+import hd as HD
+from shell import (page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
 import data as D
 from build_site import write, slugify, ROOT
@@ -158,7 +159,7 @@ def build_innovation():
         others = "".join(f'<li><a href="{h}">{n}</a></li>' for n, h, _ in D.INNOVATIONS if h != t["file"])
         body = phero_media("Innovation", t["h1"], t["lede"], t["img"], f'{re.sub("&[a-z]+;|<[^>]+>", "", t["name"])} shown in detail',
                            trail=[("Home", "index.html"), ("Innovation", "innovation.html"), (t["name"], None)],
-                           ctas=f'<a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound">Shop at The Home Depot</a><a class="btn btn--ghost" href="products.html">See compatible products</a>')
+                           ctas=HD.btn("Shop at The Home Depot", module="hero") + '<a class="btn btn--ghost" href="products.html">See compatible products</a>')
         body += f"""
   <section>
     <div class="wrap">
@@ -174,7 +175,7 @@ def build_innovation():
       <div style="margin-top:10px">{acc(t["faqs"])}</div>
     </div>
   </section>
-  {cta_band("See it on a real window.", "Every Veneta product is sold through The Home Depot, online and in store, with the full option list.", ("Shop at The Home Depot", HD), ("Order free samples", "free-samples.html"))}
+  {cta_band("See it on a real window.", "Every Veneta product is sold through The Home Depot, online and in store, with the full option list.", ("Shop at The Home Depot", HD.href(module="cta_band")), ("Order free samples", "free-samples.html"))}
 """
         write(t["file"], page(f'{t["name"]} | VENETA&trade;',
                               re.sub("<[^>]+>", "", t["lede"])[:155],
@@ -219,7 +220,7 @@ def build_innovation():
       </div>
     </div>
   </section>
-  {cta_band("Safe by default.", "Choose any product in the range and cordless operation comes with it.", ("Shop at The Home Depot", HD), ("Shop for a nursery", "shop-by-room.html#nursery"))}
+  {cta_band("Safe by default.", "Choose any product in the range and cordless operation comes with it.", ("Shop at The Home Depot", HD.href(module="cta_band")), ("Shop for a nursery", "shop-by-room.html#nursery"))}
 """
     write("child-safety.html", page("Child &amp; Pet Safety Standards | VENETA&trade;",
                                     "Every Veneta window treatment is cordless as standard and designed to meet ANSI/WCMA A100.1. What that means room by room.",
@@ -314,7 +315,7 @@ def build_support():
       </div>
     </div>
   </section>
-  {cta_band("Measured up?", "Take your numbers to The Home Depot and configure the size, fabric and lift.", ("Shop at The Home Depot", HD), ("Order free samples", "free-samples.html"))}
+  {cta_band("Measured up?", "Take your numbers to The Home Depot and configure the size, fabric and lift.", ("Shop at The Home Depot", HD.href(module="cta_band")), ("Order free samples", "free-samples.html"))}
 """
     write("how-to-measure.html", page("How to Measure for Blinds &amp; Shades | VENETA&trade;",
                                       "Step-by-step measuring guide for inside and outside mount, patio doors, bay windows and out-of-square openings. Submit the exact opening size.",
@@ -465,7 +466,7 @@ def build_videos():
         body += f"""<section class="tight"><div class="wrap">{vids(vlist)}
         <p class="tnote" style="margin-top:24px">Placeholder thumbnails. Each video ships with captions and a written transcript.</p>
         <div class="callout" style="max-width:860px"><p><strong>Not sure which frame you ordered?</strong> The order confirmation lists the frame type, or call 1-855-558-1222 with the order number and we will check.</p></div></div></section>
-        {cta_band("Shutters, properly fitted.", "Configure louvre size, frame type and finish at The Home Depot.", ("Shop at The Home Depot", HD), ("Shutter specifications", "shutters.html"))}"""
+        {cta_band("Shutters, properly fitted.", "Configure louvre size, frame type and finish at The Home Depot.", ("Shop at The Home Depot", HD.href(key="shutters", module="cta_band")), ("Shutter specifications", "shutters.html"))}"""
         write(f, page(f"{label} Installation Videos | VENETA&trade;",
                       f"Step-by-step {label.lower()} installation videos covering frame assembly, shimming, fixing, panel hanging and finishing.",
                       body, active="support"))

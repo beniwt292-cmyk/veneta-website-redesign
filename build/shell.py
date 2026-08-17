@@ -1,6 +1,5 @@
 """Shared page shell + component helpers for the VENETA redesign mockup."""
-
-HD = "https://www.homedepot.com/b/VENETA/N-5yc1vZryk"
+import hd as HD
 
 # §5.1 primary navigation. Audience entries (For Designers, Commercial) live in
 # the utility bar and the footer, never here.
@@ -48,7 +47,7 @@ def head(title, desc, css="assets/css/veneta.css"):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{css}">
-<script src="assets/js/search-index.js" defer></script>
+{HD.ga4_head()}<script src="assets/js/search-index.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -133,7 +132,7 @@ def header(active=""):
   <div class="bar">
     <a href="index.html" class="logo" aria-label="Veneta home">VENET<span>A</span></a>
     <nav class="main" aria-label="Primary">{links}</nav>
-    <div class="hd-wrap">{SEARCH_BTN}<a class="btn btn--hd btn--sm" href="{HD}" data-analytics="hd-outbound" data-location="header">Shop at The Home Depot</a></div>
+    <div class="hd-wrap">{SEARCH_BTN}{HD.btn("Shop at The Home Depot", module="header", cls="btn btn--hd btn--sm")}</div>
     <button class="iconbtn m-only" data-search-open aria-label="Search this site">{MAG}</button>
     <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="openNav()"><i></i></button>
   </div>
@@ -142,7 +141,7 @@ def header(active=""):
 <div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="top"><span class="logo">VENET<span>A</span></span><button class="close" aria-label="Close menu" onclick="closeNav()">&times;</button></div>
   <ul>{mlinks}</ul>
-  <a class="btn btn--hd" style="width:100%;justify-content:center" href="{HD}" data-analytics="hd-outbound" data-location="mobile-nav">Shop at The Home Depot</a>
+  {HD.btn("Shop at The Home Depot", module="mobile_nav", style="width:100%;justify-content:center")}
   <p style="margin-top:26px;font-size:var(--fs-body);color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
 </div>
 
@@ -206,8 +205,8 @@ FOOTER = f"""
 </footer>
 
 <div class="sticky" id="sticky">
-  <a class="btn btn--hd" href="{HD}" data-analytics="hd-outbound" data-location="sticky-bar">Shop at The Home Depot</a>
-  <a class="btn btn--ghost" href="free-samples.html" data-analytics="sample-request">Free samples</a>
+  {HD.btn("Shop at The Home Depot", module="sticky")}
+  <a class="btn btn--ghost" href="free-samples.html">Free samples</a>
 </div>
 
 <script src="assets/js/veneta.js" defer></script>
@@ -343,19 +342,21 @@ def stats(items):
 
 def cta_band(h2, body, primary=None, secondary=None, dark=True):
     # orange is reserved for the Home Depot handoff; internal CTAs use the light ghost
+    # primary is (label, href); pass a HD.href(...) value to make it a retail handoff
+    is_hd = bool(primary) and "homedepot.com" in primary[1]
     if primary:
-        hd = "homedepot.com" in primary[1]
-        cls = "btn btn--hd" if hd else ("btn btn--light" if dark else "btn")
-        hook = ' data-analytics="hd-outbound"' if hd else ""
-        p = f'<a class="{cls}" href="{primary[1]}"{hook}>{primary[0]}</a>'
+        cls = "btn btn--hd" if is_hd else ("btn btn--light" if dark else "btn")
+        p = f'<a class="{cls}" href="{primary[1]}">{primary[0]}</a>'
     else:
         p = ""
     s = f'<a class="btn btn--ghost-light" href="{secondary[1]}">{secondary[0]}</a>' if secondary else ""
+    # §9.3: expectation-setting sits directly under every primary retail CTA
+    t = f'<p class="hd-trust hd-trust--c">{HD.TRUST}</p>' if is_hd else ""
     return f"""
   <section class="{'dark' if dark else ''}">
     <div class="wrap center" style="max-width:760px">
       <h2>{h2}</h2><p style="margin-top:18px">{body}</p>
-      <div class="cta-row" style="justify-content:center;margin-top:30px">{p}{s}</div>
+      <div class="cta-row" style="justify-content:center;margin-top:30px">{p}{s}</div>{t}
     </div>
   </section>
 """

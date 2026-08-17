@@ -585,6 +585,14 @@ ul.ticks li::before{
 .dark .eyebrow{color:var(--on-noir-45)}
 .dark .eyebrow::before{background:var(--clay-soft)}
 
+/* --- §9.3 handoff trust line -------------------------------------------- */
+.hd-trust{
+  margin:14px 0 0;max-width:44ch;
+  font-size:var(--fs-small);line-height:1.5;color:var(--ink-70);
+}
+.hd-trust--c{margin-left:auto;margin-right:auto;text-align:center}
+.dark .hd-trust,.fhero .hd-trust{color:var(--on-noir-70)}
+
 /* --- sticky retail bar -------------------------------------------------- */
 .sticky{
   position:fixed;left:0;right:0;bottom:0;z-index:120;
