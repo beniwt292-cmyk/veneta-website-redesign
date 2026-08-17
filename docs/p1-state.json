@@ -351,12 +351,40 @@
    "width": 819
   },
   "macro-blackout-espresso": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 70.4,
+     "path": "assets/img/macro-blackout-espresso-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 118.4,
+     "path": "assets/img/macro-blackout-espresso-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-bottom-bar": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 53.0,
+     "path": "assets/img/macro-bottom-bar-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 89.0,
+     "path": "assets/img/macro-bottom-bar-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-cellular-bone": {
    "attempts": 1,
@@ -431,12 +459,40 @@
    "width": 768
   },
   "macro-sheer-vane": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 43.6,
+     "path": "assets/img/macro-sheer-vane-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 65.1,
+     "path": "assets/img/macro-sheer-vane-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-shutter-paint": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 38.1,
+     "path": "assets/img/macro-shutter-paint-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 43.6,
+     "path": "assets/img/macro-shutter-paint-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-solar-10": {
    "attempts": 1,
@@ -475,8 +531,22 @@
    "width": 768
   },
   "macro-wood-oak": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 49.8,
+     "path": "assets/img/macro-wood-oak-1024.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 67.6,
+     "path": "assets/img/macro-wood-oak-1024.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 768
   },
   "macro-woven-flax": {
    "attempts": 1,

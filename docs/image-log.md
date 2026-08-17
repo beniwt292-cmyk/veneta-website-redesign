@@ -176,3 +176,38 @@ Every accepted image, with the prompt that produced it, so the set can be extend
 - Files: `assets/img/macro-faux-wood-white-1024.avif` (31.4 KB), `assets/img/macro-faux-wood-white-1024.webp` (43.6 KB)
 - Alt: Macro detail of faux wood blind slat in warm white composite with a subtle grain emboss
 - Prompt: Macro photograph of faux wood blind slat in warm white composite with a subtle grain emboss, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the slat edge profile and matte finish, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-wood-oak
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-wood-oak-1024.avif` (49.8 KB), `assets/img/macro-wood-oak-1024.webp` (67.6 KB)
+- Alt: Macro detail of real wood blind slat in muted white oak with visible grain
+- Prompt: Macro photograph of real wood blind slat in muted white oak with visible grain, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: grain direction and satin sheen, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-shutter-paint
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-shutter-paint-1024.avif` (38.1 KB), `assets/img/macro-shutter-paint-1024.webp` (43.6 KB)
+- Alt: Macro detail of shutter louvre and stile joint in warm white painted hardwood
+- Prompt: Macro photograph of shutter louvre and stile joint in warm white painted hardwood, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the paint texture and joinery line, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-sheer-vane
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-sheer-vane-1024.avif` (43.6 KB), `assets/img/macro-sheer-vane-1024.webp` (65.1 KB)
+- Alt: Macro detail of sheer shade fabric vane against its sheer facing in bone polyester
+- Prompt: Macro photograph of sheer shade fabric vane against its sheer facing in bone polyester, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the layered translucency, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-blackout-espresso
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-blackout-espresso-1024.avif` (70.4 KB), `assets/img/macro-blackout-espresso-1024.webp` (118.4 KB)
+- Alt: Macro detail of blackout roller shade fabric in espresso coated fabric
+- Prompt: Macro photograph of blackout roller shade fabric in espresso coated fabric, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the dense opaque surface and matte coating, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## macro-bottom-bar
+
+- Set: macro · ratio 3:4 · 768x1024
+- Files: `assets/img/macro-bottom-bar-1024.avif` (53.0 KB), `assets/img/macro-bottom-bar-1024.webp` (89.0 KB)
+- Alt: Macro detail of the bottom bar and hem of a cordless shade in brushed aluminium and flax fabric
+- Prompt: Macro photograph of the bottom bar and hem of a cordless shade in brushed aluminium and flax fabric, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the level hem line and hardware finish, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
