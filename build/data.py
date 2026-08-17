@@ -452,3 +452,15 @@ INNOVATIONS = [
     ("TruQuiet&trade; Motorization", "truquiet-motorization.html", "A motor you can run during a film. Rechargeable, schedulable, and quiet enough for a bedroom."),
     ("RevitaCharge&trade;", "motorization.html", "Rechargeable battery packs that top up in place, so you are not on a ladder with a pack of AAs."),
 ]
+
+# --- minimum inside-mount depth ------------------------------------------------
+# Declared once here per MASTER_PLAN §12. Read by the measuring guide sidebar and
+# by build/diagrams.py, so the page copy and the diagram can never disagree.
+# (depth, short label for tables, long line for the diagram)
+MOUNT_DEPTH = [
+    ('3/4"', "Cellular", "cellular shades"),
+    ('2"', "Roller, solar &amp; faux wood", "roller, solar and faux wood"),
+    ('2 1/2"', "Roman &amp; sheer", "Roman and sheer shades"),
+    ("Framed", "Shutters", "shutters mount in their own frame"),
+    ("Outside mount", "Under 3/4&quot;", "use an outside mount instead"),
+]

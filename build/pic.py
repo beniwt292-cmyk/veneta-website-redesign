@@ -94,3 +94,26 @@ def upgrade(html):
         )
 
     return _IMG.sub(sub, html)
+
+
+# --- guide diagrams ----------------------------------------------------------
+# Hand-built SVG rather than generated raster, because these need legible
+# lettering and §11.2 forbids that in generated imagery. Alt text lives in
+# build/diagrams.py so the drawing and its description are edited together.
+def diagram(name, caption=""):
+    """<figure> wrapping one of the assets/img/diagram-*.svg guide drawings."""
+    import diagrams as DG
+    path = os.path.join("assets", "img", name + ".svg")
+    if not os.path.exists(os.path.join(ROOT, path)):
+        return ""
+    alt = DG.ALT.get(name, "")
+    cap = f"<figcaption>{caption}</figcaption>" if caption else ""
+    return (f'<figure class="diagram">'
+            f'<img src="{path}" alt="{alt}" width="1400" height="1050" '
+            f'loading="lazy" decoding="async">{cap}</figure>')
+
+
+def diagram_pair(a, b, cap_a="", cap_b=""):
+    """Two diagrams, stacked. Never side by side: a 1400px-wide drawing shown at
+    half the prose column drops its lettering below a readable size."""
+    return diagram(a, cap_a) + diagram(b, cap_b)

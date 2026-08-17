@@ -421,3 +421,20 @@ Every accepted image, with the prompt that produced it, so the set can be extend
 - Files: `assets/img/trade-commercial-lobby-1536.avif` (105.0 KB), `assets/img/trade-commercial-lobby-1536.webp` (155.9 KB)
 - Alt: Quiet commercial lobby with a limestone floor specified with woven wood shades in mushroom bamboo reed
 - Prompt: Quiet commercial lobby with a limestone floor, featuring woven wood shades in mushroom bamboo reed, two-thirds lowered. Natural morning daylight from camera-left showing realistic filtered light and soft directional shadows on white oak flooring and lime-plaster walls. Shot on 32mm, eye-level architectural interior photography, camera height 4'8", corrected verticals, editorial composition, generous negative space. Palette: warm bone, limestone, flax, mushroom, white oak. Mood: calm, precise, quietly expensive, believable, tactile. Under-styled, maximum three props, no legible lettering. Emphasise: scale, repetition and warmth, even pleat and slat spacing, crisp fabric edges, accurate window proportions, visible weave texture. Avoid: warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Framed so a centre crop to 3:2 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## Guide diagrams (hand-built SVG)
+
+Six 4:3 diagrams closing out the §11.1 shot list. Built by `build/diagrams.py`,
+not generated, because each one needs legible lettering and §11.2 forbids that in
+generated imagery. ~5 KB each against a ~120 KB raster equivalent, and sharp at
+any zoom. Minimum mount depths are read from `data.MOUNT_DEPTH` so the drawing
+and the measuring-guide sidebar cannot drift.
+
+| Diagram | Placed on |
+|---|---|
+| `diagram-inside-mount` | how-to-measure, step 1 |
+| `diagram-outside-mount` | how-to-measure, step 1 |
+| `diagram-measure-width` | how-to-measure, step 2 |
+| `diagram-measure-height` | how-to-measure, step 3 |
+| `diagram-depth-clearance` | how-to-measure, before you order |
+| `diagram-bracket-placement` | how-to-install, tools section |

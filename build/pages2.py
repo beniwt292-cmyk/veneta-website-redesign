@@ -6,6 +6,7 @@ from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, a
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
 import data as D
 from build_site import write, slugify, ROOT
+import pic as PIC
 
 
 # ---------------------------------------------------------------- innovation hub + detail
@@ -281,10 +282,15 @@ def build_support():
           <h2 id="mount">Step 1: decide inside or outside mount</h2>
           <p><strong>Inside mount</strong> sits within the window frame for a built-in look. It needs enough depth: 3/4&quot; for a cellular shade, 2&quot; for faux wood, 2 1/2&quot; for a Roman or sheer shade.</p>
           <p><strong>Outside mount</strong> fits to the wall or trim above the opening and overlaps it. Choose it when the frame is too shallow, out of square, or when you want maximum darkness.</p>
+          {PIC.diagram_pair("diagram-inside-mount", "diagram-outside-mount",
+                            "Inside mount: order the exact opening size.",
+                            "Outside mount: add 4&quot; to width, 3&quot; to height.")}
           <h2 id="width">Step 2: measure the width in three places</h2>
           <p>Measure top, middle and bottom of the opening. Openings are rarely square. For an inside mount, use the <strong>narrowest</strong> of the three. For an outside mount, use the widest and add 2&quot; on each side for overlap.</p>
+          {PIC.diagram("diagram-measure-width", "Three widths. The narrowest is the one you record.")}
           <h2 id="height">Step 3: measure the height in three places</h2>
           <p>Measure left, centre and right. For an inside mount, use the <strong>longest</strong> of the three so the shade reaches the sill everywhere. For an outside mount, measure from where the headrail will sit down to where you want the shade to end, plus 2&quot; below the opening.</p>
+          {PIC.diagram("diagram-measure-height", "Three heights. The longest is the one you record.")}
           <h2 id="order">Step 4: write it down width first</h2>
           <p>Always width by height, to the nearest 1/8&quot;. A 36&quot; wide, 60&quot; tall window is 36 x 60, never 60 x 36. Reversing the two is the single most common ordering error in this category.</p>
           <div class="callout"><p><strong>Do not deduct anything.</strong> Submit the exact opening size. Every Veneta product is built with the correct clearance applied at the factory. If you deduct as well, the shade will be too small and it will not be covered by the warranty.</p></div>
@@ -296,12 +302,13 @@ def build_support():
           <h3>Out-of-square openings</h3>
           <p>If the difference between your three width measurements is more than 1/2&quot;, use an outside mount, or a shutter with a deco frame that hides the discrepancy.</p>
           <h2>Before you order</h2>
+          {PIC.diagram("diagram-depth-clearance", "Depth is measured in front of the glass, not across the opening.")}
           <ul><li>Check depth against the product's minimum mount depth on its page.</li><li>Confirm nothing intrudes into the opening: handles, cranks, alarm sensors, tile edges.</li><li>Write down which window each measurement belongs to. Label them.</li></ul>
         </div>
         <aside class="side">
           <div class="box sticky-box"><h4>On this page</h4><ul>
             <li><a href="#mount">Inside or outside mount</a></li><li><a href="#width">Width in three places</a></li><li><a href="#height">Height in three places</a></li><li><a href="#order">Width first, always</a></li><li><a href="#special">Special cases</a></li></ul></div>
-          <div class="box tint"><h4>Minimum mount depth</h4>{kv([("Cellular", '3/4"'), ("Roller &amp; solar", '2"'), ("Faux wood", '2"'), ("Roman", '2 1/2"'), ("Sheer", '2 1/2"'), ("Shutters", "Framed")])}</div>
+          <div class="box tint"><h4>Minimum mount depth</h4>{kv([(lbl, d) for d, lbl, _ in D.MOUNT_DEPTH])}</div>
           <div class="box"><h4>Next</h4><ul><li><a href="how-to-install.html">How to install</a></li><li><a href="installation-videos.html">Installation videos</a></li><li><a href="contact.html">Ask a question</a></li></ul></div>
         </aside>
       </div>
@@ -336,6 +343,7 @@ def build_support():
     <div class="wrap">
       <div class="withside">
         <div class="prose">
+          {PIC.diagram("diagram-bracket-placement", "End brackets 2&quot; in, one support per 36&quot; of span.")}
           <h2>Tools you will actually need</h2>
           <ul><li>Cordless drill with a No. 2 Phillips bit</li><li>3/32&quot; pilot bit for timber, 1/4&quot; for drywall anchors</li><li>Spirit level, 12&quot; is enough</li><li>Pencil, steel tape, step ladder</li></ul>
           <h2>What differs by product</h2>
