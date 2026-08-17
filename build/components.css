@@ -731,9 +731,9 @@ picture{display:block}
   }
   .gc{
     grid-row:span 4;display:grid;grid-template-rows:subgrid;row-gap:0;
-    padding:36px 36px 38px 0;border-bottom:0;
+    padding:36px clamp(28px,3vw,52px) 38px 0;border-bottom:0;
   }
-  .gc+.gc{border-left:1px solid var(--line);padding-left:36px}
+  .gc+.gc{border-left:1px solid var(--line);padding-left:clamp(28px,3vw,52px)}
   .gc-d{align-self:start}
   .gc .arrow{align-self:end;justify-self:start;margin-top:0}
   .gc:hover{background:var(--surface)}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds the full multi-page VENETA redesign mockup into the repo root."""
-import json, os, re, shutil, sys
+import hashlib, json, os, re, shutil, sys
 import shell as SH
 import pic as PIC
 import seo as SEO
@@ -13,6 +13,17 @@ import data as D
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B = os.path.join(ROOT, "build")
 written = []
+ASSET_V = ""      # set by build_assets(): short content hash of the css + js bundles
+
+
+def bust(html):
+    """Append a content hash to the local css/js so a redeploy can never serve a
+    cached stylesheet against fresh markup."""
+    if not ASSET_V:
+        return html
+    for a in ("assets/css/veneta.css", "assets/js/veneta.js"):
+        html = html.replace(f'"{a}"', f'"{a}?v={ASSET_V}"')
+    return html
 
 
 def slugify(s):
@@ -23,6 +34,7 @@ def write(name, html):
     html = PIC.upgrade(html)
     html = SEO.inject(name, html)   # §6.4: canonical, Open Graph, JSON-LD, outbound rels
     html = HD.stamp(name, html)     # §9/§10: page type, retail hooks, body dimensions
+    html = bust(html)               # cache-bust the local bundles
     with open(os.path.join(ROOT, name), "w") as f:
         f.write(html)
     if name not in written:      # inspiration.html is built by P0 then replaced by §7.4
@@ -54,6 +66,8 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
     js = js.strip() + "\n" + interactive_js()
     js += "\n" + open(os.path.join(B, "analytics.js")).read()   # §10 measurement layer
     open(os.path.join(ROOT, "assets/js/veneta.js"), "w").write(js)
+    global ASSET_V
+    ASSET_V = hashlib.sha1((css + js).encode()).hexdigest()[:8]
 
 
 # ---------------------------------------------------------------- home
