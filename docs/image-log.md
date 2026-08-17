@@ -211,3 +211,38 @@ Every accepted image, with the prompt that produced it, so the set can be extend
 - Files: `assets/img/macro-bottom-bar-1024.avif` (53.0 KB), `assets/img/macro-bottom-bar-1024.webp` (89.0 KB)
 - Alt: Macro detail of the bottom bar and hem of a cordless shade in brushed aluminium and flax fabric
 - Prompt: Macro photograph of the bottom bar and hem of a cordless shade in brushed aluminium and flax fabric, with visible fibre, texture and natural colour variation. Soft directional daylight raking across the surface from camera-right. Shot on 100mm macro, editorial materials photography, shallow but realistic depth of field. Emphasise: the level hem line and hardware finish, weave or grain rhythm, tactile hand, subtle irregularity. Avoid: repeating pattern glitches, plastic sheen, synthetic uniformity, HDR halos, legible text. Framed so a centre crop to 3:4 keeps the composition intact. Photorealistic. Matte film finish, fine grain.
+
+## triptych-solar-5
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-solar-5-1000.avif` (13.4 KB), `assets/img/triptych-solar-5-1000.webp` (12.5 KB)
+- Alt: Solar roller shades at 5 percent openness, fully lowered, bright exterior visible as a soft silhouette through the weave
+- Prompt: Straight-on view of a single window fitted with solar roller shades in bone or charcoal fabric as specified, at 5 percent openness, fully lowered, bright exterior visible as a soft silhouette through the weave. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-solar-10
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-solar-10-1000.avif` (22.8 KB), `assets/img/triptych-solar-10-1000.webp` (30.1 KB)
+- Alt: Solar roller shades at 10 percent openness, fully lowered, exterior shapes softly readable through the weave
+- Prompt: Straight-on view of a single window fitted with solar roller shades in bone or charcoal fabric as specified, at 10 percent openness, fully lowered, exterior shapes softly readable through the weave. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-solar-open
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-solar-open-1000.avif` (11.1 KB), `assets/img/triptych-solar-open-1000.webp` (12.5 KB)
+- Alt: Solar roller shades fully raised, the bare window and clean rolled shade at the head
+- Prompt: Straight-on view of a single window fitted with solar roller shades in bone or charcoal fabric as specified, fully raised, the bare window and clean rolled shade at the head. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-cellular-light
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-cellular-light-1000.avif` (10.7 KB), `assets/img/triptych-cellular-light-1000.webp` (12.9 KB)
+- Alt: Cellular shades in light-filtering bone fabric, fully lowered, an even glow across the whole blind
+- Prompt: Straight-on view of a single window fitted with cellular shades in bone or charcoal fabric as specified, in light-filtering bone fabric, fully lowered, an even glow across the whole blind. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.
+
+## triptych-cellular-room
+
+- Set: triptych · ratio 1:1 · 1000x1000
+- Files: `assets/img/triptych-cellular-room-1000.avif` (9.5 KB), `assets/img/triptych-cellular-room-1000.webp` (11.6 KB)
+- Alt: Cellular shades in room-darkening bone fabric, fully lowered, a soft halo only at the edges
+- Prompt: Straight-on view of a single window fitted with cellular shades in bone or charcoal fabric as specified, in room-darkening bone fabric, fully lowered, a soft halo only at the edges. Neutral warm-bone interior wall, no furniture. Natural midday daylight. Shot on 50mm, perfectly level, corrected verticals, clinical editorial product photography. Emphasise: the openness of the weave or fabric, even tension across the fabric, straight level bottom bar. Avoid: warped mullions, uneven fabric tension, legible exterior detail, warped mullions, uneven slat or pleat spacing, duplicated furniture or decor, impossible shadow directions, legible text or signage, glossy CGI surfaces, HDR halos, people, pets, oversaturated colour. Aspect ratio 1:1. Photorealistic, matte finish, fine grain.

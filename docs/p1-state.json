@@ -655,12 +655,40 @@
    "status": "pending"
   },
   "triptych-cellular-light": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 10.7,
+     "path": "assets/img/triptych-cellular-light-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 12.9,
+     "path": "assets/img/triptych-cellular-light-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-cellular-room": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 9.5,
+     "path": "assets/img/triptych-cellular-room-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 11.6,
+     "path": "assets/img/triptych-cellular-room-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-sheer-closed": {
    "attempts": 0,
@@ -675,16 +703,58 @@
    "status": "pending"
   },
   "triptych-solar-10": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 22.8,
+     "path": "assets/img/triptych-solar-10-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 30.1,
+     "path": "assets/img/triptych-solar-10-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-solar-5": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 13.4,
+     "path": "assets/img/triptych-solar-5-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 12.5,
+     "path": "assets/img/triptych-solar-5-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   },
   "triptych-solar-open": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 11.1,
+     "path": "assets/img/triptych-solar-open-1000.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 12.5,
+     "path": "assets/img/triptych-solar-open-1000.webp",
+     "q": 78
+    }
+   },
+   "height": 1000,
+   "status": "accepted",
+   "width": 1000
   }
  }
 }
