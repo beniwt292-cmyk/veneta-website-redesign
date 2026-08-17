@@ -90,8 +90,8 @@ def build_policies():
     <div class="wrap">
       <div class="methods">
         <div class="method"><h3>Call</h3><b>1-855-558-1222</b><p>Monday to Friday, 8am to 6pm CT. Average wait under three minutes.</p></div>
-        <div class="method"><h3>Email</h3><b style="font-size:15px">help@venetawindowfashions.com</b><p>We reply within one business day. Attach photos and we will usually resolve it in one exchange.</p></div>
-        <div class="method"><h3>Order status</h3><b style="font-size:15px">The Home Depot</b><p>Delivery tracking sits with the retailer. Order status, changes and cancellations go through them.</p></div>
+        <div class="method"><h3>Email</h3><b style="font-size:var(--fs-body)">help@venetawindowfashions.com</b><p>We reply within one business day. Attach photos and we will usually resolve it in one exchange.</p></div>
+        <div class="method"><h3>Order status</h3><b style="font-size:var(--fs-body)">The Home Depot</b><p>Delivery tracking sits with the retailer. Order status, changes and cancellations go through them.</p></div>
       </div>
       <div class="withside" style="margin-top:64px">
         <div>
@@ -338,7 +338,7 @@ def build_inspiration():
     <div class="wrap">
       <a class="feature-post rev" href="{feat["slug"]}.html">
         <div><img src="assets/img/{feat["img"]}" alt="{feat["title"]}"></div>
-        <div><p class="meta" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin:0 0 12px">Latest &middot; {feat["cat"]} &middot; {feat["date"]}</p>
+        <div><p class="meta" style="font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin:0 0 12px">Latest &middot; {feat["cat"]} &middot; {feat["date"]}</p>
           <h2>{feat["title"]}</h2><p style="color:var(--ink-70);margin-top:16px">{feat["excerpt"]}</p>
           <span class="arrow" style="font-weight:600;border-bottom:1px solid var(--daylight)">Read the article</span></div>
       </a>
@@ -365,7 +365,7 @@ def build_inspiration():
   </div>
   <section class="tight">
     <div class="wrap">
-      <figure style="max-width:1080px;margin:0 auto clamp(40px,5vw,64px)"><img src="assets/img/{p["img"]}" alt="{p["title"]}" style="width:100%;aspect-ratio:16/9;object-fit:cover"><figcaption style="font-size:13px;color:var(--ink-45);margin-top:10px">Placeholder photography for the redesign mockup.</figcaption></figure>
+      <figure style="max-width:1080px;margin:0 auto clamp(40px,5vw,64px)"><img src="assets/img/{p["img"]}" alt="{p["title"]}" style="width:100%;aspect-ratio:16/9;object-fit:cover"><figcaption style="font-size:var(--fs-fine);color:var(--ink-45);margin-top:10px">Placeholder photography for the redesign mockup.</figcaption></figure>
       <div style="max-width:820px;margin:0 auto">
         <div class="prose" style="max-width:none">{prose_blocks(p["body"])}</div>
         <div class="slat" style="padding:0;margin:56px 0" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -642,7 +642,7 @@ def build_legal():
         body = phero("Legal" if "Accessibility" not in title else "Accessibility", title.replace("&amp;", "&"), lede,
                      trail=[("Home", "index.html"), (title, None)])
         body += f"""<section class="tight"><div class="wrap"><div class="prose">{prose_blocks(blocks)}
-        <p style="margin-top:44px;font-size:13.5px;color:var(--ink-45)">Last revised: this is a mockup page and carries no effective date.</p></div></div></section>"""
+        <p style="margin-top:44px;font-size:var(--fs-fine);color:var(--ink-45)">Last revised: this is a mockup page and carries no effective date.</p></div></div></section>"""
         write(f, page(f"{title} | VENETA&trade;", lede, body, active=""))
 
 

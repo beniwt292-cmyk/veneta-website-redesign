@@ -143,7 +143,7 @@ def header(active=""):
   <div class="top"><span class="logo">VENET<span>A</span></span><button class="close" aria-label="Close menu" onclick="closeNav()">&times;</button></div>
   <ul>{mlinks}</ul>
   <a class="btn btn--hd" style="width:100%;justify-content:center" href="{HD}" data-analytics="hd-outbound" data-location="mobile-nav">Shop at The Home Depot</a>
-  <p style="margin-top:26px;font-size:15px;color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
+  <p style="margin-top:26px;font-size:var(--fs-body);color:var(--ink-70)">Questions? Call <strong>1-855-558-1222</strong></p>
 </div>
 
 {SEARCH_PANEL}
