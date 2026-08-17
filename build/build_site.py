@@ -3,6 +3,7 @@
 import json, os, re, shutil, sys
 import shell as SH
 import pic as PIC
+import seo as SEO
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shell import (HD, page, crumbs, phero, phero_media, anchors, SLAT, shead, acc,
                    steps, kv, vids, tiles, cards, rowfeat, stats, cta_band, support_strip)
@@ -19,9 +20,11 @@ def slugify(s):
 
 def write(name, html):
     html = PIC.upgrade(html)
+    html = SEO.inject(name, html)   # §6.4: canonical, Open Graph, JSON-LD, outbound rels
     with open(os.path.join(ROOT, name), "w") as f:
         f.write(html)
-    written.append(name)
+    if name not in written:      # inspiration.html is built by P0 then replaced by §7.4
+        written.append(name)
 
 
 # ---------------------------------------------------------------- stylesheet + js
@@ -242,7 +245,7 @@ def build_pdp(p):
           <div class="box tint">
             <h4>Need a hand?</h4>
             <p style="margin:0 0 10px;color:var(--ink-70)">Talk to someone who knows the product line.</p>
-            <p style="margin:0"><strong>1-855-558-1222</strong><br><a href="contact.html" style="border-bottom:1px solid var(--daylight)">Contact support</a></p>
+            <p style="margin:0"><strong>1-855-558-1222</strong><br><a href="contact.html" style="border-bottom:1px solid var(--clay)">Contact support</a></p>
           </div>
         </aside>
       </div>
@@ -379,7 +382,7 @@ def build_shop_by():
     for i, (need, sub, img, slugs) in enumerate(D.NEEDS):
         nid = slugify(need)
         nblocks += f"""<div id="{nid}" style="padding-top:clamp(48px,6vw,80px)">
-          {rowfeat(f'Need {str(i+1).zfill(2)}', need + ".", f'<p style="color:var(--ink-70)">{sub}</p><p style="color:var(--ink-70)">Recommended lines: ' + ", ".join(f'<a class="link" href="{s}.html" style="border-bottom:1px solid var(--daylight)">{D.BY_SLUG[s]["short"]}</a>' for s in slugs) + '.</p>', img, need + " solution shown at a window", flip=(i % 2 == 1))}
+          {rowfeat(f'Need {str(i+1).zfill(2)}', need + ".", f'<p style="color:var(--ink-70)">{sub}</p><p style="color:var(--ink-70)">Recommended lines: ' + ", ".join(f'<a class="link" href="{s}.html" style="border-bottom:1px solid var(--clay)">{D.BY_SLUG[s]["short"]}</a>' for s in slugs) + '.</p>', img, need + " solution shown at a window", flip=(i % 2 == 1))}
         </div>"""
     body = phero("Shop by need", "Name the problem. We'll name the product.",
                  "Most people arrive with a problem, not a product in mind: the sun hits the screen, the bedroom is too bright, the patio door looks bare. Start there.",

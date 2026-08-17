@@ -1,36 +1,114 @@
 {
  "og": {
   "og-cellular-shades": {
+   "jpg": "assets/img/og-cellular-shades-1200.jpg",
    "path": "assets/img/og-cellular-shades-1200.webp",
    "source": "category-cellular-shades"
   },
   "og-child-safety": {
+   "jpg": "assets/img/og-child-safety-1200.jpg",
    "path": "assets/img/og-child-safety-1200.webp",
    "source": "safety-nursery-cordless"
   },
+  "og-company": {
+   "jpg": "assets/img/og-company-1200.jpg",
+   "path": "assets/img/og-company-1200.webp",
+   "source": "style-organic-modern"
+  },
+  "og-dualdrape": {
+   "jpg": "assets/img/og-dualdrape-1200.jpg",
+   "path": "assets/img/og-dualdrape-1200.webp",
+   "source": "category-dualdrape"
+  },
+  "og-faux-wood-blinds": {
+   "jpg": "assets/img/og-faux-wood-blinds-1200.jpg",
+   "path": "assets/img/og-faux-wood-blinds-1200.webp",
+   "source": "category-faux-wood-blinds"
+  },
+  "og-guides": {
+   "jpg": "assets/img/og-guides-1200.jpg",
+   "path": "assets/img/og-guides-1200.webp",
+   "source": "style-quiet-traditional"
+  },
   "og-home": {
+   "jpg": "assets/img/og-home-1200.jpg",
    "path": "assets/img/og-home-1200.webp",
    "source": "hero-home"
   },
+  "og-innovation": {
+   "jpg": "assets/img/og-innovation-1200.jpg",
+   "path": "assets/img/og-innovation-1200.webp",
+   "source": "motor-living-wall"
+  },
+  "og-inspiration": {
+   "jpg": "assets/img/og-inspiration-1200.jpg",
+   "path": "assets/img/og-inspiration-1200.webp",
+   "source": "style-warm-minimal"
+  },
+  "og-journal": {
+   "jpg": "assets/img/og-journal-1200.jpg",
+   "path": "assets/img/og-journal-1200.webp",
+   "source": "style-modern-coastal"
+  },
   "og-motorization": {
+   "jpg": "assets/img/og-motorization-1200.jpg",
    "path": "assets/img/og-motorization-1200.webp",
    "source": "motor-dusk-bedroom"
   },
+  "og-need": {
+   "jpg": "assets/img/og-need-1200.jpg",
+   "path": "assets/img/og-need-1200.webp",
+   "source": "room-bedroom"
+  },
   "og-products": {
+   "jpg": "assets/img/og-products-1200.jpg",
    "path": "assets/img/og-products-1200.webp",
    "source": "category-cellular-shades"
   },
   "og-roller-solar-shades": {
+   "jpg": "assets/img/og-roller-solar-shades-1200.jpg",
    "path": "assets/img/og-roller-solar-shades-1200.webp",
    "source": "category-roller-solar-shades"
   },
   "og-roman-shades": {
+   "jpg": "assets/img/og-roman-shades-1200.jpg",
    "path": "assets/img/og-roman-shades-1200.webp",
    "source": "category-roman-shades"
   },
+  "og-rooms": {
+   "jpg": "assets/img/og-rooms-1200.jpg",
+   "path": "assets/img/og-rooms-1200.webp",
+   "source": "room-living-room"
+  },
+  "og-samples": {
+   "jpg": "assets/img/og-samples-1200.jpg",
+   "path": "assets/img/og-samples-1200.webp",
+   "source": "macro-linen-flax"
+  },
+  "og-sheer-shades": {
+   "jpg": "assets/img/og-sheer-shades-1200.jpg",
+   "path": "assets/img/og-sheer-shades-1200.webp",
+   "source": "category-sheer-shades"
+  },
   "og-shutters": {
+   "jpg": "assets/img/og-shutters-1200.jpg",
    "path": "assets/img/og-shutters-1200.webp",
    "source": "category-shutters"
+  },
+  "og-support": {
+   "jpg": "assets/img/og-support-1200.jpg",
+   "path": "assets/img/og-support-1200.webp",
+   "source": "room-home-office"
+  },
+  "og-trade": {
+   "jpg": "assets/img/og-trade-1200.jpg",
+   "path": "assets/img/og-trade-1200.webp",
+   "source": "trade-office-open"
+  },
+  "og-vertical-blinds": {
+   "jpg": "assets/img/og-vertical-blinds-1200.jpg",
+   "path": "assets/img/og-vertical-blinds-1200.webp",
+   "source": "category-vertical-blinds"
   }
  },
  "shots": {

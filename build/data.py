@@ -361,6 +361,7 @@ POSTS = [
     dict(
         slug="journal-faux-wood-decor",
         title="Faux wood blinds do more for your decor than you think",
+        seo_title="What faux wood blinds do for your decor",
         cat="Design",
         date="February 11, 2026",
         read="5 min read",

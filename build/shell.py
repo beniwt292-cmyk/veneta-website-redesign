@@ -158,7 +158,7 @@ FOOTER = f"""
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        <span class="logo">VENET<span style="color:var(--daylight)">A</span></span>
+        <span class="logo">VENET<span style="color:var(--clay-soft)">A</span></span>
         <p>Custom blinds, shades and shutters by Richfield Window Coverings. Sold at The Home Depot.</p>
         <p class="fcontact"><strong>1-855-558-1222</strong><br>help@venetawindowfashions.com</p>
       </div>
@@ -303,7 +303,7 @@ def kv(rows):
 def vids(items):
     out = ""
     for title, desc, length, img in items:
-        out += f"""<a class="vid rev" href="#"><div class="frame"><img src="assets/img/{img}" alt="" loading="lazy"><b></b><span class="len">{length}</span></div><h3>{title}</h3><p>{desc}</p></a>"""
+        out += f"""<a class="vid rev" href="#"><div class="frame"><img src="assets/img/{img}" alt="Video still: {title}" loading="lazy"><b></b><span class="len">{length}</span></div><h3>{title}</h3><p>{desc}</p></a>"""
     return f'<div class="vids">{out}</div>'
 
 

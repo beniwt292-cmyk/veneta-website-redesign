@@ -1,0 +1,6 @@
+# Redesign mockup. Nothing here should be indexed until it replaces the
+# live site. Flip PRODUCTION in build/seo.py to open it up.
+User-agent: *
+Disallow: /
+
+Sitemap: https://www.venetawindowfashions.com/sitemap.xml

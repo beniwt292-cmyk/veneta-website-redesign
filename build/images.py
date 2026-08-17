@@ -178,7 +178,11 @@ def og():
         im = centre_crop(im, "1200:630").resize((1200, 630), Image.LANCZOS)
         out = f"assets/img/{o['id']}-1200.webp"
         im.save(os.path.join(ROOT, out), "WEBP", quality=80, method=6)
-        st.setdefault("og", {})[o["id"]] = {"path": out, "source": o["source"]}
+        # og:image points at the JPEG: LinkedIn and several other crawlers still do
+        # not fetch WebP, and a silently broken share card is worse than 40 KB.
+        jpg = f"assets/img/{o['id']}-1200.jpg"
+        im.save(os.path.join(ROOT, jpg), "JPEG", quality=82, optimize=True, progressive=True)
+        st.setdefault("og", {})[o["id"]] = {"path": out, "jpg": jpg, "source": o["source"]}
         made += 1
     save_state(st)
     print("og cards written:", made)

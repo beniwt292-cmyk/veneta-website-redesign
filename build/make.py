@@ -6,6 +6,7 @@ import pages2 as P2
 import pages3 as P3
 import p2 as P2T
 import data as D
+import seo as SEO
 
 # P2 (§7) owns home, the eight category pages, the DualDrape product family and
 # the inspiration gallery. Everything still on the P0 templates is listed below it.
@@ -30,7 +31,9 @@ P3.build_legal()
 P3.build_utility()
 
 S.build_search_index()
+urls = SEO.write_sitemap(S.written)
 
 print("pages written:", len(S.written))
+print("sitemap urls:", urls, "| robots.txt:", "index" if SEO.PRODUCTION else "noindex (mockup)")
 for n in sorted(S.written):
     print("  ", n)

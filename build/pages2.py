@@ -33,7 +33,7 @@ def build_innovation():
   {support_strip()}
 """
     write("innovation.html", page("Innovation &mdash; ClearFit&trade;, SmartRail&trade;, SmartPrivacy&reg; | VENETA&trade;",
-                                  "The engineering behind Veneta window treatments: ClearFit headrails, SmartRail bottom bars, SmartPrivacy side channels, TruQuiet motorization and RevitaCharge batteries.",
+                                  "The engineering behind Veneta: ClearFit headrails, SmartRail bottom bars, SmartPrivacy side channels, TruQuiet motorization and RevitaCharge batteries.",
                                   body, active="innovation"))
 
     tech = [

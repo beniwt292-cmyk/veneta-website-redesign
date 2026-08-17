@@ -306,11 +306,20 @@ def build():
         s.setdefault("lcp", False)
         s.setdefault("legacy", [])
 
+    # §6.4 needs a per-page og:image, so the card set covers every product line plus
+    # one card per site area. build/seo.py maps all 50 pages onto these ids.
     og = [{"id": f"og-{n}", "source": src} for n, src in [
         ("home", "hero-home"), ("products", "category-cellular-shades"),
         ("cellular-shades", "category-cellular-shades"), ("roller-solar-shades", "category-roller-solar-shades"),
         ("roman-shades", "category-roman-shades"), ("shutters", "category-shutters"),
-        ("motorization", "motor-dusk-bedroom"), ("child-safety", "safety-nursery-cordless")]]
+        ("faux-wood-blinds", "category-faux-wood-blinds"), ("sheer-shades", "category-sheer-shades"),
+        ("dualdrape", "category-dualdrape"), ("vertical-blinds", "category-vertical-blinds"),
+        ("motorization", "motor-dusk-bedroom"), ("child-safety", "safety-nursery-cordless"),
+        ("rooms", "room-living-room"), ("need", "room-bedroom"),
+        ("inspiration", "style-warm-minimal"), ("guides", "style-quiet-traditional"),
+        ("support", "room-home-office"), ("innovation", "motor-living-wall"),
+        ("trade", "trade-office-open"), ("journal", "style-modern-coastal"),
+        ("samples", "macro-linen-flax"), ("company", "style-organic-modern")]]
 
     doc = {
         "version": 1,

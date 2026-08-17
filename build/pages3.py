@@ -119,7 +119,7 @@ def build_policies():
             <li><a href="how-to-clean.html">How to clean</a></li>
             <li><a href="warranty.html">Warranty terms</a></li>
             <li><a href="motorization.html">Smart home compatibility</a></li></ul></div>
-          <div class="box"><h4>Trade enquiries</h4><p style="margin:0;color:var(--ink-70)">Builders, designers and property managers: see <a href="for-professionals.html" style="border-bottom:1px solid var(--daylight)">For Professionals</a>.</p></div>
+          <div class="box"><h4>Trade enquiries</h4><p style="margin:0;color:var(--ink-70)">Builders, designers and property managers: see <a href="for-professionals.html" style="border-bottom:1px solid var(--clay)">For Professionals</a>.</p></div>
         </aside>
       </div>
     </div>
@@ -340,7 +340,7 @@ def build_inspiration():
         <div><img src="assets/img/{feat["img"]}" alt="{feat["title"]}"></div>
         <div><p class="meta" style="font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin:0 0 12px">Latest &middot; {feat["cat"]} &middot; {feat["date"]}</p>
           <h2>{feat["title"]}</h2><p style="color:var(--ink-70);margin-top:16px">{feat["excerpt"]}</p>
-          <span class="arrow" style="font-weight:600;border-bottom:1px solid var(--daylight)">Read the article</span></div>
+          <span class="arrow" style="font-weight:600;border-bottom:1px solid var(--clay)">Read the article</span></div>
       </a>
       <div class="posts">{rest}</div>
     </div>
@@ -379,7 +379,8 @@ def build_inspiration():
   </section>
   {cta_band("Ready to fix the window?", "Every product is made to measure, cordless as standard, and sold at The Home Depot.", ("Shop at The Home Depot", HD), ("Use the product finder", "product-finder.html"))}
 """
-        write(p["slug"] + ".html", page(f'{p["title"]} | VENETA&trade; Journal', p["excerpt"][:155], body, active="inspiration"))
+        write(p["slug"] + ".html", page(f'{p.get("seo_title", p["title"])} | VENETA&trade; Journal',
+                                        p["excerpt"][:155], body, active="inspiration"))
 
 
 # ---------------------------------------------------------------- company + utility
@@ -455,7 +456,7 @@ def build_company():
         </div>
         <aside class="side">
           <div class="box sticky-box"><h4>Quick facts</h4>{kv([("Product lines", "8"), ("Cut increment", '1/8"'), ("Cordless products", "All"), ("Warranty", "Lifetime"), ("Sold at", "The Home Depot"), ("Support", "Direct from Veneta")])}</div>
-          <div class="box tint"><h4>Trade</h4><p style="margin:0;color:var(--ink-70)">Builders, designers and property managers: see <a href="for-professionals.html" style="border-bottom:1px solid var(--daylight)">For Professionals</a>.</p></div>
+          <div class="box tint"><h4>Trade</h4><p style="margin:0;color:var(--ink-70)">Builders, designers and property managers: see <a href="for-professionals.html" style="border-bottom:1px solid var(--clay)">For Professionals</a>.</p></div>
         </aside>
       </div>
     </div>
@@ -477,8 +478,8 @@ def build_company():
     </div>
   </section>
 """
-    write("about.html", page("About Veneta &mdash; Made-to-Measure, Cordless by Default | VENETA&trade;",
-                             "Veneta is the window fashions brand of Richfield Window Coverings: made-to-measure blinds, shades and shutters, cordless as standard, sold at The Home Depot.",
+    write("about.html", page("About Veneta &mdash; Made to Measure, Cordless | VENETA&trade;",
+                             "Veneta is the window fashions brand of Richfield Window Coverings: made-to-measure blinds, shades and shutters, cordless as standard.",
                              body, active=""))
 
     body = phero("For professionals", "Specification, volume and a contact who answers.",
@@ -572,7 +573,7 @@ def build_company():
 
 
 LEGAL = [
-    ("terms-and-conditions.html", "Terms &amp; Conditions", "Terms of use for this website.",
+    ("terms-and-conditions.html", "Terms &amp; Conditions", "Terms of use for this website, covering products sold at Home Depot, content accuracy, trademarks, warranty, liability and third-party links.",
      [("p", "<em>Mockup notice: this is placeholder legal copy for a design prototype. The live site must use terms reviewed by counsel.</em>"),
       ("h2", "1. About these terms"),
       ("p", "These terms govern your use of this website, operated by Richfield Window Coverings on behalf of the Veneta brand. By using the site you accept them."),
@@ -590,7 +591,7 @@ LEGAL = [
       ("p", "We may update these terms. The version in force is the one published on this page, with the date of last revision shown below."),
       ("h2", "8. Contact"),
       ("p", "Questions about these terms: help@venetawindowfashions.com or 1-855-558-1222.")]),
-    ("privacy-policy.html", "Privacy Policy", "How we handle personal information.",
+    ("privacy-policy.html", "Privacy Policy", "How Veneta handles personal information: what we collect, why we use it, cookies, sharing, retention and how to exercise your privacy rights.",
      [("p", "<em>Mockup notice: this is placeholder legal copy for a design prototype. The live policy must be reviewed by counsel and reflect actual data practices.</em>"),
       ("h2", "1. What we collect"),
       ("ul", ["Contact details you give us: name, email, postal address and phone number when you request samples, submit a support request or make a warranty claim.",
@@ -614,7 +615,7 @@ LEGAL = [
       ("p", "This site is not directed to children and we do not knowingly collect information from anyone under 16."),
       ("h2", "8. Contact"),
       ("p", "Privacy questions and requests: help@venetawindowfashions.com, or write to Richfield Window Coverings, attention Privacy.")]),
-    ("accessibility.html", "Accessibility Statement", "Our commitment, and where we are falling short.",
+    ("accessibility.html", "Accessibility Statement", "Our accessibility commitment: we build to WCAG 2.2 Level AA, what we test, the gaps we know about, and how to tell us when something blocks you.",
      [("p", "<em>Mockup notice: placeholder wording for a design prototype. A live statement must reflect a real audit.</em>"),
       ("h2", "Our target"),
       ("p", "We build to WCAG 2.2 Level AA. That is a target we test against, not a badge we award ourselves."),

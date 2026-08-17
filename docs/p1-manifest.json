@@ -38,12 +38,68 @@
    "source": "category-shutters"
   },
   {
+   "id": "og-faux-wood-blinds",
+   "source": "category-faux-wood-blinds"
+  },
+  {
+   "id": "og-sheer-shades",
+   "source": "category-sheer-shades"
+  },
+  {
+   "id": "og-dualdrape",
+   "source": "category-dualdrape"
+  },
+  {
+   "id": "og-vertical-blinds",
+   "source": "category-vertical-blinds"
+  },
+  {
    "id": "og-motorization",
    "source": "motor-dusk-bedroom"
   },
   {
    "id": "og-child-safety",
    "source": "safety-nursery-cordless"
+  },
+  {
+   "id": "og-rooms",
+   "source": "room-living-room"
+  },
+  {
+   "id": "og-need",
+   "source": "room-bedroom"
+  },
+  {
+   "id": "og-inspiration",
+   "source": "style-warm-minimal"
+  },
+  {
+   "id": "og-guides",
+   "source": "style-quiet-traditional"
+  },
+  {
+   "id": "og-support",
+   "source": "room-home-office"
+  },
+  {
+   "id": "og-innovation",
+   "source": "motor-living-wall"
+  },
+  {
+   "id": "og-trade",
+   "source": "trade-office-open"
+  },
+  {
+   "id": "og-journal",
+   "source": "style-modern-coastal"
+  },
+  {
+   "id": "og-samples",
+   "source": "macro-linen-flax"
+  },
+  {
+   "id": "og-company",
+   "source": "style-organic-modern"
   }
  ],
  "diagrams_are_svg": [
