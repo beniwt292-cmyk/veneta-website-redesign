@@ -79,19 +79,22 @@
 /* --- support strip ----------------------------------------------------- */
 .sgrid{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--ink)}
 .sgrid a{
-  display:block;padding:38px 0;border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:38px 0;border-bottom:1px solid var(--line);
   transition:background var(--d-base) var(--ease),padding-left var(--d-base) var(--ease);
 }
-.sgrid a:hover{background:var(--surface-sink)}
 .sgrid .meta{
   margin-bottom:10px;font-size:var(--fs-micro);font-weight:500;
   letter-spacing:.2em;text-transform:uppercase;color:var(--clay);
 }
-.sgrid .arrow{margin-top:12px}
+.sgrid h3{transition:color var(--d-base) var(--ease)}
+.sgrid a:hover h3{color:var(--clay)}
+.sgrid .arrow{margin-top:auto;padding-top:12px;align-self:start}
 @media(min-width:820px){
+  /* items here carry two, three or four blocks of copy depending on the page,
+     so the CTA is pinned to the bottom with flex rather than a fixed row set */
   .sgrid{grid-template-columns:repeat(3,1fr)}
-  .sgrid a{padding:38px 32px 38px 0}
-  .sgrid a+a{padding-left:32px;border-left:1px solid var(--line)}
+  .sgrid a{padding:38px clamp(28px,3vw,52px) 38px 0}
+  .sgrid a+a{padding-left:clamp(28px,3vw,52px);border-left:1px solid var(--line)}
 }
 
 /* --- newsletter -------------------------------------------------------- */

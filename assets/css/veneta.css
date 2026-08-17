@@ -377,10 +377,23 @@ nav.main a.on{color:var(--ink)}
 /* --- product cards ------------------------------------------------------ */
 .cards{
   display:grid;
-  gap:clamp(34px,3.4vw,52px) var(--gap-m);
+  column-gap:var(--gap-m);row-gap:0;
   grid-template-columns:repeat(auto-fill,minmax(266px,1fr));
+  /* one row track per card part, repeated for every wrapped band, so image,
+     title, copy, price and badges align across every card in a row. The row
+     gap must be zero (it would otherwise open up inside each card); the space
+     between bands comes from the card's own bottom padding instead. */
+  grid-auto-rows:auto auto 1fr auto auto;
+  margin-bottom:calc(-1 * clamp(34px,3.4vw,52px));
 }
-.card{display:grid;grid-template-rows:auto auto 1fr auto auto;align-content:start}
+.card{
+  grid-row:span 5;display:grid;grid-template-rows:subgrid;
+  padding-bottom:clamp(34px,3.4vw,52px);
+}
+@supports not (grid-template-rows:subgrid){
+  .cards{grid-auto-rows:auto;row-gap:clamp(34px,3.4vw,52px);margin-bottom:0}
+  .card{grid-row:auto;grid-template-rows:auto auto 1fr auto auto;padding-bottom:0}
+}
 .card .ph{
   grid-row:1;position:relative;aspect-ratio:3/4;overflow:hidden;
   background:var(--surface-sink);border:1px solid var(--line);
@@ -807,9 +820,18 @@ picture{display:block}
 .noir-note a{color:#fff;border-bottom:1px solid var(--clay-soft)}
 @media(min-width:1000px){
   .noir-top{grid-template-columns:.9fr 1.1fr}
-  .noir-pts{grid-template-columns:repeat(3,1fr);gap:0}
-  .noir-pts>div{padding:30px 34px 30px 0;border-bottom:0;border-right:1px solid var(--on-noir-line)}
-  .noir-pts>div:last-child{border-right:0}
+  .noir-pts{
+    grid-template-columns:repeat(3,1fr);gap:0;grid-template-rows:auto 1fr;
+    border-bottom:1px solid var(--on-noir-line);
+  }
+  .noir-pts>div{
+    grid-row:span 2;display:grid;grid-template-rows:subgrid;row-gap:0;
+    padding:30px clamp(28px,3vw,52px) 34px 0;border-bottom:0;
+  }
+  .noir-pts>div+div{
+    border-left:1px solid var(--on-noir-line);padding-left:clamp(28px,3vw,52px);
+  }
+  .noir-pts>div p{align-self:start}
 }
 
 /* --- room rail ---------------------------------------------------------- */
@@ -846,7 +868,13 @@ picture{display:block}
 .rl-item p{margin:0;font-size:var(--fs-fine);color:var(--ink-45)}
 @media(min-width:900px){.rl-grid{grid-template-columns:repeat(4,1fr)}}
 
-/* --- guide cards -------------------------------------------------------- */
+/* --- guide cards --------------------------------------------------------
+   RULED COLUMN SET. Shared pattern with .sgrid, .ho-steps and .noir-pts:
+   equal-width columns divided by a hairline, with the gutter split evenly on
+   both sides of the rule, and rows shared across columns via subgrid so the
+   kickers, titles, copy and calls to action all sit on common baselines.
+   No hover tint: the first column is flush to the text margin, so a filled
+   panel would read as lopsided. The rule under the CTA carries the hover. */
 .gc-grid{
   display:grid;grid-template-columns:1fr;gap:0;margin-top:clamp(32px,4vw,50px);
   border-top:1px solid var(--line);
@@ -883,8 +911,9 @@ picture{display:block}
   .gc+.gc{border-left:1px solid var(--line);padding-left:clamp(28px,3vw,52px)}
   .gc-d{align-self:start}
   .gc .arrow{align-self:end;justify-self:start;margin-top:0}
-  .gc:hover{background:var(--surface)}
 }
+.gc:hover h3{color:var(--clay)}
+.gc h3{transition:color var(--d-base) var(--ease)}
 @supports not (grid-template-rows:subgrid){
   @media(min-width:860px){.gc{display:flex}.gc .arrow{margin-top:auto;align-self:start}}
 }
@@ -906,9 +935,16 @@ picture{display:block}
 .ho-steps p{margin:6px 0 0;font-size:var(--fs-small);color:var(--ink-45)}
 @media(min-width:900px){
   .ho-head{grid-template-columns:1.35fr .65fr}
-  .ho-steps{grid-template-columns:repeat(3,1fr)}
-  .ho-steps li{padding:30px 34px 30px 0;border-bottom:0;border-right:1px solid var(--line)}
-  .ho-steps li:last-child{border-right:0}
+  .ho-steps{
+    grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto 1fr;
+    border-bottom:1px solid var(--line);
+  }
+  .ho-steps li{
+    grid-row:span 3;display:grid;grid-template-rows:subgrid;row-gap:0;
+    padding:30px clamp(28px,3vw,52px) 34px 0;border-bottom:0;
+  }
+  .ho-steps li+li{border-left:1px solid var(--line);padding-left:clamp(28px,3vw,52px)}
+  .ho-steps li p{align-self:start}
 }
 
 /* --- audience split ----------------------------------------------------- */
@@ -1132,19 +1168,22 @@ picture{display:block}
 /* --- support strip ----------------------------------------------------- */
 .sgrid{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--ink)}
 .sgrid a{
-  display:block;padding:38px 0;border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:38px 0;border-bottom:1px solid var(--line);
   transition:background var(--d-base) var(--ease),padding-left var(--d-base) var(--ease);
 }
-.sgrid a:hover{background:var(--surface-sink)}
 .sgrid .meta{
   margin-bottom:10px;font-size:var(--fs-micro);font-weight:500;
   letter-spacing:.2em;text-transform:uppercase;color:var(--clay);
 }
-.sgrid .arrow{margin-top:12px}
+.sgrid h3{transition:color var(--d-base) var(--ease)}
+.sgrid a:hover h3{color:var(--clay)}
+.sgrid .arrow{margin-top:auto;padding-top:12px;align-self:start}
 @media(min-width:820px){
+  /* items here carry two, three or four blocks of copy depending on the page,
+     so the CTA is pinned to the bottom with flex rather than a fixed row set */
   .sgrid{grid-template-columns:repeat(3,1fr)}
-  .sgrid a{padding:38px 32px 38px 0}
-  .sgrid a+a{padding-left:32px;border-left:1px solid var(--line)}
+  .sgrid a{padding:38px clamp(28px,3vw,52px) 38px 0}
+  .sgrid a+a{padding-left:clamp(28px,3vw,52px);border-left:1px solid var(--line)}
 }
 
 /* --- newsletter -------------------------------------------------------- */
