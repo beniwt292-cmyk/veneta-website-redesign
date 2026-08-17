@@ -8,6 +8,10 @@
    "path": "assets/img/og-home-1200.webp",
    "source": "hero-home"
   },
+  "og-motorization": {
+   "path": "assets/img/og-motorization-1200.webp",
+   "source": "motor-dusk-bedroom"
+  },
   "og-products": {
    "path": "assets/img/og-products-1200.webp",
    "source": "category-cellular-shades"
@@ -567,8 +571,22 @@
    "width": 768
   },
   "motor-dusk-bedroom": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 37.1,
+     "path": "assets/img/motor-dusk-bedroom-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 45.6,
+     "path": "assets/img/motor-dusk-bedroom-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 864,
+   "status": "accepted",
+   "width": 1536
   },
   "motor-living-wall": {
    "attempts": 0,
@@ -695,20 +713,76 @@
    "status": "pending"
   },
   "style-modern-coastal": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 87.9,
+     "path": "assets/img/style-modern-coastal-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 160.2,
+     "path": "assets/img/style-modern-coastal-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "style-organic-modern": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 94.4,
+     "path": "assets/img/style-organic-modern-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 150.7,
+     "path": "assets/img/style-organic-modern-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "style-quiet-traditional": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 65.8,
+     "path": "assets/img/style-quiet-traditional-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 84.5,
+     "path": "assets/img/style-quiet-traditional-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "style-warm-minimal": {
-   "attempts": 0,
-   "status": "pending"
+   "attempts": 1,
+   "files": {
+    "avif": {
+     "kb": 99.0,
+     "path": "assets/img/style-warm-minimal-1536.avif",
+     "q": 55
+    },
+    "webp": {
+     "kb": 137.7,
+     "path": "assets/img/style-warm-minimal-1536.webp",
+     "q": 78
+    }
+   },
+   "height": 1024,
+   "status": "accepted",
+   "width": 1536
   },
   "trade-commercial-lobby": {
    "attempts": 0,
