@@ -539,6 +539,9 @@ footer li a:hover{color:#fff}
     rgba(12,11,8,.30) 62%,rgba(12,11,8,.82) 100%);
 }
 .fhero .wrap{position:relative;z-index:2;padding-top:clamp(96px,16vw,180px);padding-bottom:clamp(30px,4vw,60px)}
+/* Home hero: nudge the text block up off the very bottom edge so it reads
+   more comfortably against the video/gradient, without changing hero height. */
+.fhero--video.fhero--tall .wrap{padding-bottom:clamp(56px,8vw,100px)}
 .fhero .eyebrow{color:rgba(255,255,255,.76)}
 .fhero .eyebrow::before{background:var(--clay-soft)}
 .fhero h1{max-width:15ch;color:#fff}
