@@ -39,14 +39,26 @@ def txt(s):
 
 
 # =============================================================== components ===
-def hero(shot, eyebrow, h1, lede, ctas, proof, tall=True):
-    """Full-bleed image hero. 86vh on the homepage, 62vh on a category page."""
+def hero(shot, eyebrow, h1, lede, ctas, proof, tall=True, video=None):
+    """Full-bleed image hero. 86vh on the homepage, 62vh on a category page.
+
+    `video` names an encode in assets/video/. When one has shipped it plays over
+    the still, which stays in the markup as the LCP paint and the fallback for
+    reduced motion, Save-Data and any browser that cannot decode either file.
+    """
     media = PIC.pic(shot, cls="hero-img", lcp=True,
                     sizes="100vw") or ""
+    vid = PIC.bg_video(video, shot) if video else ""
+    if vid:
+        vid += ('<button class="hero-vid-toggle" type="button" data-bg-video-toggle '
+                'aria-pressed="true">'
+                '<span data-lbl-on>Pause<span class="lbl-rest"> background video</span></span>'
+                '<span data-lbl-off>Play<span class="lbl-rest"> background video</span></span>'
+                '</button>')
     chips = "".join(f"<span>{p}</span>" for p in proof)
     return f"""
-  <div class="fhero{' fhero--tall' if tall else ''}">
-    {media}
+  <div class="fhero{' fhero--tall' if tall else ''}{' fhero--video' if vid else ''}">
+    {media}{vid}
     <div class="wrap">
       <p class="eyebrow">{eyebrow}</p>
       <h1>{h1}</h1>
@@ -443,6 +455,7 @@ def build_home(write, page):
         "through The Home Depot.",
         _hd("Shop at The Home Depot", "hero") + _ghost("Order free samples", SAMPLES, light=True),
         ["Cordless by default", "Published specs", "Made to size"],
+        video="hero-home",
     )
     body += finder
 

@@ -61,6 +61,47 @@ def _markup(s, cls="", sizes="", style="", alt="", lcp=False, img_id=""):
     )
 
 
+# --- background video --------------------------------------------------------
+# No codecs= parameter in the type: the container may hold AV1, VP9 or H.264 and
+# a mismatched codec string makes the browser skip a file it could have played.
+VIDEO_TYPES = [("webm", "video/webm"), ("mp4", "video/mp4")]
+
+
+def video_files(name):
+    """Which assets/video/NAME.* encodes exist, smallest transfer first.
+
+    Sorting by size rather than hard-coding webm-before-mp4 means whichever
+    encode actually came out lighter is the one most browsers take.
+    """
+    out = []
+    for ext, mime in VIDEO_TYPES:
+        path = os.path.join("assets", "video", f"{name}.{ext}")
+        full = os.path.join(ROOT, path)
+        if os.path.exists(full):
+            out.append((os.path.getsize(full), path, mime))
+    return [(p, m) for _, p, m in sorted(out)]
+
+
+def bg_video(name, poster_shot):
+    """Decorative looping hero video, or "" when no encode has shipped yet.
+
+    The sources are held in data-src and attached by build/interactive.js, so a
+    visitor on prefers-reduced-motion, Save-Data or a 2G connection never pays
+    for the download. The poster is the same file the <picture> already loads,
+    so it is a cache hit rather than a second request.
+    """
+    files = video_files(name)
+    if not files:
+        return ""
+    by_id, _ = _shots()
+    s = by_id.get(poster_shot)
+    poster = s["files"]["webp"] if s and shipped(s) else ""
+    srcs = "".join(f'<source data-src="{p}" type="{m}">' for p, m in files)
+    return (f'<video class="hero-vid" data-bg-video muted loop playsinline '
+            f'disablepictureinpicture preload="none" tabindex="-1" aria-hidden="true"'
+            f'{f" poster={chr(34)}{poster}{chr(34)}" if poster else ""}>{srcs}</video>')
+
+
 _IMG = re.compile(r'<img\b[^>]*?src="assets/img/([^"]+)"[^>]*>')
 
 

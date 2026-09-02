@@ -372,6 +372,7 @@ def build_support():
                                       body, active="support"))
 
     # clean
+    C = D.CARE
     body = phero("Guide", "How to clean and care.",
                  "Dust first, water second, solvents never. What to use on each material and the mistakes that cause permanent marks.",
                  trail=[("Home", "index.html"), ("Support", "support.html"), ("How to clean", None)])
@@ -381,26 +382,15 @@ def build_support():
       <div class="withside">
         <div class="prose">
           <h2>The rule that covers everything</h2>
-          <p>Dry dust brushes away. Damp dust becomes a stain. So dust every window covering regularly and only introduce water where the material can take it.</p>
+          <p>{C["rule"]}</p>
           <h2>By material</h2>
-          <h3>Cellular shades</h3>
-          <p>Vacuum with a soft brush attachment on low suction, working across the cells rather than into them. Spot clean with a barely damp white cloth and blot dry. Never submerge a blackout shade: the foil liner can separate from the face fabric.</p>
-          <h3>Roller and solar shades</h3>
-          <p>Lower the shade fully and wipe the flat face with a damp microfibre cloth. Screen fabrics tolerate a little mild soap. Let it dry fully lowered before you roll it up, or you will trap moisture on the tube.</p>
-          <h3>Roman and sheer shades</h3>
-          <p>Dust only, then spot clean gently. Use a professional cleaner for anything larger than a spot. Washing removes the sizing that holds the folds and the shade will never hang the same way again.</p>
-          <h3>Faux wood blinds</h3>
-          <p>The easy one. Close the slats one way, wipe with a damp cloth, flip and repeat. A drop of dish soap handles kitchen grease. Skip furniture polish, which leaves a dust-attracting film.</p>
-          <h3>Vinyl and fabric verticals, DualDrape&trade;</h3>
-          <p>Vinyl louvres wipe clean in place. Fabric vanes unclip: hand wash cool, hang flat to dry, re-clip. Never machine dry a vane.</p>
-          <h3>Shutters</h3>
-          <p>Dust the louvres closed in one direction, then reverse them and do the other side. Pay attention to the frame corners. On a painted finish, no solvents and no polish.</p>
-          <div class="callout"><p><strong>Never use:</strong> bleach, ammonia, solvent cleaners, steam cleaners, or a magic-eraser sponge. All of them remove finish, and finish damage is not a manufacturing defect.</p></div>
+          {''.join(f'<h3>{n}</h3><p>{t}</p>' for n, t in C["by_material"])}
+          <div class="callout"><p><strong>Never use:</strong> {C["never"]}</p></div>
           <h2>Seasonal maintenance, 15 minutes</h2>
-          <ul><li>Raise and lower every shade fully. Anything that binds needs attention now.</li><li>Check that brackets are still tight; seasonal movement loosens screws.</li><li>Look at the bottom hem for curl or fraying.</li><li>Top up motorized battery packs before the low-battery warning appears.</li></ul>
+          <ul>{''.join(f'<li>{i}</li>' for i in C['seasonal'])}</ul>
         </div>
         <aside class="side">
-          <div class="box tint sticky-box"><h4>Quick reference</h4>{kv([("Cellular", "Dust, spot only"), ("Roller", "Damp wipe"), ("Roman", "Dust only"), ("Sheer", "Dust only"), ("Faux wood", "Damp wipe"), ("Vinyl vertical", "Damp wipe"), ("Fabric vane", "Hand wash"), ("Shutters", "Dust, damp wipe")])}</div>
+          <div class="box tint sticky-box"><h4>Quick reference</h4>{kv(C["quick"])}</div>
           <div class="box"><h4>Related</h4><ul><li><a href="warranty.html">What the warranty covers</a></li><li><a href="journal-spring-cleaning.html">Spring cleaning routine</a></li><li><a href="contact.html">Ask about a stain</a></li></ul></div>
         </aside>
       </div>

@@ -176,6 +176,61 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
   }
 })();
 
+/* --- hero background video -------------------------------------------------
+   The <source> URLs ship in data-src so nothing downloads until we have decided
+   the visitor wants it. We skip the fetch entirely for reduced-motion, Save-Data
+   and slow connections, pause offscreen to stop burning battery on a video
+   nobody can see, and expose a pause control because §2.2.2 requires one for
+   anything that animates for more than five seconds. */
+(function () {
+  var vids = [].slice.call(document.querySelectorAll('[data-bg-video]'));
+  if (!vids.length) return;
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  var conn = navigator.connection || {};
+  var cheap = conn.saveData === true || /^(slow-)?2g$/.test(conn.effectiveType || '');
+
+  var attach = function (v) {
+    if (v.dataset.attached) return;
+    v.dataset.attached = '1';
+    v.querySelectorAll('source[data-src]').forEach(function (s) { s.src = s.dataset.src; });
+    v.addEventListener('canplay', function () { v.classList.add('ready'); });
+    v.load();
+    v.play().catch(function () { /* autoplay refused: the still stands in */ });
+  };
+
+  var wanted = function () { return !reduce.matches && !cheap; };
+
+  vids.forEach(function (v) {
+    var toggle = v.parentNode.querySelector('[data-bg-video-toggle]');
+    var paused = false;
+
+    if (wanted()) attach(v);
+
+    if (toggle) toggle.addEventListener('click', function () {
+      paused = !paused;
+      toggle.setAttribute('aria-pressed', paused ? 'false' : 'true');
+      if (paused) { v.pause(); } else { attach(v); v.play().catch(function () {}); }
+    });
+
+    // Only run while the hero is actually on screen.
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!v.dataset.attached || paused) return;
+          if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
+        });
+      }, { threshold: 0 }).observe(v);
+    }
+
+    // Honour a preference changed after load.
+    reduce.addEventListener('change', function () {
+      if (reduce.matches) { v.pause(); v.classList.remove('ready'); }
+      else if (!paused) { attach(v); v.play().catch(function () {}); }
+    });
+  });
+})();
+
 /* ===== VENETA measurement layer — MASTER_PLAN §10 ===========================
    Nine events. Three are purpose-built (hd_click, spec_table_view, guide_read);
    finder_complete is fired by the finder in interactive.js through window.vev;

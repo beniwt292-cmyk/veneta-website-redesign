@@ -31,8 +31,9 @@ def prose_blocks(items):
 
 # ---------------------------------------------------------------- warranty / contact / faq
 def build_policies():
+    W = D.WARRANTY
     body = phero("Warranty", "Limited lifetime warranty, in plain English.",
-                 "Every Veneta product is covered for as long as the original purchaser owns it. Here is exactly what that means, what it does not cover, and how to make a claim without being sent in a circle.",
+                 W["lede"],
                  trail=[("Home", "index.html"), ("Support", "support.html"), ("Warranty", None)],
                  ctas='<a class="btn" href="contact.html">Start a claim</a>')
     body += f"""
@@ -42,37 +43,25 @@ def build_policies():
         <div class="prose">
           {prose_blocks([
             ("h2", "What is covered"),
-            ("p", "Defects in materials and workmanship, for the life of the product, for the original purchaser at the original installation address."),
-            ("ul", ["Operating systems: cordless lift mechanisms, tilt mechanisms, wands and traverse tracks.",
-                    "Components: brackets, headrails, bottom bars, valance clips, vane and louvre carriers.",
-                    "Fabric and finish faults present at manufacture, including delamination and misaligned printing.",
-                    "Motorization components for five years from purchase, including motors, battery packs and hubs."]),
+            ("p", W["scope"]),
+            ("ul", W["covered"]),
             ("h2", "What is not covered"),
-            ("ul", ["Measuring errors. If the product was made to the size you supplied, it is not a defect.",
-                    "Normal wear, fading and discolouration from sun exposure over time.",
-                    "Damage from misuse, accident, pets, cleaning with unapproved products, or steam.",
-                    "Products modified, cut down or re-drilled after delivery.",
-                    "Labour to remove or reinstall, and shipping costs on non-defect returns.",
-                    "Products bought second hand or moved to a different address by a new owner."]),
+            ("ul", W["excluded"]),
             ("h2", "How to make a claim"),
-            ("ol", ["Find your Home Depot order number. It is on the confirmation email and the packing slip.",
-                    "Take two photographs: one of the whole window, one close up on the fault.",
-                    "Call 1-855-558-1222 or send the details through the contact form.",
-                    "We assess the claim, usually within one business day, and either ship a part or remake the product.",
-                    "If a remake is needed, we tell you the lead time up front rather than after you ask."]),
-            ("callout", "You do not need to go back to the store first. Warranty claims are handled directly by Veneta, whether you bought online or in a Home Depot store."),
+            ("ol", W["claim"]),
+            ("callout", W["direct"]),
             ("h2", "Motorization specifics"),
-            ("p", "Motors, rechargeable battery packs and the ShadeAuto&trade; Hub carry a five-year warranty from date of purchase rather than lifetime coverage, because they contain consumable electronics. Batteries that no longer hold a useful charge within that period are replaced."),
+            ("p", W["motor"]),
             ("h2", "Consumer rights"),
-            ("p", "This warranty gives you specific legal rights. You may also have other rights that vary by state, and nothing here limits any right you have under applicable consumer law."),
+            ("p", W["rights"]),
             ("h2", "Registering a product"),
-            ("p", "Registration is not required for coverage. It only saves you finding the order number later, so it is worth two minutes."),
+            ("p", W["register"]),
           ])}
         </div>
         <aside class="side">
-          <div class="box sticky-box"><h4>Claim checklist</h4><ul><li>Home Depot order number</li><li>Photo of the full window</li><li>Photo of the fault</li><li>Product line and size</li><li>Installation date if known</li></ul>
+          <div class="box sticky-box"><h4>Claim checklist</h4><ul>{''.join(f'<li>{i}</li>' for i in W["checklist"])}</ul>
             <a class="btn btn--sm" style="width:100%;justify-content:center;margin-top:16px" href="contact.html">Start a claim</a></div>
-          <div class="box tint"><h4>Phone</h4><p style="margin:0"><strong>1-855-558-1222</strong><br>Mon&ndash;Fri, 8am&ndash;6pm CT</p></div>
+          <div class="box tint"><h4>Phone</h4><p style="margin:0"><strong>{D.SUPPORT_PHONE}</strong><br>{D.SUPPORT_HOURS}</p></div>
         </aside>
       </div>
     </div>
@@ -81,6 +70,7 @@ def build_policies():
     write("warranty.html", page("Limited Lifetime Warranty | VENETA&trade;",
                                 "What the Veneta limited lifetime warranty covers, what it excludes, motorization coverage, and the five-step claim process.",
                                 body, active="support"))
+
 
     # contact
     body = phero("Contact", "Talk to someone who knows the product.",

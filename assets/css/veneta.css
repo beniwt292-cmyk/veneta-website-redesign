@@ -675,6 +675,37 @@ footer li a:hover{color:#fff}
 .fhero--tall{min-height:min(86svh,900px)}
 .fhero .hero-img{position:absolute;inset:0}
 .fhero .hero-img img{width:100%;height:100%;object-fit:cover}
+/* Video sits over the still, which stays put as the LCP paint and the fallback.
+   Opacity is flipped to 1 only once the first frame is decodable, so a slow
+   connection shows the photograph instead of a black rectangle. */
+.fhero .hero-vid{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .6s ease;
+}
+.fhero .hero-vid.ready{opacity:1}
+.hero-vid-toggle{
+  position:absolute;right:clamp(16px,4vw,40px);bottom:clamp(16px,3vw,34px);z-index:3;
+  display:none;align-items:center;gap:8px;
+  padding:9px 15px;border:1px solid rgba(255,255,255,.42);border-radius:999px;
+  background:rgba(12,11,8,.42);color:#fff;cursor:pointer;
+  font:inherit;font-size:var(--fs-micro);letter-spacing:var(--ls-micro);
+  text-transform:uppercase;backdrop-filter:blur(6px);
+  transition:background .2s ease,border-color .2s ease;
+}
+.fhero--video .hero-vid.ready~.hero-vid-toggle{display:inline-flex}
+.hero-vid-toggle:hover{background:rgba(12,11,8,.66);border-color:#fff}
+.hero-vid-toggle[aria-pressed="true"] [data-lbl-off],
+.hero-vid-toggle[aria-pressed="false"] [data-lbl-on]{display:none}
+/* Below the desktop breakpoint the proof chips wrap into the bottom-right
+   corner, so the control moves to the top of the hero and drops its long label
+   rather than sitting on top of the text. */
+@media (max-width:760px){
+  .hero-vid-toggle{top:clamp(12px,4vw,20px);bottom:auto;padding:7px 12px}
+  .hero-vid-toggle .lbl-rest{
+    position:absolute;width:1px;height:1px;overflow:hidden;
+    clip-path:inset(50%);white-space:nowrap;
+  }
+}
 .fhero::after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(12,11,8,.44) 0%,rgba(12,11,8,.10) 34%,

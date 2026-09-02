@@ -499,3 +499,73 @@ MOUNT_DEPTH = [
     ("Framed", "Shutters", "shutters mount in their own frame"),
     ("Outside mount", "Under 3/4&quot;", "use an outside mount instead"),
 ]
+
+
+# --- warranty + care content ---------------------------------------------------
+# Declared once here per MASTER_PLAN §12. Read by warranty.html (build/pages3.py),
+# how-to-clean.html (build/pages2.py) and the downloadable documents in
+# build/specdocs.py, so the page and the PDF a specifier downloads can never state
+# different terms. Edit here and all three change in the same commit.
+
+WARRANTY = dict(
+    lede="Every Veneta product is covered for as long as the original purchaser owns it. Here is exactly what that means, what it does not cover, and how to make a claim without being sent in a circle.",
+    scope="Defects in materials and workmanship, for the life of the product, for the original purchaser at the original installation address.",
+    covered=[
+        "Operating systems: cordless lift mechanisms, tilt mechanisms, wands and traverse tracks.",
+        "Components: brackets, headrails, bottom bars, valance clips, vane and louvre carriers.",
+        "Fabric and finish faults present at manufacture, including delamination and misaligned printing.",
+        "Motorization components for five years from purchase, including motors, battery packs and hubs.",
+    ],
+    excluded=[
+        "Measuring errors. If the product was made to the size you supplied, it is not a defect.",
+        "Normal wear, fading and discolouration from sun exposure over time.",
+        "Damage from misuse, accident, pets, cleaning with unapproved products, or steam.",
+        "Products modified, cut down or re-drilled after delivery.",
+        "Labour to remove or reinstall, and shipping costs on non-defect returns.",
+        "Products bought second hand or moved to a different address by a new owner.",
+    ],
+    claim=[
+        "Find your Home Depot order number. It is on the confirmation email and the packing slip.",
+        "Take two photographs: one of the whole window, one close up on the fault.",
+        "Call 1-855-558-1222 or send the details through the contact form.",
+        "We assess the claim, usually within one business day, and either ship a part or remake the product.",
+        "If a remake is needed, we tell you the lead time up front rather than after you ask.",
+    ],
+    direct="You do not need to go back to the store first. Warranty claims are handled directly by Veneta, whether you bought online or in a Home Depot store.",
+    motor="Motors, rechargeable battery packs and the ShadeAuto&trade; Hub carry a five-year warranty from date of purchase rather than lifetime coverage, because they contain consumable electronics. Batteries that no longer hold a useful charge within that period are replaced.",
+    rights="This warranty gives you specific legal rights. You may also have other rights that vary by state, and nothing here limits any right you have under applicable consumer law.",
+    register="Registration is not required for coverage. It only saves you finding the order number later, so it is worth two minutes.",
+    checklist=["Home Depot order number", "Photo of the full window", "Photo of the fault",
+               "Product line and size", "Installation date if known"],
+)
+
+CARE = dict(
+    rule="Dry dust brushes away. Damp dust becomes a stain. So dust every window covering regularly and only introduce water where the material can take it.",
+    by_material=[
+        ("Cellular shades",
+         "Vacuum with a soft brush attachment on low suction, working across the cells rather than into them. Spot clean with a barely damp white cloth and blot dry. Never submerge a blackout shade: the foil liner can separate from the face fabric."),
+        ("Roller and solar shades",
+         "Lower the shade fully and wipe the flat face with a damp microfibre cloth. Screen fabrics tolerate a little mild soap. Let it dry fully lowered before you roll it up, or you will trap moisture on the tube."),
+        ("Roman and sheer shades",
+         "Dust only, then spot clean gently. Use a professional cleaner for anything larger than a spot. Washing removes the sizing that holds the folds and the shade will never hang the same way again."),
+        ("Faux wood blinds",
+         "The easy one. Close the slats one way, wipe with a damp cloth, flip and repeat. A drop of dish soap handles kitchen grease. Skip furniture polish, which leaves a dust-attracting film."),
+        ("Vinyl and fabric verticals, DualDrape&trade;",
+         "Vinyl louvres wipe clean in place. Fabric vanes unclip: hand wash cool, hang flat to dry, re-clip. Never machine dry a vane."),
+        ("Shutters",
+         "Dust the louvres closed in one direction, then reverse them and do the other side. Pay attention to the frame corners. On a painted finish, no solvents and no polish."),
+    ],
+    never="bleach, ammonia, solvent cleaners, steam cleaners, or a magic-eraser sponge. All of them remove finish, and finish damage is not a manufacturing defect.",
+    seasonal=[
+        "Raise and lower every shade fully. Anything that binds needs attention now.",
+        "Check that brackets are still tight; seasonal movement loosens screws.",
+        "Look at the bottom hem for curl or fraying.",
+        "Top up motorized battery packs before the low-battery warning appears.",
+    ],
+    quick=[("Cellular", "Dust, spot only"), ("Roller", "Damp wipe"), ("Roman", "Dust only"),
+           ("Sheer", "Dust only"), ("Faux wood", "Damp wipe"), ("Vinyl vertical", "Damp wipe"),
+           ("Fabric vane", "Hand wash"), ("Shutters", "Dust, damp wipe")],
+)
+
+SUPPORT_PHONE = "1-855-558-1222"
+SUPPORT_HOURS = "Mon&ndash;Fri, 8am&ndash;6pm CT"
