@@ -60,6 +60,7 @@
   --pad:clamp(20px,5vw,72px);
   --maxw:1400px;
   --hdr:78px;
+  --utilbar:36px;
   --sec-y:clamp(68px,8vw,132px);
   --gap-s:12px;
   --gap-m:clamp(16px,1.8vw,26px);

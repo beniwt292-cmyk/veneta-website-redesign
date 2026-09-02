@@ -51,7 +51,6 @@ def head(title, desc, css="assets/css/veneta.css"):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<p class="mocknote">Redesign mockup &middot; not the live VENETA&trade; site &middot; photography is placeholder art direction</p>
 """
 
 

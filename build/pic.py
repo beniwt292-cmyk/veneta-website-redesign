@@ -39,6 +39,20 @@ def shipped(s):
     return all(os.path.exists(os.path.join(ROOT, s["files"][k])) for k in ("avif", "webp"))
 
 
+_hash_cache = {}
+
+
+def _ver(path):
+    """Short content hash for a shipped asset, so replacing a file under the
+    same name (e.g. re-shooting a hero image) is a new URL to the browser and
+    CDN rather than a stale cache hit on the old bytes."""
+    if path not in _hash_cache:
+        full = os.path.join(ROOT, path)
+        with open(full, "rb") as f:
+            _hash_cache[path] = hashlib.sha1(f.read()).hexdigest()[:10]
+    return f"{path}?v={_hash_cache[path]}"
+
+
 def pic(shot_id, cls="", sizes="", style="", alt=None, lcp=None, img_id=""):
     """<picture> with AVIF + WebP, explicit dimensions and descriptive alt text."""
     by_id, _ = _shots()
@@ -52,11 +66,12 @@ def pic(shot_id, cls="", sizes="", style="", alt=None, lcp=None, img_id=""):
 def _markup(s, cls="", sizes="", style="", alt="", lcp=False, img_id=""):
     load = 'fetchpriority="high" decoding="async"' if lcp else 'loading="lazy" decoding="async"'
     sz = f' sizes="{sizes}"' if sizes else ""
+    avif, webp = _ver(s["files"]["avif"]), _ver(s["files"]["webp"])
     return (
         f'<picture{f" class={chr(34)}{cls}{chr(34)}" if cls else ""}>'
-        f'<source type="image/avif" srcset="{s["files"]["avif"]}"{sz}>'
-        f'<source type="image/webp" srcset="{s["files"]["webp"]}"{sz}>'
-        f'<img {f"id={chr(34)}{img_id}{chr(34)} " if img_id else ""}src="{s["files"]["webp"]}" alt="{alt}" width="{s["width"]}" height="{s["height"]}" '
+        f'<source type="image/avif" srcset="{avif}"{sz}>'
+        f'<source type="image/webp" srcset="{webp}"{sz}>'
+        f'<img {f"id={chr(34)}{img_id}{chr(34)} " if img_id else ""}src="{webp}" alt="{alt}" width="{s["width"]}" height="{s["height"]}" '
         f'{load}{f" style={chr(34)}{style}{chr(34)}" if style else ""}></picture>'
     )
 
@@ -102,7 +117,7 @@ def bg_video(name, poster_shot):
         return ""
     by_id, _ = _shots()
     s = by_id.get(poster_shot)
-    poster = s["files"]["webp"] if s and shipped(s) else ""
+    poster = _ver(s["files"]["webp"]) if s and shipped(s) else ""
     srcs = "".join(f'<source data-src="{p}" type="{m}">' for p, m in files)
     return (f'<video class="hero-vid" data-bg-video muted playsinline '
             f'disablepictureinpicture preload="none" tabindex="-1" aria-hidden="true"'
