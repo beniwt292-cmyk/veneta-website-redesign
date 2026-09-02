@@ -11,7 +11,7 @@ Two entry points:
 page as each batch lands, with no per-page edits and no broken build while the set
 is incomplete.
 """
-import json, os, re
+import hashlib, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MANIFEST = os.path.join(ROOT, "docs", "p1-manifest.json")
@@ -72,13 +72,20 @@ def video_files(name):
 
     Sorting by size rather than hard-coding webm-before-mp4 means whichever
     encode actually came out lighter is the one most browsers take.
+
+    The path carries a short content hash (?v=...) so replacing an encode under
+    the same filename is a new URL to the browser and the CDN, not a cache hit
+    on the old bytes. Without this, swapping hero-home.mp4 for a corrected cut
+    can silently keep serving the previous clip for a long time.
     """
     out = []
     for ext, mime in VIDEO_TYPES:
         path = os.path.join("assets", "video", f"{name}.{ext}")
         full = os.path.join(ROOT, path)
         if os.path.exists(full):
-            out.append((os.path.getsize(full), path, mime))
+            with open(full, "rb") as f:
+                digest = hashlib.sha1(f.read()).hexdigest()[:10]
+            out.append((os.path.getsize(full), f"{path}?v={digest}", mime))
     return [(p, m) for _, p, m in sorted(out)]
 
 
