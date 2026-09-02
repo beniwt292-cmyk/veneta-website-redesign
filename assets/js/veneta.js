@@ -178,17 +178,17 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
 
 /* --- hero background video -------------------------------------------------
    The <source> URLs ship in data-src so nothing downloads until we have decided
-   the visitor wants it. We skip the fetch entirely for reduced-motion, Save-Data
-   and slow connections, and pause offscreen to stop burning battery on a video
-   nobody can see. The clip plays once and rests on its final frame: it is
-   never told to loop, and reaching the end never re-triggers playback,
-   including when it scrolls back into view. There is no user-facing pause
-   control; the clip is short, silent, decorative and non-interactive. */
+   the visitor wants it. We skip the fetch only for Save-Data and slow
+   connections, and pause offscreen to stop burning battery on a video nobody
+   can see. The clip always autoplays on load, same as every other hero video
+   out there. It plays once and rests on its final frame: it is never told to
+   loop, and reaching the end never re-triggers playback, including when it
+   scrolls back into view. There is no user-facing pause control; the clip is
+   short, silent, decorative and non-interactive. */
 (function () {
   var vids = [].slice.call(document.querySelectorAll('[data-bg-video]'));
   if (!vids.length) return;
 
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)');
   var conn = navigator.connection || {};
   var cheap = conn.saveData === true || /^(slow-)?2g$/.test(conn.effectiveType || '');
 
@@ -201,10 +201,8 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
     v.play().catch(function () { /* autoplay refused: the still stands in */ });
   };
 
-  var wanted = function () { return !reduce.matches && !cheap; };
-
   vids.forEach(function (v) {
-    if (wanted()) attach(v);
+    if (!cheap) attach(v);
 
     // Only run while the hero is actually on screen, and never past the end.
     if (window.IntersectionObserver) {
@@ -215,12 +213,6 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
         });
       }, { threshold: 0 }).observe(v);
     }
-
-    // Honour a preference changed after load.
-    reduce.addEventListener('change', function () {
-      if (reduce.matches) { v.pause(); v.classList.remove('ready'); }
-      else if (!v.ended) { attach(v); v.play().catch(function () {}); }
-    });
   });
 })();
 
