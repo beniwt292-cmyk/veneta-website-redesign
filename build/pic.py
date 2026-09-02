@@ -97,7 +97,7 @@ def bg_video(name, poster_shot):
     s = by_id.get(poster_shot)
     poster = s["files"]["webp"] if s and shipped(s) else ""
     srcs = "".join(f'<source data-src="{p}" type="{m}">' for p, m in files)
-    return (f'<video class="hero-vid" data-bg-video muted loop playsinline '
+    return (f'<video class="hero-vid" data-bg-video muted playsinline '
             f'disablepictureinpicture preload="none" tabindex="-1" aria-hidden="true"'
             f'{f" poster={chr(34)}{poster}{chr(34)}" if poster else ""}>{srcs}</video>')
 

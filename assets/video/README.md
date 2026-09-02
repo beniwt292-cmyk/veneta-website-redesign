@@ -22,13 +22,25 @@ jump.
 | Setting | Value | Why |
 |---|---|---|
 | Resolution | 1920x1080 | Upscaled by `object-fit:cover` past that; 4K is wasted on a darkened background |
-| Duration | 8 to 12 seconds, seamless loop | Long enough not to feel twitchy, short enough to stay under budget |
+| Duration | 4 to 6 seconds, plays once | The clip is not set to loop: it plays through once per pageview and rests on its final frame. No `loop` attribute in the markup, and the JS never restarts it, including when it scrolls back into view. |
 | Frame rate | 24 or 25 fps | Matches the still photography's film look |
 | Audio | none, stripped from the file | The element is muted and decorative; audio blocks autoplay on some browsers |
 | Target size | under 2.5 MB mp4, under 1.8 MB webm | Above that the hero costs more than the rest of the page combined |
 
 Content should be slow: a curtain drift, a shade lowering, light moving across a
-floor. Anything with a cut or a camera move fights the headline.
+floor. Anything with a cut or a camera move fights the headline. Because it only
+plays once, trim to just the active motion, there is no benefit to a long hold
+on a static final frame; the poster/last-frame does that job for free.
+
+If the source footage is lower resolution than 1080p (true of most AI-generated
+clips today), run it through a denoise + lanczos upscale + light sharpen pass
+before the final encode rather than a plain scale. A plain upscale looks soft;
+denoising first keeps the sharpen pass from amplifying compression noise:
+
+    ffmpeg -i source.mp4 -t 5.4 \
+      -vf "hqdn3d=1.2:1.0:6:6,scale=1920:1080:flags=lanczos:force_original_aspect_ratio=increase,crop=1920:1080,unsharp=5:5:0.6:5:5:0.0" \
+      -an -c:v libx264 -profile:v high -crf 19 -preset slow -pix_fmt yuv420p \
+      -movflags +faststart assets/video/hero-home.mp4
 
 ## Commands
 
