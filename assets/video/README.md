@@ -68,15 +68,19 @@ file and playback waits for the whole download.
 
 - Nothing downloads until `build/interactive.js` attaches the sources.
 - Skipped entirely on `prefers-reduced-motion: reduce`, Save-Data and 2G.
-- Paused when the hero scrolls out of view.
-- A visible pause control appears once the first frame is decodable, which is
-  what WCAG 2.2.2 requires for motion that runs longer than five seconds.
+- Paused when the hero scrolls out of view (performance only, not user-facing).
+- Plays automatically on load with no pause/play control; it is short, silent,
+  decorative and non-interactive by design.
 - The `<picture>` still is the LCP paint, so the video cannot regress that metric.
 
 ## Current file
 
 `hero-home.mp4` / `hero-home.webm` in this folder are the Kling-generated shot: a
 10-second roman shade lowering across a wall of floor-to-ceiling windows in a
-sunlit, minimalist living room. Encoded at the shot's full, unmodified length,
-no trim and no reverse, so it plays exactly as generated and rests on the fully
-lowered shade.
+sunlit, minimalist living room. Re-encoded from a higher-resolution re-export of
+the same source (2568x1432 rather than the original 1284x716), so no denoise or
+upscale pass was needed this time, a plain lanczos downscale to 1920x1080 is
+sharper than the earlier upscaled cut. Full, unmodified length and pacing, no
+trim, no reverse; it plays exactly as generated and rests on the fully lowered
+shade. The poster still (`assets/img/hero-home-1536.*`) is the first frame of
+this exact file.

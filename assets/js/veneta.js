@@ -179,11 +179,11 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
 /* --- hero background video -------------------------------------------------
    The <source> URLs ship in data-src so nothing downloads until we have decided
    the visitor wants it. We skip the fetch entirely for reduced-motion, Save-Data
-   and slow connections, pause offscreen to stop burning battery on a video
-   nobody can see, and expose a pause control because §2.2.2 requires one for
-   anything that animates for more than five seconds. The clip plays once and
-   rests on its final frame: it is never told to loop, and reaching the end
-   never re-triggers playback, including when it scrolls back into view. */
+   and slow connections, and pause offscreen to stop burning battery on a video
+   nobody can see. The clip plays once and rests on its final frame: it is
+   never told to loop, and reaching the end never re-triggers playback,
+   including when it scrolls back into view. There is no user-facing pause
+   control; the clip is short, silent, decorative and non-interactive. */
 (function () {
   var vids = [].slice.call(document.querySelectorAll('[data-bg-video]'));
   if (!vids.length) return;
@@ -204,26 +204,13 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
   var wanted = function () { return !reduce.matches && !cheap; };
 
   vids.forEach(function (v) {
-    var toggle = v.parentNode.querySelector('[data-bg-video-toggle]');
-    var userPaused = false;
-
-    v.addEventListener('ended', function () {
-      if (toggle) toggle.hidden = true;   // nothing left to pause or resume
-    });
-
     if (wanted()) attach(v);
-
-    if (toggle) toggle.addEventListener('click', function () {
-      userPaused = !userPaused;
-      toggle.setAttribute('aria-pressed', userPaused ? 'false' : 'true');
-      if (userPaused) { v.pause(); } else { attach(v); v.play().catch(function () {}); }
-    });
 
     // Only run while the hero is actually on screen, and never past the end.
     if (window.IntersectionObserver) {
       new IntersectionObserver(function (es) {
         es.forEach(function (e) {
-          if (!v.dataset.attached || userPaused || v.ended) return;
+          if (!v.dataset.attached || v.ended) return;
           if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
         });
       }, { threshold: 0 }).observe(v);
@@ -232,7 +219,7 @@ document.querySelectorAll('.gal-thumbs button').forEach(function(b){b.addEventLi
     // Honour a preference changed after load.
     reduce.addEventListener('change', function () {
       if (reduce.matches) { v.pause(); v.classList.remove('ready'); }
-      else if (!userPaused && !v.ended) { attach(v); v.play().catch(function () {}); }
+      else if (!v.ended) { attach(v); v.play().catch(function () {}); }
     });
   });
 })();

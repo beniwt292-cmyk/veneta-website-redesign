@@ -49,12 +49,6 @@ def hero(shot, eyebrow, h1, lede, ctas, proof, tall=True, video=None):
     media = PIC.pic(shot, cls="hero-img", lcp=True,
                     sizes="100vw") or ""
     vid = PIC.bg_video(video, shot) if video else ""
-    if vid:
-        vid += ('<button class="hero-vid-toggle" type="button" data-bg-video-toggle '
-                'aria-pressed="true">'
-                '<span data-lbl-on>Pause<span class="lbl-rest"> background video</span></span>'
-                '<span data-lbl-off>Play<span class="lbl-rest"> background video</span></span>'
-                '</button>')
     chips = "".join(f"<span>{p}</span>" for p in proof)
     return f"""
   <div class="fhero{' fhero--tall' if tall else ''}{' fhero--video' if vid else ''}">
